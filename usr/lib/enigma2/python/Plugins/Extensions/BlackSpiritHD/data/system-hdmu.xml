@@ -1,0 +1,65 @@
+<!-- HDMU -->
+<!-- About -->
+<!-- SKINNED -->
+<screen backgroundColor="transparent" flags="wfNoBorder" name="About" position="0,0" size="1280,720" title="About">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+    <widget backgroundColor="BS_background" font="Regular; 26" position="70,71" render="Label" size="700,40" source="EnigmaVersion" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 26" position="70,111" render="Label" size="700,40" source="ImageVersion" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 26" position="70,151" render="Label" size="700,40" source="FPVersion" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 26" position="70,191" render="Label" size="700,40" source="TunerHeader" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 24" position="70,231" render="Label" size="700,40" source="Tuner0" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 24" position="70,271" render="Label" size="700,40" source="Tuner1" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 24" position="70,311" render="Label" size="700,40" source="Tuner2" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 24" position="70,351" render="Label" size="700,40" source="Tuner3" transparent="1" />
+    <eLabel backgroundColor="BS_background" font="Regular; 26" position="69,441" size="700,40" text="Support for Image: " transparent="1" />
+    <eLabel backgroundColor="BS_background" font="Regular; 26" position="69,480" size="700,40" text="www.hdmedia-universe.com" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 26" position="70,520" render="Label" size="700,40" source="HDDHeader" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 24" position="70,560" render="Label" size="700,65" source="hddA" transparent="1" />
+</screen>
+
+  
+<!-- HotkeySetup -->
+<screen backgroundColor="transparent" flags="wfNoBorder" name="HotkeySetup" position="0,0" size="1280,720" title="Tasteneinstellungen">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
+  <widget name="list" position="center,100" size="900,450" scrollbarMode="showAlways" font="Regular;22" itemHeight="30" transparent="1" enableWrapAround="1" backgroundColor="BS_background" zPosition="5" />
+	<ePixmap position="499,550" size="522,111" zPosition="-4" pixmap="BlackSpirit.HD/img/bg_522x111.png" />
+	<widget name="description" position="510,560" size="510,90" font="Regular; 19" valign="center" halign="left" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" zPosition="1" />
+  <widget name="choosen" position="center,60" size="1000,30" scrollbarMode="showOnDemand" font="Regular;22" itemHeight="30" backgroundColor="BS_background" foregroundColor="BlackSpirit" zPosition="5" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red_source"/>
+	<panel name="template_colorkey_green_source"/>
+</screen>
+
+
+<!-- ButtonSetupSelect -->
+<screen backgroundColor="transparent" flags="wfNoBorder" name="ButtonSetupSelect" position="0,0" size="1280,720" title="Tasteneinstellungen">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
+  <widget name="list" position="center,100" size="900,450" scrollbarMode="showAlways" font="Regular;22" itemHeight="30" transparent="1" enableWrapAround="1" backgroundColor="BS_background" zPosition="5" />
+	<ePixmap position="499,550" size="522,111" zPosition="-4" pixmap="BlackSpirit.HD/img/bg_522x111.png" />
+	<widget name="description" position="510,560" size="510,90" font="Regular; 19" valign="center" halign="left" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" zPosition="1" />
+  <widget name="choosen" position="center,60" size="1000,30" scrollbarMode="showOnDemand" font="Regular;22" itemHeight="30" backgroundColor="BS_background" foregroundColor="BlackSpirit" zPosition="5" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red_source"/>
+	<panel name="template_colorkey_green_source"/>
+</screen>
+
+
+<!-- LED_GigaSetup -->
+<screen name="LED_GigaSetup" position="0,0" size="1280,720" title="LED Setup" backgroundColor="transparent">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+<widget name="config" position="70,131" size="510,469" scrollbarMode="showOnDemand" transparent="1" />
+<ePixmap alphatest="blend" pixmap="KravenHD/buttons/key_red1.png" position="100,665" size="200,5" />
+  <ePixmap alphatest="blend" pixmap="KravenHD/buttons/key_green1.png" position="390,665" size="200,5" />
+  <widget backgroundColor="BS_background" font="Regular;20" halign="left" position="105,640" render="Label" size="240,24" source="key_red" transparent="1" zPosition="1" />
+  <widget backgroundColor="BS_background" font="Regular;20" halign="left" position="395,640" render="Label" size="240,24" source="key_green" transparent="1" zPosition="1" />
+</screen>
+
+

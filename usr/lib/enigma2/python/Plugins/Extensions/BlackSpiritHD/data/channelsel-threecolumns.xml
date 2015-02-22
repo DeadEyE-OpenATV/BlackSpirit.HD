@@ -1,0 +1,74 @@
+
+
+<!-- /* ChannelSelection ThreeColumns -->
+<!-- SKINNED -->
+<screen backgroundColor="transparent" flags="wfNoBorder" name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection">
+	<panel name="template_screen_background" />
+	<panel name="template_TOP_Title" />
+	<widget source="ServiceEvent" render="Label" position="center,60" size="500,50" font="RegularBold; 25" halign="center" valign="bottom" foregroundColor="BlackSpirit" backgroundColor="BS_background" transparent="1">
+		<convert type="ServiceName">Name</convert>
+	</widget>
+	
+	
+	
+	
+	<ePixmap pixmap="BlackSpirit.HD/img/bg_502x542.png" position="center,109" size="502,542" zPosition="4" backgroundColor="BS_background" alphatest="off" transparent="1" />
+	<ePixmap position="875,110" size="15,540" zPosition="6" pixmap="BlackSpirit.HD/img/scroll540.png" backgroundColor="BS_background" alphatest="blend" transparent="1" />
+	<widget name="list" position="center,115" size="500,532" backgroundColor="BS_background" scrollbarMode="showAlways" zPosition="5" picServiceEventProgressbar="BlackSpirit.HD/img/mini_progbar_blackspirit.png" foregroundColorMarkedSelected="green" foregroundColor="BS_grey3" foregroundColorSelected="BlackSpirit" colorEventProgressbarBorder="black" colorEventProgressbarBorderSelected="black" colorServiceDescription="BS_grey1" colorServiceDescriptionSelected="BS_fg_select" colorServiceRecording="red" foregroundColorServiceNotAvail="orange" serviceInfoFont="Regular;20" serviceItemHeight="28" serviceNameFont="Regular;20" serviceNumberFont="Regular;20" transparent="1" />
+	<ePixmap pixmap="BlackSpirit.HD/img/bg_378x576.png" position="30,80" size="378,576" backgroundColor="BS_background" alphatest="off" zPosition="3" transparent="1" />
+	<widget source="ServiceEvent" render="Label" position="39,95" size="350,45" font="Regular;18" halign="center" nowrap="0" backgroundColor="BS_background" zPosition="10" transparent="1" foregroundColor="BS_fg_select">
+		<convert type="EventName">Name</convert>
+	</widget>
+	<widget source="ServiceEvent" render="Label" position="16,138" size="60,25" font="Regular; 15" halign="right" backgroundColor="BS_background" zPosition="10" transparent="1" foregroundColor="BlackSpirit">
+		<convert type="EventTime">StartTime</convert>
+		<convert type="ClockToText">
+		</convert>
+	</widget>
+	<widget source="ServiceEvent" render="Label" position="350,138" size="60,25" font="Regular; 15" halign="left" backgroundColor="BS_background" zPosition="10" transparent="1" foregroundColor="BlackSpirit">
+		<convert type="EventTime">EndTime</convert>
+		<convert type="ClockToText">
+		</convert>
+	</widget>
+	<ePixmap alphatest="off" pixmap="BlackSpirit.HD/img/line260.png" position="83,145" size="260,2" zPosition="12" />
+	<ePixmap alphatest="off" pixmap="BlackSpirit.HD/img/line260.png" position="83,151" size="260,2" zPosition="12" />
+	<widget source="ServiceEvent" render="Progress" position="83,147" size="260,5" zPosition="11" pixmap="BlackSpirit.HD/img/progressbar260_1.png" backgroundColor="BS_background" transparent="1">
+		<convert type="EventTime">Progress</convert>
+	</widget>
+	<widget source="ServiceEvent" render="BS_RunningText" position="39,167" size="350,185" font="Regular; 18" options="movetype=running,direction=top,startpoint=0,startdelay=15000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" foregroundColor="BS_grey1" backgroundColor="BS_background" zPosition="10" transparent="1">
+		<convert type="EventName">ExtendedDescription</convert>
+	</widget>
+	<eLabel text="Jetzt" halign="left" position="42,83" size="60,17" font="Regular; 14" noWrap="1" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" valign="bottom" zPosition="10" />
+	<ePixmap pixmap="BlackSpirit.HD/img/line306_1px.png" position="63,378" size="306,1" zPosition="12" />
+	<widget source="ServiceEvent" render="Label" position="39,383" size="360,25" font="Regular; 18" halign="center" nowrap="0" backgroundColor="BS_background" zPosition="10" transparent="1" foregroundColor="BlackSpirit">
+		<convert type="BS_ServiceNameEventNobile">NextEvent</convert>
+	</widget>
+	<eLabel text="Im Anschluss:" halign="left" position="45,417" size="140,22" font="Regular; 16" noWrap="1" backgroundColor="BS_background" foregroundColor="BS_grey1" transparent="1" zPosition="10" />
+	<widget source="ServiceEvent" render="Label" position="155,417" size="60,25" font="Regular; 16" halign="left" backgroundColor="BS_background" zPosition="10" transparent="1" foregroundColor="BS_grey1">
+		<convert type="BS_ServiceNameEventNobile">StartTime</convert>
+	</widget>
+	<eLabel text="-" halign="left" position="205,417" size="140,22" font="Regular; 16" noWrap="1" backgroundColor="BS_background" foregroundColor="BS_grey1" transparent="1" zPosition="10" />
+	<widget source="ServiceEvent" render="Label" position="220,417" size="60,25" font="Regular; 16" halign="left" backgroundColor="BS_background" zPosition="10" transparent="1" foregroundColor="BS_grey1">
+		<convert type="BS_ServiceNameEventNobile">EndTime</convert>
+	</widget>
+	<widget source="ServiceEvent" render="BS_RunningText" position="39,442" size="350,210" font="Regular; 18" options="movetype=running,direction=top,startpoint=0,startdelay=25000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" backgroundColor="BS_background" transparent="1" zPosition="10" foregroundColor="BlackSpirit">
+		<convert type="BS_ServiceNameEventNobile">ExtendedDescription</convert>
+	</widget>
+	<ePixmap pixmap="BlackSpirit.HD/img/bg_378x576.png" position="870,80" size="378,576" backgroundColor="BS_background" alphatest="off" zPosition="3" transparent="1" />
+	<eLabel text="Nach:" position="900,85" size="60,22" font="Regular; 16" halign="left" noWrap="1" backgroundColor="BS_background" foregroundColor="BS_grey1" transparent="1" zPosition="10" />
+	<widget source="ServiceEvent" render="Label" position="960,85" size="285,22" font="Regular; 16" halign="left" nowrap="1" backgroundColor="BS_background" zPosition="10" transparent="1" foregroundColor="BlackSpirit">
+		<convert type="BS_ServiceNameEventNobile">NextEvent</convert>
+	</widget>
+	<ePixmap pixmap="BlackSpirit.HD/img/line306_1px.png" position="906,107" size="306,1" zPosition="12" />
+	<widget source="ServiceEvent" render="BS_SingleEpgListLong" position="900,110" size="330,540" font="Regular;16" itemHeight="25" foregroundColor="BS_grey1" backgroundColor="BS_background" noWrap="1" zPosition="6" transparent="1" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red"/>
+	<panel name="template_colorkey_green"/>
+	<panel name="template_colorkey_yellow"/>
+	<panel name="template_colorkey_blue"/>
+	<panel name="template_key_menu"/>
+	<panel name="template_key_epg"/>
+	<panel name="template_key_info"/>
+	<panel name="template_key_updown"/>
+	<panel name="template_key_leftright"/>
+</screen>
+<!-- /* ChannelSelection ThreeColumns -->

@@ -1,0 +1,354 @@
+<!-- ********** openMips ********** -->
+<!-- About -->
+<!-- SKINNED -->
+<screen backgroundColor="transparent" flags="wfNoBorder" name="About" position="0,0" size="1280,720" title="About">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+    <widget backgroundColor="BS_background" font="Regular; 26" position="70,71" render="Label" size="700,40" source="EnigmaVersion" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 26" position="70,111" render="Label" size="700,40" source="ImageVersion" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 26" position="70,151" render="Label" size="700,40" source="FPVersion" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 26" position="70,191" render="Label" size="700,40" source="TunerHeader" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 24" position="70,231" render="Label" size="700,40" source="Tuner0" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 24" position="70,271" render="Label" size="700,40" source="Tuner1" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 24" position="70,311" render="Label" size="700,40" source="Tuner2" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 24" position="70,351" render="Label" size="700,40" source="Tuner3" transparent="1" />
+    <eLabel backgroundColor="BS_background" font="Regular; 26" position="69,441" size="700,40" text="Support for Image: " transparent="1" />
+    <eLabel backgroundColor="BS_background" font="Regular; 26" position="69,480" size="700,40" text="www.gigablue-support.com" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 26" position="70,520" render="Label" size="700,40" source="HDDHeader" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 24" position="70,560" render="Label" size="700,65" source="hddA" transparent="1" />
+</screen>
+
+ <!-- AboutOE Image Info -->
+<!-- SKINNED -->
+<screen name="AboutOE" position="0,0" size="1280,720" title="SystemInfoSystemInfo" flags="wfNoBorder" backgroundColor="transparent">
+    <panel name="template_screen_background" />
+    <panel name="template_TOP_Title" />
+    <widget source="lab1" render="Label" position="830,330" size="370,35" font="Regular;30" backgroundColor="BS_background" transparent="1" zPosition="2" />
+    <widget source="lab2" render="Label" position="830,380" size="370,25" font="Regular;19" backgroundColor="BS_background" transparent="1" zPosition="2" />
+    <widget source="lab3" render="Label" position="830,420" size="370,25" font="Regular;19" backgroundColor="BS_background" transparent="1" zPosition="1" />
+    <eLabel text="OPEN SOURCE" position="830,470" size="370,28" font="Regular;19" backgroundColor="BS_background" transparent="1" zPosition="1" />
+    <eLabel text="https://github.com/openmips" position="830,513" size="370,28" font="Regular;19" backgroundColor="BS_background" transparent="1" zPosition="1" />
+    <eLabel text="https://github.com/oe-alliance" position="830,556" size="370,28" font="Regular;19" backgroundColor="BS_background" transparent="1" zPosition="1" />
+    <ePixmap position="830,90" size="301,200" zPosition="1" pixmap="BlackSpirit.HD/img/logo_openmips.png" transparent="0" alphatest="blend" />
+    <ePixmap position="100,99" size="702,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_702x516.png" />
+    <widget name="AboutScrollLabel" position="120,110" size="700,490" font="Regular;20" backgroundColor="BS_background" transparent="1" zPosition="1" />
+    <panel name="template_BOTTOM_Lines"/>
+    <panel name="template_key_info"/>
+    <panel name="template_key_ok"/>
+    <eLabel font="Regular; 14" position="60,690" render="Label" size="300,20" text="BlackSpirit.HD Version: 0.53.rc1" transparent="1" halign="left" valign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" nowrap="1" zPosition="20"/>
+</screen>
+
+
+  
+<!-- HotkeySetup -->
+<screen backgroundColor="transparent" flags="wfNoBorder" name="HotkeySetup" position="0,0" size="1280,720" title="Tasteneinstellungen">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
+  <widget name="list" position="center,100" size="900,450" scrollbarMode="showAlways" font="Regular;22" itemHeight="30" transparent="1" enableWrapAround="1" backgroundColor="BS_background" zPosition="5" />
+	<ePixmap position="499,550" size="522,111" zPosition="-4" pixmap="BlackSpirit.HD/img/bg_522x111.png" />
+	<widget name="description" position="510,560" size="510,90" font="Regular; 19" valign="center" halign="left" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" zPosition="1" />
+  <widget name="choosen" position="center,60" size="1000,30" scrollbarMode="showOnDemand" font="Regular;22" itemHeight="30" backgroundColor="BS_background" foregroundColor="BlackSpirit" zPosition="5" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red_source"/>
+	<panel name="template_colorkey_green_source"/>
+</screen>
+
+
+<!-- HotkeySetupSelect -->
+<screen backgroundColor="transparent" flags="wfNoBorder" name="HotkeySetupSelect" position="0,0" size="1280,720" title="Tasteneinstellungen">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
+  <widget name="list" position="center,100" size="900,450" scrollbarMode="showAlways" font="Regular;22" itemHeight="30" transparent="1" enableWrapAround="1" backgroundColor="BS_background" zPosition="5" />
+	<ePixmap position="499,550" size="522,111" zPosition="-4" pixmap="BlackSpirit.HD/img/bg_522x111.png" />
+	<widget name="description" position="510,560" size="510,90" font="Regular; 19" valign="center" halign="left" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" zPosition="1" />
+  <widget name="choosen" position="center,60" size="1000,30" scrollbarMode="showOnDemand" font="Regular;22" itemHeight="30" backgroundColor="BS_background" foregroundColor="BlackSpirit" zPosition="5" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red_source"/>
+	<panel name="template_colorkey_green_source"/>
+</screen>
+
+
+<!-- OSD3DSetupScreen -->
+<screen backgroundColor="transparent" flags="wfNoBorder" name="OSD3DSetupScreen" position="0,0" size="1280,720" title="OSD 3D Setup">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+  <widget name="config" backgroundColor="BS_background" position="79,115" zPosition="-8" size="728,540" />
+  <eLabel font="Regular; 20" foregroundColor="red" backgroundColor="BS_background" halign="left" position="105,670" size="240,24" text="Cancel" transparent="1" />
+  <eLabel font="Regular; 20" foregroundColor="green" backgroundColor="BS_background" halign="left" position="455,670" size="240,24" text="OK" transparent="1" />
+</screen>
+
+
+<!-- GBAspectRatioSwitchSetup -->
+<screen name="GBAspectRatioSwitchSetup" position="0,0" size="1280,720" title="GBAspectRatioSwitchSetup" flags="wfNoBorder" backgroundColor="transparent">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+  <widget name="config" position="67,110" size="734,495" scrollbarMode="showOnDemand" backgroundColor="BS_background" zPosition="-8" />
+  <widget name="label" position="866,531" size="399,60" font="Regular;20" halign="center" backgroundColor="BS_background" zPosition="-9" />
+
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red"/>
+	<panel name="template_colorkey_green"/>
+</screen>
+
+
+<!-- SwapManager -->
+<screen name="SwapManager" title="Swap File Manager" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+  <widget name="autostart_off" position="102,413" zPosition="1" pixmap="skin_default/icons/lock_off.png" size="32,32" alphatest="on" />
+  <widget name="autostart_on" position="102,413" zPosition="2" pixmap="skin_default/icons/lock_on.png" size="32,32" alphatest="on" />
+  <widget name="lab1" position="146,414" size="360,30" font="Regular;20" valign="center" transparent="1" />
+  <widget name="lab3" position="70,190" size="150,30" font="Regular;20" valign="center" transparent="1" />
+  <widget name="lab2" position="70,130" size="150,30" font="Regular;20" valign="center" transparent="1" />
+  <widget name="lab4" position="70,250" size="150,30" font="Regular;20" valign="center" transparent="1" />
+  <widget name="labplace" position="245,130" size="320,30" font="Regular;20" valign="center" backgroundColor="grey" foregroundColor="black" />
+  <widget name="labsize" position="245,190" size="220,30" font="Regular;20" valign="center" backgroundColor="grey" foregroundColor="black" />
+  <widget name="inactive" position="245,250" size="100,30" font="Regular;20" valign="center" halign="center" backgroundColor="red" />
+  <widget name="active" position="245,250" size="100,30" font="Regular;20" valign="center" halign="center" backgroundColor="green" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red"/>
+	<panel name="template_colorkey_green"/>
+	<panel name="template_colorkey_yellow"/>
+</screen>
+
+
+<!-- FastScanScreen -->
+<screen backgroundColor="transparent" flags="wfNoBorder" name="FastScanScreen" position="0,0" size="1280,720" title="Fast Scan">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+  <widget name="config" position="70,100" size="728,561" font="Regular;22" foregroundColor="BS_grey1" transparent="1" halign="left" valign="top" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red_source"/>
+	<panel name="template_colorkey_green_source"/>
+</screen>
+
+
+<!-- ZapHistoryBrowser -->
+<screen backgroundColor="transparent" flags="wfNoBorder" name="ZapHistoryBrowser" position="0,0" size="1280,720" title="Zap History Browser">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+  <widget name="list" position="70,98" size="672,562" scrollbarMode="showOnDemand" itemHeight="50" backgroundColor="BS_background" zPosition="-8" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red_source"/>
+	<panel name="template_colorkey_green_source"/>
+	<panel name="template_colorkey_yellow_source"/>
+	<panel name="template_colorkey_blue_source"/>
+</screen>
+
+
+<!-- OMMetrixWeatherSetup -->
+<screen backgroundColor="transparent" flags="wfNoBorder" name="OMMetrixWeatherSetup" position="0,0" size="1280,720" title="OMMetrixWeatherSetup">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+  <widget name="config" position="71,100" size="700,555" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="BS_background" transparent="1" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red_source"/>
+	<panel name="template_colorkey_green_source"/>
+</screen>
+
+
+<!-- Softcam Panel -->
+<screen backgroundColor="transparent" flags="wfNoBorder" name="SoftCamPanel" position="0,0" size="1280,720" title="SoftCam Panel">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+  <widget name="entries" position="62,115" size="755,150" />
+  <widget name="text1" position="451,321" size="320,260" zPosition="2" font="Regular;17" foregroundColor="BS_grey1" />
+  <widget name="cam" zPosition="2" position="130,271" size="310,21" font="Regular;18" halign="left" foregroundColor="BS_grey1" />
+  <widget name="server" zPosition="2" position="441,292" size="328,21" font="Regular;18" halign="left" foregroundColor="BS_grey1" />
+  <widget name="text" position="106,321" size="345,260" zPosition="2" font="Regular;17" foregroundColor="BS_grey1" />
+</screen>
+ 
+ 
+ 
+<!-- SoftcamPackages -->
+<screen name="SoftCamPackages" position="0,0" size="1280,720" title="Install Softcams" flags="wfNoBorder" backgroundColor="transparent">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+<widget source="list" render="Listbox" position="88,137" size="755,420" scrollbarMode="showOnDemand">
+  <convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (5, 1), size = (540, 28), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+						MultiContentEntryText(pos = (5, 26), size = (540, 20), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is the description
+						MultiContentEntryPixmapAlphaTest(pos = (545, 2), size = (48, 48), png = 4), # index 4 is the status pixmap
+						MultiContentEntryPixmapAlphaTest(pos = (5, 50), size = (510, 2), png = 5), # index 4 is the div pixmap
+					],
+				"fonts": [gFont("Regular", 22),gFont("Regular", 14)],
+				"itemHeight": 52
+				}
+			</convert>
+</widget>
+</screen>
+
+
+<!-- HddSetup -->
+<screen backgroundColor="transparent" flags="wfNoBorder" name="HddSetup" position="0,0" size="1280,720" title="Hard Drive Setup">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+  <widget source="menu" render="Listbox" position="71,156" size="585,488" scrollbarMode="showOnDemand" itemHeight="50" transparent="1">
+    <convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryPixmapAlphaTest(pos = (2, 0), size = (48, 48), png = 0),
+					MultiContentEntryText(pos = (65, 10), size = (330, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					MultiContentEntryText(pos = (475, 10), size = (125, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 2),
+					],
+					"fonts": [gFont("Regular", 20)],
+					"itemHeight": 50
+				}
+			</convert>
+  </widget>
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red_source"/>
+	<panel name="template_colorkey_green_source"/>
+	<panel name="template_colorkey_yellow_source"/>
+	<panel name="template_colorkey_blue_source"/>
+</screen>
+
+
+<!-- HddPartitions -->
+<screen backgroundColor="transparent" flags="wfNoBorder" name="HddPartitions" position="0,0" size="1280,720" title="Hard Drive Partitions">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+  <widget name="label_disk" position="70,105" font="Regular;26" size="520,30" halign="center" valign="center" backgroundColor="BS_background" transparent="1" />
+  <widget source="menu" render="Listbox" position="71,156" size="585,488" scrollbarMode="showOnDemand" itemHeight="50" transparent="1">
+    <convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryPixmapAlphaTest(pos = (2, 0), size = (48, 48), png = 0),
+					MultiContentEntryText(pos = (65, 10), size = (330, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					MultiContentEntryText(pos = (475, 10), size = (125, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 2),
+					],
+					"fonts": [gFont("Regular", 20)],
+					"itemHeight": 50
+				}
+			</convert>
+  </widget>
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red_source"/>
+	<panel name="template_colorkey_green_source"/>
+	<panel name="template_colorkey_yellow_source"/>
+	<panel name="template_colorkey_blue_source"/>
+</screen>
+
+
+
+<!-- HddMounts -->
+<screen backgroundColor="transparent" flags="wfNoBorder" name="HddMount" position="0,0" size="1280,720" title="Hard Drive Mount">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+  <widget name="menu" render="Listbox" position="73,114" size="585,488" scrollbarMode="showOnDemand" itemHeight="50" transparent="1">
+    <convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryPixmapAlphaTest(pos = (2, 0), size = (48, 48), png = 0),
+					MultiContentEntryText(pos = (65, 10), size = (330, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					MultiContentEntryText(pos = (475, 10), size = (125, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 2),
+					],
+					"fonts": [gFont("Regular", 20)],
+					"itemHeight": 50
+				}
+			</convert>
+  </widget>
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red_source"/>
+	<panel name="template_colorkey_green_source"/>
+	<panel name="template_colorkey_yellow_source"/>
+	<panel name="template_colorkey_blue_source"/>
+</screen>
+
+
+
+<!-- HddInfo -->
+<screen backgroundColor="transparent" flags="wfNoBorder" name="HddInfo" position="0,0" size="1280,720" title="Hard Drive Info">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+   <widget name="config" position="95,237" size="585,30" scrollbarMode="showOnDemand" backgroundColor="BS_background" transparent="1" />
+  <widget font="Regular;20" halign="left" name="model" position="95,320" size="580,25" valign="center" backgroundColor="BS_background" transparent="1" />
+  <widget font="Regular;20" halign="left" name="serial" position="95,350" size="580,25" valign="center" backgroundColor="BS_background" transparent="1" />
+  <widget font="Regular;20" halign="left" name="firmware" position="95,380" size="580,25" valign="center" backgroundColor="BS_background" transparent="1" />
+  <widget font="Regular;20" halign="left" name="cylinders" position="95,410" size="580,25" valign="center" backgroundColor="BS_background" transparent="1" />
+  <widget font="Regular;20" halign="left" name="heads" position="95,440" size="580,25" valign="center" backgroundColor="BS_background" transparent="1" />
+  <widget font="Regular;20" halign="left" name="sectors" position="95,470" size="580,25" valign="center" backgroundColor="BS_background" transparent="1" />
+  <widget font="Regular;20" halign="left" name="readDisk" position="95,500" size="580,25" valign="center" backgroundColor="BS_background" transparent="1" />
+  <widget font="Regular;20" halign="left" name="readCache" position="95,530" size="580,25" valign="center" backgroundColor="BS_background" transparent="1" />
+  <widget font="Regular;20" halign="left" name="temp" position="95,560" size="580,25" valign="center" backgroundColor="BS_background" transparent="1" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red_source"/>
+	<panel name="template_colorkey_green_source"/>
+	<panel name="template_colorkey_yellow_source"/>
+	<panel name="template_colorkey_blue_source"/>
+</screen>
+
+
+<!-- HddFastRemove -->
+<screen backgroundColor="transparent" flags="wfNoBorder" name="HddFastRemove" position="0,0" size="1280,720" title="Hard Drive Fast Umount">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+   <widget name="menu" render="Listbox" position="70,112" size="585,500" scrollbarMode="showOnDemand" itemHeight="50" transparent="1">
+    <convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryPixmapAlphaTest(pos = (2, 0), size = (48, 48), png = 0),
+					MultiContentEntryText(pos = (65, 10), size = (330, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					MultiContentEntryText(pos = (475, 10), size = (125, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 2),
+					],
+					"fonts": [gFont("Regular", 22)],
+					"itemHeight": 50
+				}
+			</convert>
+  </widget>
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red_source"/>
+	<panel name="template_colorkey_green_source"/>
+	<panel name="template_colorkey_yellow_source"/>
+	<panel name="template_colorkey_blue_source"/>
+</screen>
+
+
+<!-- LCDSkinSelector -->
+<screen name="LCDSkinSelector" position="0,0" size="1280,720" title="LCD Skin-Selector" backgroundColor="transparent">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+<widget name="lab1" position="70,201" size="250,26" zPosition="1" font="Regular;22" halign="left" transparent="1" />
+<widget name="lab2" position="423,201" size="250,26" zPosition="1" font="Regular;22" halign="left" transparent="1" />
+<widget name="lab3" position="422,543" halign="center" size="700,26" zPosition="1" foregroundColor="BS_grey1" font="Regular;22" transparent="1" />
+<widget name="SkinList" position="70,265" size="270,371" enableWrapAround="1" scrollbarMode="showOnDemand" backgroundColor="BS_background" transparent="1" />
+<widget name="Preview" position="422,261" size="280,210" zPosition="2" backgroundColor="BS_background" transparent="0" alphatest="on" />
+</screen>
+
+
+<!-- LCDClockSelector -->
+<screen name="LCDClockSelector" position="0,0" size="1280,720" title="LCD Clock-Selector" backgroundColor="transparent">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+<widget name="lab1" position="70,201" size="250,26" zPosition="1" font="Regular;22" halign="left" transparent="1" />
+<widget name="lab2" position="423,201" size="250,26" zPosition="1" font="Regular;22" halign="left" transparent="1" />
+<widget name="lab3" position="422,543" halign="center" size="700,26" zPosition="1" foregroundColor="BS_grey1" font="Regular;22" transparent="1" />
+<widget name="ClockList" position="70,265" size="270,371" enableWrapAround="1" scrollbarMode="showOnDemand" backgroundColor="BS_background" transparent="1" />
+<widget name="Preview" position="422,261" size="280,210" zPosition="2" backgroundColor="BS_background" transparent="0" alphatest="on" />
+</screen>
+
+
+<!-- LED_GigaSetup -->
+<screen name="LED_GigaSetup" position="0,0" size="1280,720" title="LED Setup" backgroundColor="transparent">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+<widget name="config" position="70,131" size="510,469" scrollbarMode="showOnDemand" transparent="1" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red_source"/>
+	<panel name="template_colorkey_green_source"/>
+</screen>
+
+
+
+<!-- SoftcamSetup -->
+<screen name="SoftcamSetup" position="0,0" size="1280,720" title="SoftcamSetup" backgroundColor="transparent">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+  <widget name="config" position="70,129" size="550,200" backgroundColor="BS_background" transparent="1" />
+<widget name="info" position="70,367" size="550,200" backgroundColor="BS_background" transparent="1" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red_source"/>
+	<panel name="template_colorkey_green_source"/>
+</screen>
+

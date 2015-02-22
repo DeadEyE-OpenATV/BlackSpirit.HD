@@ -1,0 +1,55 @@
+	<!-- /* ChannelSelection "Servicemmodus-Standard" -->
+	<!-- SKINNED -->
+	<screen backgroundColor="transparent" flags="wfNoBorder" name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+	  <widget name="list" position="436,75" size="816,472" backgroundColor="BS_background" scrollbarMode="showAlways" zPosition="5" picServiceEventProgressbar="BlackSpirit.HD/img/mini_progbar_blackspirit.png" foregroundColorMarkedSelected="green" foregroundColor="BS_grey3" foregroundColorSelected="BlackSpirit" colorEventProgressbarBorder="black" colorEventProgressbarBorderSelected="black" colorServiceDescription="BS_grey1" colorServiceDescriptionSelected="BS_fg_select" colorServiceRecording="red" foregroundColorServiceNotAvail="orange" serviceInfoFont="Regular;20" serviceItemHeight="28" serviceNameFont="Regular;20" serviceNumberFont="Regular;20" transparent="1" />
+		<ePixmap position="1237,75" size="15,472" zPosition="6" pixmap="BlackSpirit.HD/img/scroll472.png" backgroundColor="BS_background" alphatest="blend" transparent="1" />
+		<ePixmap position="435,74" size="817,474" zPosition="2" pixmap="BlackSpirit.HD/img/bg_channellist.png" backgroundColor="BS_background" alphatest="off" transparent="1" />
+
+		<ePixmap position="480,460" size="720,200" zPosition="1" pixmap="BlackSpirit.HD/img/bg_nextlist.png" backgroundColor="BS_background" alphatest="off" transparent="1" />
+		<eLabel backgroundColor="BS_background" font="Regular; 19" halign="left" position="490,633" size="300,22" noWrap="1" foregroundColor="BlackSpirit" text="Es folgt:" transparent="1" valign="bottom" zPosition="3" />
+		<widget source="ServiceEvent" render="BS_SingleEpgList" position="610,552" size="550,146" zPosition="3" noWrap="1" font="Regular;19" foregroundColor="BlackSpirit" backgroundColor="BS_background" transparent="1">
+		</widget>
+
+		<ePixmap position="33,90" size="380,550" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_nowinfo.png" backgroundColor="BS_background" alphatest="off" transparent="1" />
+		<widget font="Regular; 25" foregroundColor="BlackSpirit" position="43,100" size="360,60" halign="center" render="Label" source="ServiceEvent" backgroundColor="BS_background" zPosition="1" valign="bottom" transparent="1">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="40,158" size="64,24" font="Regular; 16" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" halign="left">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">
+			</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="329,158" size="77,24" font="Regular; 16" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" halign="right">
+			<convert type="EventTime">EndTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<ePixmap alphatest="off" pixmap="BlackSpirit.HD/img/line280.png" position="85,166" size="280,2" zPosition="4" />
+		<ePixmap alphatest="off" pixmap="BlackSpirit.HD/img/line280.png" position="85,172" size="280,2" zPosition="4" />
+		<widget source="ServiceEvent" render="Progress" position="85,168" size="280,5" zPosition="3" pixmap="BlackSpirit.HD/img/progressbar280_1.png" backgroundColor="BS_background" transparent="1">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+
+		<widget font="Regular; 18" foregroundColor="BlackSpirit" position="85,182" size="280,25"  zPosition="1" noWrap="1" render="Label" halign="center" source="ServiceEvent" valign="top" backgroundColor="BS_background" transparent="1">
+			<convert type="EventName">Description</convert>
+		</widget>
+		<widget font="Regular; 22"  foregroundColor="BS_grey1" position="52,210" size="350,400" zPosition="1" render="BS_RunningText" halign="left" source="ServiceEvent" options="movetype=running,direction=top,startpoint=0,startdelay=15000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" valign="top" backgroundColor="BS_background" transparent="1">
+			<convert type="EventName">ExtendedDescription</convert>
+		</widget>
+		<widget backgroundColor="BS_background" font="Regular; 16" halign="right" position="343,620" size="60,20" render="Label" source="ServiceEvent" transparent="1" valign="bottom" foregroundColor="BlackSpirit" zPosition="3">
+			<convert type="EventTime">Duration</convert>
+			<convert type="ClockToText">InMinutes</convert>
+		</widget>
+
+	  <panel name="template_BOTTOM_Lines"/>
+  	<panel name="template_colorkey_red"/>
+  	<panel name="template_colorkey_green"/>
+  	<panel name="template_colorkey_yellow"/>
+  	<panel name="template_colorkey_blue"/>
+	<panel name="template_key_menu"/>
+	<panel name="template_key_epg"/>
+	<panel name="template_key_info"/>
+</screen>
+<!-- ChannelSelection Standard */-->
+

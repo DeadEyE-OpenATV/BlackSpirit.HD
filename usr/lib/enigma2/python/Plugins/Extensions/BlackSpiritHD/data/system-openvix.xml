@@ -1,0 +1,21 @@
+<!-- OpenViX -->
+<!-- About -->
+<!-- SKINNED -->
+<screen backgroundColor="transparent" flags="wfNoBorder" name="About" position="0,0" size="1280,720" title="About">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+    <widget backgroundColor="BS_background" font="Regular; 26" position="70,71" render="Label" size="700,40" source="EnigmaVersion" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 26" position="70,111" render="Label" size="700,40" source="ImageVersion" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 26" position="70,151" render="Label" size="700,40" source="FPVersion" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 26" position="70,191" render="Label" size="700,40" source="TunerHeader" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 24" position="70,231" render="Label" size="700,40" source="Tuner0" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 24" position="70,271" render="Label" size="700,40" source="Tuner1" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 24" position="70,311" render="Label" size="700,40" source="Tuner2" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 24" position="70,351" render="Label" size="700,40" source="Tuner3" transparent="1" />
+    <eLabel backgroundColor="BS_background" font="Regular; 26" position="69,441" size="700,40" text="Support for Image: " transparent="1" />
+    <eLabel backgroundColor="BS_background" font="Regular; 26" position="69,480" size="700,40" text="www.world-of-satellite.com" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 26" position="70,520" render="Label" size="700,40" source="HDDHeader" transparent="1" />
+    <widget backgroundColor="BS_background" font="Regular; 24" position="70,560" render="Label" size="700,65" source="hddA" transparent="1" />
+</screen>
+
+

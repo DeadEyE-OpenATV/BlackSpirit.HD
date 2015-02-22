@@ -1,0 +1,453 @@
+
+
+
+<!-- /* InfoBar extended Sat -->
+	<!-- SKINNED  -->
+	<screen backgroundColor="transparent" flags="wfNoBorder" name="InfoBar" position="0,0" size="1280,720" title="InfoBar">
+		<ePixmap position="0,0" size="1280,720" zPosition="-9" pixmap="BlackSpirit.HD/img/bg_screen_ib_290.png" transparent="1" alphatest="off" />
+		<ePixmap position="29,575" size="222,134" zPosition="12" pixmap="BlackSpirit.HD/img/bg_xpicon.png" alphatest="off" transparent="0" />
+		<widget render="BS_XPicon" position="30,576" size="220,132" source="session.CurrentService" alphatest="on" transparent="0" zPosition="13">
+			<convert type="ServiceName">Reference</convert>
+		</widget>
+		<widget source="session.Event_Now" position="40,512" size="1200,50" font="RegularBold;35" halign="center" noWrap="1" render="BS_RunningText" options="movetype=running,startpoint=0,startdelay=1000,wrap=0,always=0,repeat=2,oneshot=1" backgroundColor="BS_background" transparent="1" foregroundColor="BS_grey1" zPosition="5">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget source="session.Event_Now" position="40,561" render="Progress" size="1200,5" transparent="1" zPosition="3" pixmap="BlackSpirit.HD/img/progressbar1200_1.png">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<ePixmap position="40,559" size="1200,2" zPosition="4" pixmap="BlackSpirit.HD/img/line1200.png" />
+		<ePixmap position="40,565" size="1200,2" zPosition="4" pixmap="BlackSpirit.HD/img/line1200.png" />
+		
+		
+		
+		<widget source="session.Event_Now" position="273,569" size="60,23" backgroundColor="BS_background" font="Regular; 17" halign="left" noWrap="1" render="Label" transparent="1" valign="top" foregroundColor="BS_grey1" zPosition="1">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<eLabel text="bis" position="318,569" size="30,23" backgroundColor="BS_background" font="Regular; 17" halign="left" noWrap="1"  foregroundColor="BS_grey1" transparent="1" valign="top" zPosition="1" />
+		<widget source="session.Event_Now" position="346,569" size="60,23" backgroundColor="BS_background" font="Regular; 17" halign="left" noWrap="1" render="Label" transparent="1" valign="top" foregroundColor="BS_grey1" zPosition="1">
+			<convert type="EventTime">EndTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="session.Event_Now" position="400,569" size="485,23" backgroundColor="BS_background" font="Regular; 17" halign="center" noWrap="1" render="Label" transparent="1" foregroundColor="BS_grey1" zPosition="2">
+			<convert type="EventName">Description</convert>
+		</widget>
+		<eLabel text="Sendung laeuft" position="895,569" size="130,23" backgroundColor="BS_background" font="Regular; 17" halign="left" noWrap="1" transparent="1" valign="top" foregroundColor="BS_grey1" zPosition="1" />
+		<widget source="session.Event_Now" position="1002,569" size="53,23" backgroundColor="BS_background" font="Regular; 17" halign="right" render="Label" noWrap="1" transparent="1" valign="top" foregroundColor="BS_grey1" zPosition="1">
+			<convert type="BS_EventTime">RunTime</convert>
+			<convert type="BS_RemainingToText">OnlyMinutes</convert>
+		</widget>
+		<eLabel text="/" position="1057,569" size="45,23" backgroundColor="BS_background" font="Regular; 17" halign="left" noWrap="1" foregroundColor="BS_grey1" transparent="1" valign="top" zPosition="1" />
+		<widget source="session.Event_Now" position="1065,569" size="60,33" backgroundColor="BS_background" font="Regular; 17" halign="left" render="Label" noWrap="1" transparent="1" valign="top" foregroundColor="BS_grey1" zPosition="1">
+			<convert type="EventTime">Duration</convert>
+			<convert type="ClockToText">InMinutes</convert>
+		</widget>
+		<eLabel text="Rest" position="1150,569" size="45,23" backgroundColor="BS_background" font="Regular; 17" halign="left" noWrap="1" foregroundColor="BS_grey1" transparent="1" valign="top" zPosition="1" />
+		<widget source="session.Event_Now" position="1190,569" size="50,23" backgroundColor="BS_background" font="Regular; 17" halign="left" render="Label" noWrap="1" transparent="1" valign="top" foregroundColor="BS_grey1" zPosition="1">
+			<convert type="BS_EventTime">Remaining</convert>
+			<convert type="BS_RemainingToText">InMinutes</convert>
+		</widget>
+		
+		
+		<eLabel text="Es folgt" position="273,602" size="60,30" backgroundColor="BS_background" font="Regular; 18" halign="left" noWrap="1" foregroundColor="BlackSpirit" transparent="1" valign="top" zPosition="1" />
+		<widget source="session.Event_Next" position="340,595" size="610,40" backgroundColor="BS_background" font="RegularBold; 25" halign="center" render="BS_RunningText" options="movetype=running,startpoint=0,startdelay=1000,wrap=0,always=0,repeat=2,oneshot=1" valign="top" transparent="1" foregroundColor="BlackSpirit" zPosition="1">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget source="session.Event_Next" position="273,625" size="60,20" backgroundColor="BS_background" font="Regular; 16" halign="left" noWrap="1" render="Label" transparent="1" valign="top" foregroundColor="BlackSpirit" zPosition="1">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<eLabel text="bis" position="319,625" size="30,20" backgroundColor="BS_background" font="Regular; 16" halign="left" noWrap="1" foregroundColor="BlackSpirit" transparent="1" valign="top" zPosition="1" />
+		<widget source="session.Event_Next" position="346,625" size="60,20" backgroundColor="BS_background" font="Regular; 16" halign="left" noWrap="1" render="Label" transparent="1" valign="top" foregroundColor="BlackSpirit" zPosition="1">
+			<convert type="EventTime">EndTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="session.Event_Next" position="450,625" size="400,20" backgroundColor="BS_background" font="Regular; 16" halign="center" noWrap="1" render="Label" transparent="1" foregroundColor="BlackSpirit" zPosition="1">
+			<convert type="EventName">Description</convert>
+		</widget>
+		<eLabel text="Laufzeit" position="900,625" size="60,20" backgroundColor="BS_background" font="Regular; 16" halign="left" noWrap="1" foregroundColor="BlackSpirit" transparent="1" valign="top" zPosition="1" />
+		<widget source="session.Event_Next" position="945,625" size="70,30" backgroundColor="BS_background" font="Regular; 16" halign="right" render="Label" transparent="1" valign="top" foregroundColor="BlackSpirit" zPosition="1">
+			<convert type="EventTime">Duration</convert>
+			<convert type="ClockToText">InMinutes</convert>
+		</widget>
+		
+		
+	  <ePixmap pixmap="BlackSpirit.HD/img/line700_1px.png" position="center,647" size="700,1" zPosition="1" />
+    <widget source="session.CurrentService" position="273,653" size="740,18" font="RegularBold;15" render="Label" halign="left" valign="bottom" foregroundColor="BlackSpirit" backgroundColor="BS_background" transparent="1" zPosition="1">
+      <convert type="BS_MyCaidDisplay">Default</convert>
+    </widget>
+    <widget source="session.CurrentService" position="273,670" size="740,18" font="RegularBold;15" valign="bottom" halign="left" render="Label" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1">
+      <!--convert type="BS_ExtraInfo">All</convert-->
+     <convert type="BS_ExtraInfo">All</convert>
+    </widget>
+		
+		<ePixmap position="40,687" size="1200,2" zPosition="8" pixmap="BlackSpirit.HD/img/line1200.png" />
+		<ePixmap position="40,707" size="1200,2" zPosition="13" pixmap="BlackSpirit.HD/img/line1200.png" />
+		
+		
+		<ePixmap pixmap="BlackSpirit.HD/img/ico_rec_off.png" position="251,687" size="43,22" alphatest="blend" zPosition="4" />
+		<widget pixmap="BlackSpirit.HD/img/ico_rec_on.png" position="251,687" size="43,22" source="session.RecordState" render="Pixmap" alphatest="blend" zPosition="5">
+			<convert type="ConditionalShowHide">Blink</convert>
+		</widget>
+		<ePixmap pixmap="BlackSpirit.HD/img/ico_crypt_off.png" position="293,687" size="43,22" alphatest="blend" zPosition="4" />
+		<widget pixmap="BlackSpirit.HD/img/ico_crypt_on.png" position="293,687" size="43,22" source="session.CurrentService" render="Pixmap" alphatest="blend" zPosition="5">
+			<convert type="BS_ServiceInfo">IsCrypted</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<ePixmap pixmap="BlackSpirit.HD/img/ico_hd_off.png" position="334,687" size="43,22" alphatest="blend" zPosition="4" />
+		<widget pixmap="BlackSpirit.HD/img/ico_hd_on.png" position="334,687" size="43,22" source="session.CurrentService" render="Pixmap" alphatest="blend" zPosition="5">
+			<convert type="BS_ServiceInfo">IsHD</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<ePixmap pixmap="BlackSpirit.HD/img/ico_format_off.png" position="375,687" size="43,22" alphatest="blend" zPosition="4" />
+		<widget pixmap="BlackSpirit.HD/img/ico_format_on.png" position="375,687" size="43,22" source="session.CurrentService" render="Pixmap" alphatest="blend" zPosition="5">
+			<convert type="BS_ServiceInfo">IsWidescreen</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<ePixmap pixmap="BlackSpirit.HD/img/ico_dolby_off.png" position="416,687" size="43,22" alphatest="blend" zPosition="4" />
+		<widget pixmap="BlackSpirit.HD/img/ico_dolby_on.png" position="416,687" size="43,22" source="session.CurrentService" render="Pixmap" alphatest="blend" zPosition="5">
+			<convert type="BS_ServiceInfo">IsMultichannel</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<ePixmap pixmap="BlackSpirit.HD/img/ico_hbbtv_off.png" position="457,687" size="43,22" alphatest="blend" zPosition="4" />
+		<widget pixmap="BlackSpirit.HD/img/ico_hbbtv_on.png" position="457,687" size="43,22" source="session.CurrentService" render="Pixmap" alphatest="blend" zPosition="5">
+			<convert type="BS_ServiceInfo">HasHBBTV</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<ePixmap pixmap="BlackSpirit.HD/img/ico_txt_off.png" position="498,687" size="43,22" alphatest="blend" zPosition="4" />
+		<widget pixmap="BlackSpirit.HD/img/ico_txt_on.png" position="498,687" size="43,22" source="session.CurrentService" render="Pixmap" alphatest="blend" zPosition="5">
+			<convert type="BS_ServiceInfo">HasTelext</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<ePixmap pixmap="BlackSpirit.HD/img/ico_sub_off.png" position="539,687" size="43,22" alphatest="blend" zPosition="4" />
+		<widget pixmap="BlackSpirit.HD/img/ico_sub_on.png" position="539,687" size="43,22" source="session.CurrentService" render="Pixmap" zPosition="5" alphatest="blend">
+			<convert type="BS_ServiceInfo">SubservicesAvailable</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		
+	  <!-- Tuner -->
+		<ePixmap pixmap="BlackSpirit.HD/img/a_off.png" position="833,687" size="20,22" alphatest="blend" zPosition="4" />
+		<widget pixmap="BlackSpirit.HD/img/a_on.png" position="833,687" size="20,22" source="session.TunerInfo" render="Pixmap" zPosition="5" alphatest="blend" valign="center">
+			<convert type="TunerInfo">TunerUseMask</convert>
+			<convert type="ValueBitTest">1</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<ePixmap pixmap="BlackSpirit.HD/img/b_off.png" position="851,687" size="20,22" zPosition="4" alphatest="blend" />
+		<widget pixmap="BlackSpirit.HD/img/b_on.png" position="851,687" size="20,22" source="session.TunerInfo" render="Pixmap" zPosition="5" alphatest="blend" valign="center">
+			<convert type="TunerInfo">TunerUseMask</convert>
+			<convert type="ValueBitTest">2</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<ePixmap pixmap="BlackSpirit.HD/img/c_off.png" position="869,687" size="20,22" zPosition="4" alphatest="blend" />
+		<widget pixmap="BlackSpirit.HD/img/c_on.png" position="869,687" size="20,22" source="session.TunerInfo" render="Pixmap" zPosition="5" alphatest="blend" valign="center">
+			<convert type="TunerInfo">TunerUseMask</convert>
+			<convert type="ValueBitTest">4</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<ePixmap pixmap="BlackSpirit.HD/img/d_off.png" position="887,687" size="20,22" zPosition="4" alphatest="blend" />
+		<widget pixmap="BlackSpirit.HD/img/d_on.png" position="887,687" size="20,22" source="session.TunerInfo" render="Pixmap" zPosition="5" alphatest="blend" valign="center">
+			<convert type="TunerInfo">TunerUseMask</convert>
+			<convert type="ValueBitTest">8</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		
+		  <!-- Resolution OrbitPos -->
+		<ePixmap pixmap="BlackSpirit.HD/img/bg_resolution.png" position="905,687" size="112,22" zPosition="1" alphatest="on" />
+		<widget source="session.CurrentService" position="917,687" size="90,22" font="RegularBold; 16" render="Label" halign="left" valign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" zPosition="3">
+			<convert type="BS_ServiceInfo">VideoWidth</convert>
+		</widget>
+		<eLabel text="x" position="917,687" size="90,22" font="RegularBold; 16" halign="center" valign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" zPosition="3" />
+		<widget source="session.CurrentService" position="917,687" size="90,22" font="RegularBold; 16" render="Label" halign="right" valign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" zPosition="3">
+			<convert type="BS_ServiceInfo">VideoHeight</convert>
+		</widget>
+		
+		<ePixmap pixmap="BlackSpirit.HD/img/bg_orbit.png" position="1015,687" size="69,22" zPosition="1" alphatest="on" />
+		<widget source="session.CurrentService" position="1017,687" size="67,22" render="Label" font="RegularBold; 16" transparent="1" zPosition="3" foregroundColor="BlackSpirit" valign="center" halign="center" backgroundColor="BS_background">
+			<convert type="BS_ExtraInfo">OrbitalPositionOrTunerSystem</convert>
+		</widget>
+
+		  <!-- SNR AGC -->
+		<ePixmap pixmap="BlackSpirit.HD/img/bg_agc.png" position="1084,687" size="78,22" zPosition="4" alphatest="blend" />
+		<ePixmap pixmap="BlackSpirit.HD/img/bg_snr.png" position="1162,687" size="78,22" zPosition="4" alphatest="blend" />
+  <widget source="session.FrontendStatus" render="Progress" position="1115,702" size="45,10" pixmap="BlackSpirit.HD/img/snr_agc.png" transparent="1" zPosition="7" backgroundColor="BS_background">
+    <convert type="FrontendInfo">AGC</convert>
+  </widget>
+  <widget source="session.FrontendStatus" render="Label" position="1115,690" size="45,10" font="RegularBold; 10" halign="center" valign="top" transparent="1" zPosition="6" backgroundColor="BS_background" foregroundColor="BS_grey1">
+    <convert type="FrontendInfo">AGC</convert>
+  </widget>
+  <widget source="session.FrontendStatus" render="Progress" position="1193,702" size="45,10" pixmap="BlackSpirit.HD/img/snr_agc.png" transparent="1" zPosition="7" backgroundColor="BS_background">
+    <convert type="FrontendInfo">SNR</convert>
+  </widget>
+  <widget source="session.FrontendStatus" render="Label" position="1193,690" size="45,10" font="RegularBold;10" halign="center" valign="top" transparent="1" zPosition="6" backgroundColor="BS_background" foregroundColor="BS_grey1">
+    <convert type="FrontendInfo">SNR</convert>
+  </widget>
+
+		<ePixmap pixmap="BlackSpirit.HD/img/bg_clock.png" position="1029,597" size="222,96" zPosition="10" transparent="1" alphatest="off" />
+		<widget source="global.CurrentTime" position="1035,604" size="148,20" font="RegularBold; 15" render="Label" halign="center" zPosition="12" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1">
+			<convert type="ClockToText">Format:%A</convert>
+		</widget>
+		<widget source="global.CurrentTime" position="1035,622" size="148,20" font="RegularBold; 15" render="Label" halign="center" zPosition="12" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1">
+			<convert type="ClockToText">Format:%d.%m.%Y</convert>
+		</widget>
+		<widget source="global.CurrentTime" position="1035,641" size="148,30" font="Regular; 25" render="Label" halign="center" zPosition="12" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1">
+			<convert type="ClockToText">WithSeconds</convert>
+		</widget>
+    <widget source="session.MSNWeather" render="MSNWeatherPixmap" position="1180,598" size="58,58" transparent="1" zPosition="12" alphatest="off">
+      <convert type="MSNWeather">weathericon,current,/usr/share/enigma2/BlackSpirit.HD/img/weather/,png</convert>
+    </widget>
+    <widget source="session.MSNWeather" position="1180,651" size="58,20" font="RegularBold; 15" halign="center" noWrap="1" render="Label" backgroundColor="BS_background" zPosition="12" foregroundColor="BlackSpirit" transparent="1">
+      <convert type="MSNWeather">temperature_current</convert>
+    </widget>
+	</screen>
+<!-- /* InfoBar extended Sat -->
+
+
+
+
+<!--/* SecondInfoBar extended Sat -->
+	<!-- SKINNED -->
+	<screen backgroundColor="transparent" flags="wfNoBorder" name="SecondInfoBar" position="0,0" size="1280,720" title="InfoBar">
+	<ePixmap position="0,0" size="1280,720" zPosition="-9" pixmap="BlackSpirit.HD/img/bg_screen_290.png" alphatest="off" />
+		<widget font="Regular; 30" halign="center" position="340,5" size="600,50" render="Label" source="session.CurrentService" backgroundColor="BS_background" foregroundColor="BlackSpirit" valign="center" noWrap="1" transparent="1" >
+			<convert type="BS_ExtServiceInfo">ServiceNumberAndName</convert>
+		</widget>
+		
+    <eLabel text="SysTemp:" position="250,60" size="70,22" font="RegularBold;15" halign="left" valign="bottom" foregroundColor="BlackSpirit" backgroundColor="BS_background" noWrap="1" transparent="1" zPosition="2" />
+    <widget source="global.CurrentTime" render="BS_SYSTemp" position="320,60" size="60,22" font="RegularBold;15" halign="left" valign="bottom" foregroundColor="BlackSpirit" backgroundColor="BS_background" noWrap="1" transparent="1" zPosition="3"/>
+    <widget source="session.CurrentService" render="Label" position="370,60" size="100,22" font="RegularBold;15" halign="left" valign="bottom" foregroundColor="BlackSpirit" backgroundColor="BS_background" noWrap="1" transparent="1" zPosition="4">
+      <convert type="BS_CpuUsage">CPU: $0</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Label" position="455,60" size="210,22" font="RegularBold;15" halign="left" valign="bottom" foregroundColor="BlackSpirit" backgroundColor="BS_background" noWrap="1" transparent="1" zPosition="5">
+      <convert type="BS_LayoutInfo">FleshInfo,Short</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Label" position="620,60" size="200,22" font="RegularBold;15" halign="left" valign="bottom" foregroundColor="BlackSpirit" backgroundColor="BS_background" noWrap="1" transparent="1" zPosition="6">
+      <convert type="BS_LayoutInfo">MemTotal,Short</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Label" position="780,60" size="350,22" font="RegularBold;15" halign="left" valign="bottom" foregroundColor="BlackSpirit" backgroundColor="BS_background" noWrap="1" transparent="1" zPosition="7">
+      <convert type="BS_LayoutInfo">HddInfo,Full</convert>
+    </widget>
+	  <ePixmap pixmap="BlackSpirit.HD/img/line1200_1px.png" position="40,83" size="1200,1" zPosition="1" />
+
+		
+		<ePixmap position="40,55" size="1200,1" zPosition="1" pixmap="BlackSpirit.HD/img/line1200_1px.png" />
+		<ePixmap position="100,100" size="600,400" zPosition="-4" pixmap="BlackSpirit.HD/img/bg_eventnow.png" alphatest="on" />
+		<widget position="120,105" size="560,25" font="Regular; 20" source="session.Event_Now" halign="left" noWrap="1" foregroundColor="BS_foreground" backgroundColor="BS_background" render="Label" transparent="1">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget position="120,140" size="560,312" font="Regular; 20" source="session.Event_Now" render="BS_RunningText" options="movetype=running,direction=top,startpoint=0,startdelay=15000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" foregroundColor="BS_foreground" backgroundColor="BS_background" halign="left" transparent="1" valign="top">
+			<convert type="EventName">ExtendedDescription</convert>
+		</widget>
+		<widget position="120,475" size="560,20" font="Regular; 16" halign="right" render="Label" noWrap="1" source="session.Event_Now" valign="bottom" transparent="1" foregroundColor="BS_foreground" backgroundColor="BS_background" zPosition="2">
+			<convert type="EventName">Description</convert>
+		</widget>
+		<ePixmap position="695,90" size="400,400" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_eventnext.png" alphatest="on" />
+		<widget position="715,95" size="360,45" font="Regular; 18" source="session.Event_Next" Wrap="1" foregroundColor="BlackSpirit" backgroundColor="BS_background" halign="left" render="Label" transparent="1" valign="top">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget position="715,150" size="360,300" font="Regular; 18" source="session.Event_Next" render="BS_RunningText" options="movetype=running,direction=top,startpoint=0,startdelay=15000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" foregroundColor="BlackSpirit" backgroundColor="BS_background" halign="left" transparent="1" valign="top">
+			<convert type="EventName">ExtendedDescription</convert>
+		</widget>
+		<widget position="715,465" size="360,20" font="Regular; 16" halign="right" render="BS_RunningText" options="movetype=swimming,direction=right,startpoint=0,startdelay=15000,steptime=90,wrap=0,always=0,repeat=2,oneshot=1" noWrap="1" source="session.Event_Next" valign="bottom" transparent="1" foregroundColor="BlackSpirit" backgroundColor="BS_background" zPosition="2">
+			<convert type="EventName">Description</convert>
+		</widget>
+		
+		
+		
+		
+		
+		<ePixmap position="29,575" size="222,134" zPosition="12" pixmap="BlackSpirit.HD/img/bg_xpicon.png" alphatest="off" transparent="0" />
+		<widget render="BS_XPicon" position="30,576" size="220,132" source="session.CurrentService" alphatest="on" transparent="0" zPosition="13">
+			<convert type="ServiceName">Reference</convert>
+		</widget>
+		<widget source="session.Event_Now" position="40,512" size="1200,50" font="RegularBold;35" halign="center" noWrap="1" render="BS_RunningText" options="movetype=running,startpoint=0,startdelay=1000,wrap=0,always=0,repeat=2,oneshot=1" backgroundColor="BS_background" transparent="1" foregroundColor="BS_grey1" zPosition="5">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget source="session.Event_Now" position="40,561" render="Progress" size="1200,5" transparent="1" zPosition="3" pixmap="BlackSpirit.HD/img/progressbar1200_1.png">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<ePixmap position="40,559" size="1200,2" zPosition="4" pixmap="BlackSpirit.HD/img/line1200.png" />
+		<ePixmap position="40,565" size="1200,2" zPosition="4" pixmap="BlackSpirit.HD/img/line1200.png" />
+		
+		
+		
+		<widget source="session.Event_Now" position="273,569" size="60,23" backgroundColor="BS_background" font="Regular; 17" halign="left" noWrap="1" render="Label" transparent="1" valign="top" foregroundColor="BS_grey1" zPosition="1">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<eLabel text="bis" position="318,569" size="30,23" backgroundColor="BS_background" font="Regular; 17" halign="left" noWrap="1"  foregroundColor="BS_grey1" transparent="1" valign="top" zPosition="1" />
+		<widget source="session.Event_Now" position="346,569" size="60,23" backgroundColor="BS_background" font="Regular; 17" halign="left" noWrap="1" render="Label" transparent="1" valign="top" foregroundColor="BS_grey1" zPosition="1">
+			<convert type="EventTime">EndTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="session.Event_Now" position="400,569" size="485,23" backgroundColor="BS_background" font="Regular; 17" halign="center" noWrap="1" render="Label" transparent="1" foregroundColor="BS_grey1" zPosition="2">
+			<convert type="EventName">Description</convert>
+		</widget>
+		<eLabel text="Sendung laeuft" position="895,569" size="130,23" backgroundColor="BS_background" font="Regular; 17" halign="left" noWrap="1" transparent="1" valign="top" foregroundColor="BS_grey1" zPosition="1" />
+		<widget source="session.Event_Now" position="1002,569" size="53,23" backgroundColor="BS_background" font="Regular; 17" halign="right" render="Label" noWrap="1" transparent="1" valign="top" foregroundColor="BS_grey1" zPosition="1">
+			<convert type="BS_EventTime">RunTime</convert>
+			<convert type="BS_RemainingToText">OnlyMinutes</convert>
+		</widget>
+		<eLabel text="/" position="1057,569" size="45,23" backgroundColor="BS_background" font="Regular; 17" halign="left" noWrap="1" foregroundColor="BS_grey1" transparent="1" valign="top" zPosition="1" />
+		<widget source="session.Event_Now" position="1065,569" size="60,33" backgroundColor="BS_background" font="Regular; 17" halign="left" render="Label" noWrap="1" transparent="1" valign="top" foregroundColor="BS_grey1" zPosition="1">
+			<convert type="EventTime">Duration</convert>
+			<convert type="ClockToText">InMinutes</convert>
+		</widget>
+		<eLabel text="Rest" position="1150,569" size="45,23" backgroundColor="BS_background" font="Regular; 17" halign="left" noWrap="1" foregroundColor="BS_grey1" transparent="1" valign="top" zPosition="1" />
+		<widget source="session.Event_Now" position="1190,569" size="50,23" backgroundColor="BS_background" font="Regular; 17" halign="left" render="Label" noWrap="1" transparent="1" valign="top" foregroundColor="BS_grey1" zPosition="1">
+			<convert type="BS_EventTime">Remaining</convert>
+			<convert type="BS_RemainingToText">InMinutes</convert>
+		</widget>
+		
+		
+		<eLabel text="Es folgt" position="273,602" size="60,30" backgroundColor="BS_background" font="Regular; 18" halign="left" noWrap="1" foregroundColor="BlackSpirit" transparent="1" valign="top" zPosition="1" />
+		<widget source="session.Event_Next" position="340,595" size="610,40" backgroundColor="BS_background" font="RegularBold; 25" halign="center" render="BS_RunningText" options="movetype=running,startpoint=0,startdelay=1000,wrap=0,always=0,repeat=2,oneshot=1" valign="top" transparent="1" foregroundColor="BlackSpirit" zPosition="1">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget source="session.Event_Next" position="273,625" size="60,20" backgroundColor="BS_background" font="Regular; 16" halign="left" noWrap="1" render="Label" transparent="1" valign="top" foregroundColor="BlackSpirit" zPosition="1">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<eLabel text="bis" position="319,625" size="30,20" backgroundColor="BS_background" font="Regular; 16" halign="left" noWrap="1" foregroundColor="BlackSpirit" transparent="1" valign="top" zPosition="1" />
+		<widget source="session.Event_Next" position="346,625" size="60,20" backgroundColor="BS_background" font="Regular; 16" halign="left" noWrap="1" render="Label" transparent="1" valign="top" foregroundColor="BlackSpirit" zPosition="1">
+			<convert type="EventTime">EndTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="session.Event_Next" position="450,625" size="400,20" backgroundColor="BS_background" font="Regular; 16" halign="center" noWrap="1" render="Label" transparent="1" foregroundColor="BlackSpirit" zPosition="1">
+			<convert type="EventName">Description</convert>
+		</widget>
+		<eLabel text="Laufzeit" position="900,625" size="60,20" backgroundColor="BS_background" font="Regular; 16" halign="left" noWrap="1" foregroundColor="BlackSpirit" transparent="1" valign="top" zPosition="1" />
+		<widget source="session.Event_Next" position="945,625" size="70,30" backgroundColor="BS_background" font="Regular; 16" halign="right" render="Label" transparent="1" valign="top" foregroundColor="BlackSpirit" zPosition="1">
+			<convert type="EventTime">Duration</convert>
+			<convert type="ClockToText">InMinutes</convert>
+		</widget>
+		
+	  <ePixmap pixmap="BlackSpirit.HD/img/line700_1px.png" position="center,647" size="700,1" zPosition="1" />
+    <widget source="session.CurrentService" position="273,653" size="740,18" font="RegularBold;15" render="Label" halign="left" valign="bottom" foregroundColor="BlackSpirit" backgroundColor="BS_background" transparent="1" zPosition="1">
+      <convert type="BS_MyCaidDisplay">Default</convert>
+    </widget>
+    <widget source="session.CurrentService" position="273,670" size="740,18" font="RegularBold;15" valign="bottom" halign="left" render="Label" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1">
+      <convert type="BS_ExtraInfo">All</convert>
+    </widget>
+		
+		
+		<ePixmap position="40,687" size="1200,2" zPosition="8" pixmap="BlackSpirit.HD/img/line1200.png" />
+		<ePixmap position="40,707" size="1200,2" zPosition="13" pixmap="BlackSpirit.HD/img/line1200.png" />
+		
+		
+		<ePixmap pixmap="BlackSpirit.HD/img/ico_rec_off.png" position="251,687" size="43,22" alphatest="blend" zPosition="4" />
+		<widget pixmap="BlackSpirit.HD/img/ico_rec_on.png" position="251,687" size="43,22" source="session.RecordState" render="Pixmap" alphatest="blend" zPosition="5">
+			<convert type="ConditionalShowHide">Blink</convert>
+		</widget>
+		<ePixmap pixmap="BlackSpirit.HD/img/ico_crypt_off.png" position="293,687" size="43,22" alphatest="blend" zPosition="4" />
+		<widget pixmap="BlackSpirit.HD/img/ico_crypt_on.png" position="293,687" size="43,22" source="session.CurrentService" render="Pixmap" alphatest="blend" zPosition="5">
+			<convert type="BS_ServiceInfo">IsCrypted</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<ePixmap pixmap="BlackSpirit.HD/img/ico_hd_off.png" position="334,687" size="43,22" alphatest="blend" zPosition="4" />
+		<widget pixmap="BlackSpirit.HD/img/ico_hd_on.png" position="334,687" size="43,22" source="session.CurrentService" render="Pixmap" alphatest="blend" zPosition="5">
+			<convert type="BS_ServiceInfo">IsHD</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<ePixmap pixmap="BlackSpirit.HD/img/ico_format_off.png" position="375,687" size="43,22" alphatest="blend" zPosition="4" />
+		<widget pixmap="BlackSpirit.HD/img/ico_format_on.png" position="375,687" size="43,22" source="session.CurrentService" render="Pixmap" alphatest="blend" zPosition="5">
+			<convert type="BS_ServiceInfo">IsWidescreen</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<ePixmap pixmap="BlackSpirit.HD/img/ico_dolby_off.png" position="416,687" size="43,22" alphatest="blend" zPosition="4" />
+		<widget pixmap="BlackSpirit.HD/img/ico_dolby_on.png" position="416,687" size="43,22" source="session.CurrentService" render="Pixmap" alphatest="blend" zPosition="5">
+			<convert type="BS_ServiceInfo">IsMultichannel</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<ePixmap pixmap="BlackSpirit.HD/img/ico_hbbtv_off.png" position="457,687" size="43,22" alphatest="blend" zPosition="4" />
+		<widget pixmap="BlackSpirit.HD/img/ico_hbbtv_on.png" position="457,687" size="43,22" source="session.CurrentService" render="Pixmap" alphatest="blend" zPosition="5">
+			<convert type="BS_ServiceInfo">HasHBBTV</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<ePixmap pixmap="BlackSpirit.HD/img/ico_txt_off.png" position="498,687" size="43,22" alphatest="blend" zPosition="4" />
+		<widget pixmap="BlackSpirit.HD/img/ico_txt_on.png" position="498,687" size="43,22" source="session.CurrentService" render="Pixmap" alphatest="blend" zPosition="5">
+			<convert type="BS_ServiceInfo">HasTelext</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<ePixmap pixmap="BlackSpirit.HD/img/ico_sub_off.png" position="539,687" size="43,22" alphatest="blend" zPosition="4" />
+		<widget pixmap="BlackSpirit.HD/img/ico_sub_on.png" position="539,687" size="43,22" source="session.CurrentService" render="Pixmap" zPosition="5" alphatest="blend">
+			<convert type="BS_ServiceInfo">SubservicesAvailable</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		
+	  <!-- Tuner -->
+		<ePixmap pixmap="BlackSpirit.HD/img/a_off.png" position="833,687" size="20,22" alphatest="blend" zPosition="4" />
+		<widget pixmap="BlackSpirit.HD/img/a_on.png" position="833,687" size="20,22" source="session.TunerInfo" render="Pixmap" zPosition="5" alphatest="blend" valign="center">
+			<convert type="TunerInfo">TunerUseMask</convert>
+			<convert type="ValueBitTest">1</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<ePixmap pixmap="BlackSpirit.HD/img/b_off.png" position="851,687" size="20,22" zPosition="4" alphatest="blend" />
+		<widget pixmap="BlackSpirit.HD/img/b_on.png" position="851,687" size="20,22" source="session.TunerInfo" render="Pixmap" zPosition="5" alphatest="blend" valign="center">
+			<convert type="TunerInfo">TunerUseMask</convert>
+			<convert type="ValueBitTest">2</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<ePixmap pixmap="BlackSpirit.HD/img/c_off.png" position="869,687" size="20,22" zPosition="4" alphatest="blend" />
+		<widget pixmap="BlackSpirit.HD/img/c_on.png" position="869,687" size="20,22" source="session.TunerInfo" render="Pixmap" zPosition="5" alphatest="blend" valign="center">
+			<convert type="TunerInfo">TunerUseMask</convert>
+			<convert type="ValueBitTest">4</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<ePixmap pixmap="BlackSpirit.HD/img/d_off.png" position="887,687" size="20,22" zPosition="4" alphatest="blend" />
+		<widget pixmap="BlackSpirit.HD/img/d_on.png" position="887,687" size="20,22" source="session.TunerInfo" render="Pixmap" zPosition="5" alphatest="blend" valign="center">
+			<convert type="TunerInfo">TunerUseMask</convert>
+			<convert type="ValueBitTest">8</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		
+		  <!-- Resolution OrbitPos -->
+		<ePixmap pixmap="BlackSpirit.HD/img/bg_resolution.png" position="905,687" size="112,22" zPosition="1" alphatest="on" />
+		<widget source="session.CurrentService" position="917,687" size="90,22" font="RegularBold; 16" render="Label" halign="left" valign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" zPosition="3">
+			<convert type="BS_ServiceInfo">VideoWidth</convert>
+		</widget>
+		<eLabel text="x" position="917,687" size="90,22" font="RegularBold; 16" halign="center" valign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" zPosition="3" />
+		<widget source="session.CurrentService" position="917,687" size="90,22" font="RegularBold; 16" render="Label" halign="right" valign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" zPosition="3">
+			<convert type="BS_ServiceInfo">VideoHeight</convert>
+		</widget>
+		
+		<ePixmap pixmap="BlackSpirit.HD/img/bg_orbit.png" position="1015,687" size="69,22" zPosition="1" alphatest="on" />
+		<widget source="session.CurrentService" position="1017,687" size="67,22" render="Label" font="RegularBold; 16" transparent="1" zPosition="3" foregroundColor="BlackSpirit" valign="center" halign="center" backgroundColor="BS_background">
+			<convert type="BS_ExtraInfo">OrbitalPositionOrTunerSystem</convert>
+		</widget>
+
+		  <!-- SNR AGC -->
+		<ePixmap pixmap="BlackSpirit.HD/img/bg_agc.png" position="1084,687" size="78,22" zPosition="4" alphatest="blend" />
+		<ePixmap pixmap="BlackSpirit.HD/img/bg_snr.png" position="1162,687" size="78,22" zPosition="4" alphatest="blend" />
+  <widget source="session.FrontendStatus" render="Progress" position="1115,702" size="45,10" pixmap="BlackSpirit.HD/img/snr_agc.png" transparent="1" zPosition="7" backgroundColor="BS_background">
+    <convert type="FrontendInfo">AGC</convert>
+  </widget>
+  <widget source="session.FrontendStatus" render="Label" position="1115,690" size="45,10" font="RegularBold; 10" halign="center" valign="top" transparent="1" zPosition="6" backgroundColor="BS_background" foregroundColor="BS_grey1">
+    <convert type="FrontendInfo">AGC</convert>
+  </widget>
+  <widget source="session.FrontendStatus" render="Progress" position="1193,702" size="45,10" pixmap="BlackSpirit.HD/img/snr_agc.png" transparent="1" zPosition="7" backgroundColor="BS_background">
+    <convert type="FrontendInfo">SNR</convert>
+  </widget>
+  <widget source="session.FrontendStatus" render="Label" position="1193,690" size="45,10" font="RegularBold;10" halign="center" valign="top" transparent="1" zPosition="6" backgroundColor="BS_background" foregroundColor="BS_grey1">
+    <convert type="FrontendInfo">SNR</convert>
+  </widget>
+
+		<ePixmap pixmap="BlackSpirit.HD/img/bg_clock.png" position="1029,597" size="222,96" zPosition="10" transparent="1" alphatest="off" />
+		<widget source="global.CurrentTime" position="1035,604" size="148,20" font="RegularBold; 15" render="Label" halign="center" zPosition="12" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1">
+			<convert type="ClockToText">Format:%A</convert>
+		</widget>
+		<widget source="global.CurrentTime" position="1035,622" size="148,20" font="RegularBold; 15" render="Label" halign="center" zPosition="12" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1">
+			<convert type="ClockToText">Format:%d.%m.%Y</convert>
+		</widget>
+		<widget source="global.CurrentTime" position="1035,641" size="148,30" font="Regular; 25" render="Label" halign="center" zPosition="12" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1">
+			<convert type="ClockToText">WithSeconds</convert>
+		</widget>
+    <widget source="session.MSNWeather" render="MSNWeatherPixmap" position="1180,598" size="58,58" transparent="1" zPosition="12" alphatest="off">
+      <convert type="MSNWeather">weathericon,current,/usr/share/enigma2/BlackSpirit.HD/img/weather/,png</convert>
+    </widget>
+    <widget source="session.MSNWeather" position="1180,651" size="58,20" font="RegularBold; 15" halign="center" noWrap="1" render="Label" backgroundColor="BS_background" zPosition="12" foregroundColor="BlackSpirit" transparent="1">
+      <convert type="MSNWeather">temperature_current</convert>
+    </widget>
+	</screen>
+	<!-- SecondInfobar extended Sat*/-->
+
+

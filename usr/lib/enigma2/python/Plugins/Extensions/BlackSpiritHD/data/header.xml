@@ -1,0 +1,235 @@
+<skin>
+	<!--
+
+	BlackSpirit.HD by DeadEyE <deadeye.blackspirit@web.de>
+
+	Version: _VERSIONNUMMER_. You use it at your own risk!!!!
+
+	This skin is a Freeware. You can change the skin for personal use.
+	If you want to make your modifikation public, contact and ask me!
+
+	Actually I use some code snippets and images in not completely new skinned screens
+	from KravenHD and myMetrix Skin until I had rewrite this sections.
+	I say thanks to Kraven, to Fast Eddy for some icons/buttons and to Cyberboy41 for infobars.
+
+	-->
+
+	<output id="0">
+		<resolution bpp="32" xres="1280" yres="720" />
+	</output>
+	<colors>
+		<color name="BlackSpirit" value="#00a19181" />
+		<color name="BS_background" value="#23000000" />
+		<color name="BS_foreground" value="#00ffffff" />
+		<color name="BS_grey1" value="#00f0e3d6" />
+		<color name="BS_grey2" value="#00ded2c7" />
+		<color name="BS_grey3" value="#00999999" />
+		<color name="BS_select1" value="#00a19181" />
+		
+
+		<!-- DEFAULT Amber color  value="#xxca7700" DEFAULT /-->
+		<color name="BS_fg_select" value="#00ca7700" />
+
+		<!-- DEFAULT GRAU color name="BS_select2" value="#xx2c2c2c" DEFAULT /-->
+		<color name="BS_select2" value="#002c2c2c" />
+
+		<color name="BS_select3" value="#23352111" />
+		<color name="BS_green" value="#0070ad11" />
+		<color name="BS_red" value="#00911d10" />
+		<color name="black" value="#00000000" />
+		<color name="grey" value="#00d3cdc8" />
+		<color name="orange" value="#00dc5221" />
+		<color name="rds_text_bg" value="#00003258" />
+		<color name="rssviewtop" value="#45005050" />
+		<color name="transparent" value="#ff000000" />
+		<color name="transpBlack" value="#80000000" />
+		<color name="transpWhite" value="#77ffffff" />
+		<color name="white" value="#00ffffff" />
+		<color name="shadow" value="#40101010" />
+
+		<color name="red" value="#00f23d21" />
+		<color name="green" value="#00389416" />
+		<color name="yellow" value="#00e5b243" />
+		<color name="blue" value="#000064c7" />
+	</colors>
+	<fonts>
+		<font filename="lcd.ttf" name="LCD" scale="100" />
+		<font filename="ae_AlMateen.ttf" name="Replacement" replacement="1" scale="100" />
+		<font filename="tuxtxt.ttf" name="Console" scale="100" />
+		<font filename="/usr/share/enigma2/BlackSpirit.HD/fonts/OpenSans-Regular.ttf" name="Regular" scale="95" />
+		<font filename="/usr/share/enigma2/BlackSpirit.HD/fonts/OpenSans-Bold.ttf" name="RegularBold" scale="95" />
+	</fonts>
+	<subtitles>
+		<sub font="Regular;30" name="Subtitle_TTX" shadowColor="shadow" shadowOffset="3,3" />
+		<sub font="Regular;30" foregroundColor="BS_grey1" name="Subtitle_Regular" shadowColor="shadow" shadowOffset="3,3" />
+		<sub font="Replacement;30" foregroundColor="BS_grey1" name="Subtitle_Bold" shadowColor="shadow" shadowOffset="3,3" />
+		<sub font="Regular;30" foregroundColor="orange" name="Subtitle_Italic" shadowColor="shadow" shadowOffset="3,3" />
+	</subtitles>
+
+	<windowstyle id="0" type="skinned">
+		<title font="Regular;24" offset="20,5" />
+		<color color="BS_background" name="Background" />
+		<color color="white" name="LabelForeground" />
+		<color color="BS_background" name="ListboxBackground" />
+		<color color="white" name="ListboxForeground" />
+		<color color="BS_select2" name="ListboxSelectedBackground" />
+		<color color="white" name="ListboxSelectedForeground" />
+		<color color="BS_green" name="ListboxMarkedBackground" />
+		<color color="white" name="ListboxMarkedForeground" />
+		<color color="BS_select2" name="ListboxMarkedAndSelectedBackground" />
+		<color color="white" name="ListboxMarkedAndSelectedForeground" />
+		<color color="white" name="WindowTitleForeground" />
+		<color color="BS_background" name="WindowTitleBackground" />
+		<borderset name="bsWindow">
+			<pixmap filename="BlackSpirit.HD/img/window_tl.png" pos="bpTopLeft" />
+			<pixmap filename="BlackSpirit.HD/img/window_t.png" pos="bpTop" />
+			<pixmap filename="BlackSpirit.HD/img/window_tr.png" pos="bpTopRight" />
+			<pixmap filename="BlackSpirit.HD/img/window_l.png" pos="bpLeft" />
+			<pixmap filename="BlackSpirit.HD/img/window_r.png" pos="bpRight" />
+			<pixmap filename="BlackSpirit.HD/img/window_bl.png" pos="bpBottomLeft" />
+			<pixmap filename="BlackSpirit.HD/img/window_b.png" pos="bpBottom" />
+			<pixmap filename="BlackSpirit.HD/img/window_br.png" pos="bpBottomRight" />
+		</borderset>
+    <borderset name="bsListboxEntry">
+      <pixmap pos="bpTopLeft" filename="BlackSpirit.HD/img/lb1.png" />
+      <pixmap pos="bpTop" filename="BlackSpirit.HD/img/lb2.png" />
+      <pixmap pos="bpTopRight" filename="BlackSpirit.HD/img/lb1.png" />
+      <pixmap pos="bpBottomLeft" filename="BlackSpirit.HD/img/lb1.png" />
+      <pixmap pos="bpBottom" filename="BlackSpirit.HD/img/lb2.png" />
+      <pixmap pos="bpBottomRight" filename="BlackSpirit.HD/img/lb1.png" />
+    </borderset>
+	</windowstyle>
+
+	<windowstyle id="1" type="skinned">
+		<title font="Regular;24" offset="20,5" />
+		<color color="BS_background" name="Background" />
+		<color color="BS_foreground" name="LabelForeground" />
+		<color color="BS_background" name="ListboxBackground" />
+		<color color="BS_grey1" name="ListboxForeground" />
+		<color color="BS_select1" name="ListboxSelectedBackground" />
+		<color color="BS_foreground" name="ListboxSelectedForeground" />
+		<color color="BS_select1" name="ListboxMarkedBackground" />
+		<color color="BS_foreground" name="ListboxMarkedForeground" />
+		<color color="BS_select1" name="ListboxMarkedAndSelectedBackground" />
+		<color color="BS_foreground" name="ListboxMarkedAndSelectedForeground" />
+		<color color="BS_foreground" name="WindowTitleForeground" />
+		<color color="BS_background" name="WindowTitleBackground" />
+	</windowstyle>
+
+
+	<!--/* TEMPLATES -->
+		<screen name="template_screen_background">
+	<!--		<eLabel backgroundColor="BS_background" position="0,0" size="1280,720" transparent="0" zPosition="-9" /> -->
+	<ePixmap position="0,0" size="1280,720" zPosition="-9" pixmap="BlackSpirit.HD/img/bg_screen_main.png" alphatest="off" />
+		</screen>
+
+		<screen name="template_TOP_Title">
+   		<widget source="Title" position="340,5" size="600,50" backgroundColor="BS_background" font="RegularBold; 30" foregroundColor="BlackSpirit" halign="center" render="Label" transparent="1" valign="center" noWrap="1" />
+   		<ePixmap position="40,55" size="1200,1" pixmap="BlackSpirit.HD/img/line1200_1px.png" zPosition="1" />
+   		<widget source="global.CurrentTime" position="70,25" size="180,30" font="Regular; 16" render="Label" halign="left" valign="bottom" backgroundColor="BS_background" foregroundColor="BlackSpirit" noWrap="1" transparent="1" zPosition="2">
+   			<convert type="ClockToText">Format:%A, %d.%m.%Y</convert>
+   		</widget>
+   		<widget source="global.CurrentTime" position="1150,25" size="90,30" font="Regular; 16" render="Label" halign="left" valign="bottom" backgroundColor="BS_background" foregroundColor="BlackSpirit" noWrap="1" transparent="1" zPosition="2">
+   			<convert type="ClockToText">WithSeconds</convert>
+   		</widget>
+		</screen>
+
+		<screen name="template_TOP_Label">
+   		<ePixmap position="40,55" size="1200,1" pixmap="BlackSpirit.HD/img/line1200_1px.png" zPosition="1" />
+   		<widget source="global.CurrentTime" position="70,25" size="180,30" font="Regular; 16" render="Label" halign="left" valign="bottom" backgroundColor="BS_background" foregroundColor="BlackSpirit" noWrap="1" transparent="1" zPosition="2">
+   			<convert type="ClockToText">Format:%A, %d.%m.%Y</convert>
+   		</widget>
+   		<widget source="global.CurrentTime" position="1150,25" size="90,30" font="Regular; 16" render="Label" halign="left" valign="bottom" backgroundColor="BS_background" foregroundColor="BlackSpirit" noWrap="1" transparent="1" zPosition="2">
+   			<convert type="ClockToText">WithSeconds</convert>
+   		</widget>
+		</screen>
+
+		<screen name="template_BOTTOM_Lines">
+			<ePixmap position="40,670" size="1200,1" zPosition="1" pixmap="BlackSpirit.HD/img/line1200_1px.png" />
+	    <ePixmap position="40,710" size="1200,1" zPosition="1" pixmap="BlackSpirit.HD/img/line1200_1px.png" />
+		</screen>
+
+		<screen name="template_colorkey_red">
+	    <ePixmap pixmap="BlackSpirit.HD/img/key_red1.png" position="113,700" size="200,5" backgroundColor="BS_background" foregroundColor="BlackSpirit" alphatest="on" />
+	    <widget font="Regular; 20" halign="center" name="key_red" position="118,675" size="200,24" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" zPosition="1" />
+		</screen>
+
+		<screen name="template_colorkey_green">
+	    <ePixmap pixmap="BlackSpirit.HD/img/key_green1.png" position="288,700" size="200,5" backgroundColor="BS_background" foregroundColor="BlackSpirit" alphatest="on" />
+	    <widget font="Regular; 20" halign="center" name="key_green" position="293,675" size="200,24" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" zPosition="1" />
+		</screen>
+
+		<screen name="template_colorkey_yellow">
+	    <ePixmap pixmap="BlackSpirit.HD/img/key_yellow1.png" position="463,700" size="200,5" backgroundColor="BS_background" foregroundColor="BlackSpirit" alphatest="on" />
+	    <widget font="Regular; 20" halign="center" name="key_yellow" position="468,675" size="200,24" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" zPosition="1" />
+		</screen>
+
+		<screen name="template_colorkey_blue">
+	    <ePixmap pixmap="BlackSpirit.HD/img/key_blue1.png" position="640,700" size="200,5" backgroundColor="BS_background" foregroundColor="BlackSpirit" alphatest="on" />
+	    <widget font="Regular; 20" halign="center" name="key_blue" position="643,675" size="200,24" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" zPosition="1" />
+		</screen>
+
+		<screen name="template_colorkey_red_source">
+	    <ePixmap pixmap="BlackSpirit.HD/img/key_red1.png" position="113,700" size="200,5" backgroundColor="BS_background" foregroundColor="BlackSpirit" alphatest="on" />
+		  <widget font="Regular; 20" halign="center" source="key_red" position="118,675" size="200,24" render="Label" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" zPosition="1" />
+		</screen>
+
+		<screen name="template_colorkey_green_source">
+	    <ePixmap pixmap="BlackSpirit.HD/img/key_green1.png" position="288,700" size="200,5" backgroundColor="BS_background" foregroundColor="BlackSpirit" alphatest="on" />
+	    <widget font="Regular; 20" halign="center" source="key_green" position="293,675" size="200,24" render="Label" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" zPosition="1" />
+		</screen>
+
+		<screen name="template_colorkey_yellow_source">
+	    <ePixmap pixmap="BlackSpirit.HD/img/key_yellow1.png" position="463,700" size="200,5" backgroundColor="BS_background" foregroundColor="BlackSpirit" alphatest="on" />
+	    <widget font="Regular; 20" halign="center" source="key_yellow" position="468,675" size="200,24" render="Label" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" zPosition="1" />
+		</screen>
+
+		<screen name="template_colorkey_blue_source">
+	    <ePixmap pixmap="BlackSpirit.HD/img/key_blue1.png" position="640,700" size="200,5" backgroundColor="BS_background" foregroundColor="BlackSpirit" alphatest="on" />
+	    <widget font="Regular; 20" halign="center" source="key_blue" position="643,675" size="200,24" render="Label" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" zPosition="1" />
+		</screen>
+
+		<screen name="template_key_ok">
+    	<ePixmap position="1120,680" size="49,24" pixmap="BlackSpirit.HD/img/key_ok.png" transparent="1" />
+		</screen>
+
+		<screen name="template_key_menu">
+    	<ePixmap position="1120,680" size="49,24" pixmap="BlackSpirit.HD/img/key_menu.png" transparent="1" />
+		</screen>
+
+		<screen name="template_key_epg">
+    	<ePixmap position="1073,680" size="49,24" pixmap="BlackSpirit.HD/img/key_epg.png" transparent="1" />
+		</screen>
+
+		<screen name="template_key_info">
+    	<ePixmap position="1026,680" size="49,24" pixmap="BlackSpirit.HD/img/key_info.png" transparent="1" />
+		</screen>
+
+		<screen name="template_key_updown">
+    	<ePixmap position="932,680" size="49,24" pixmap="BlackSpirit.HD/img/key_updown.png" transparent="1" />
+		</screen>
+
+		<screen name="template_key_leftright">
+    	<ePixmap position="979,680" size="49,24" pixmap="BlackSpirit.HD/img/key_leftright.png" transparent="1" />
+		</screen>
+
+
+
+<!--
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red"/>
+	<panel name="template_colorkey_green"/>
+	<panel name="template_colorkey_yellow"/>
+	<panel name="template_colorkey_blue"/>
+	<panel name="template_key_ok"/>
+	<panel name="template_key_menu"/>
+	<panel name="template_key_epg"/>
+	<panel name="template_key_info"/>
+	<panel name="template_key_updown"/>
+	<panel name="template_key_leftright"/>
+-->
+
+
+
+	<!-- TEMPLATES */-->
+
