@@ -1,0 +1,13 @@
+
+	<!--/* NumberZapExt XPicon -->
+	<!-- SKINNED -->
+	<screen backgroundColor="transparent" flags="wfNoBorder" name="NumberZapExt" position="0,0" size="1280,720" title="QuickZap">
+	  <ePixmap position="center,center" size="222,134" pixmap="BlackSpirit.HD/img/bg_222x134.png" alphatest="off" transparent="0" zPosition="3" />
+		<widget name="chPicon" position="center,center" size="220,132" halign="center" alphatest="blend" transparent="0" zPosition="4" />
+	  <ePixmap position="552,302" size="404,174" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_404x174.png" />
+		<widget name="chNum" position="749,317" size="200,100" font="RegularBold; 90" halign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" zPosition="-4" />
+		<widget name="chName" position="552,447" size="330,30" font="RegularBold; 25" halign="right" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" zPosition="-4" />
+		<widget name="chBouq" position="749,307" size="200,25" font="RegularBold; 16" halign="center" noWrap="1" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
+	  <ePixmap alphatest="blend" pixmap="BlackSpirit.HD/img/line160_1px.png" position="769,437" size="160,1" zPosition="3" />
+	</screen>
+ 

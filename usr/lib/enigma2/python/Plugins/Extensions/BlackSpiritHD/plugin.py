@@ -34,11 +34,12 @@ from Components.ConfigList import ConfigListScreen
 from Components.Label import Label
 from Components.Language import language
 from os import environ, listdir, remove, rename, system
-from shutil import move
+from shutil import move, copy
 from skin import parseColor
 from Components.Pixmap import Pixmap
 from Components.Label import Label
 import gettext
+import time
 from enigma import ePicLoad
 from Tools.Directories import fileExists, resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
 from enigma import eConsoleAppContainer
@@ -120,9 +121,41 @@ config.plugins.BlackSpiritHD.ProgressColor = ConfigSelection(default="_1", choic
 				("_1", _("Normal")),
 				("_2", _("Bar 2")),
 				("_3", _("Bar 3")),
-				("_4", _("Bar 4"))
+				("_4", _("Bar 4")),
+				("_5", _("Bar 5"))
 				])
 		
+config.plugins.BlackSpiritHD.MiniProgress = ConfigSelection(default="_mp1", choices = [
+				("_mp1", _("Normal")),
+				("_mp2", _("Bar 2")),
+				("_mp3", _("Bar 3")),
+				("_mp4", _("Bar 4")),
+				("_mp5", _("Bar 5")),
+				("_mp6", _("Bar 6"))
+				])
+				
+config.plugins.BlackSpiritHD.BorderMiniProgress = ConfigSelection(default="00000002", choices = [
+				("00ffffff", _("White")),
+				("00000002", _("Black")),
+				("002c2c2c", _("Dark Grey")),
+				("007b7a7a", _("Grey")),
+				("00a19181", _("BlackSpirit")),
+				("00593e1e", _("Brown")),
+				("00ca7700", _("Amber")),				
+				("00dc5221", _("Orange")),				
+				("00172b4e", _("Blue")),
+				("00006292", _("Cyan")),
+				("00a61d4d", _("Magenta")),
+				("00A4C400", _("Lime")),
+				("006A00FF", _("Indigo")),
+				("0070ad12", _("Green")),
+				("006D8764", _("Olive")),
+				("009d3126", _("Red")),
+				("00492561", _("Violet")),
+				("00ab882a", _("Yellow"))
+				])
+
+
 config.plugins.BlackSpiritHD.Infobar = ConfigSelection(default="infobar-normal", choices = [
 				("infobar-normal", _("Normal")),
 				("infobar-ext-sys", _("Extended ECM & System Info")),
@@ -141,11 +174,20 @@ config.plugins.BlackSpiritHD.EMCcover = ConfigSelection(default="emc-normal", ch
 				("emc-cover", _("Show Cover"))
 				])
 				
-config.plugins.BlackSpiritHD.PluginPics = ConfigSelection(default="installpics", choices = [
-				("installpics", _("Use BlackSpirit Pics")),
-				("removepics", _("No, Use Default "))
+config.plugins.BlackSpiritHD.ExtNumberZap = ConfigSelection(default="extnumberzap-zzzpicon", choices = [
+				("extnumberzap-zzzpicon", _("ZZZPicon 400x240 px")),
+				("extnumberzap-xpicon", _("XPicon 220x132 px"))
 				])
 				
+config.plugins.BlackSpiritHD.PluginPics = ConfigSelection(default="installpics", choices = [
+				("installpics", _("Use BlackSpirit Pics")),
+				("removepics", _("No, Use Default"))
+				])
+				
+config.plugins.BlackSpiritHD.Spinner = ConfigSelection(default="installspinner", choices = [
+				("installspinner", _("Use BlackSpirit Spinner")),
+				("removespinner", _("System Default Spinner"))
+				])
 				
 #######################################################################
 
@@ -154,7 +196,7 @@ class BlackSpiritHD(ConfigListScreen, Screen):
 <screen name="BlackSpiritHD-Setup" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="#90000000" title="BlackSpirit.HD Konfiguration">
 			<eLabel backgroundColor="#23000000" position="0,0" size="1280,720" transparent="0" zPosition="-9" />
 	    <ePixmap position="0,0" size="1280,720" zPosition="-9" pixmap="BlackSpirit.HD/img/bg_screen_main.png" alphatest="off" />
-    	<eLabel font="Regular; 30" halign="center" position="center,5" size="800,50" text="BlackSpirit.HD *0.53.rc1* Konfiguration" backgroundColor="#23000000" foregroundColor="#00a19181" render="Label" transparent="1" valign="center" noWrap="1" />
+    	<eLabel font="Regular; 30" halign="center" position="center,5" size="800,50" text="BlackSpirit.HD *0.60.rc2* Konfiguration" backgroundColor="#23000000" foregroundColor="#00a19181" render="Label" transparent="1" valign="center" noWrap="1" />
    		<ePixmap position="40,55" size="1200,1" pixmap="BlackSpirit.HD/img/line1200_1px.png" zPosition="1" />
    		<widget source="global.CurrentTime" position="70,25" size="180,30" font="Regular; 16" render="Label" halign="left" valign="bottom" backgroundColor="#23000000" foregroundColor="#00a19181" noWrap="1" transparent="1" zPosition="2">
    			<convert type="ClockToText">Format:%A, %d.%m.%Y</convert>
@@ -188,6 +230,7 @@ class BlackSpiritHD(ConfigListScreen, Screen):
 		self.daten = "/usr/lib/enigma2/python/Plugins/Extensions/BlackSpiritHD/data/"
 		self.komponente = "/usr/lib/enigma2/python/Plugins/Extensions/BlackSpiritHD/comp/"
 		self.picinstallscript = "/usr/lib/enigma2/python/Plugins/Extensions/BlackSpiritHD/pluginpics/install_pluginpics.sh"
+		self.spinnerinstallscript = "/usr/lib/enigma2/python/Plugins/Extensions/BlackSpiritHD/spinner/install_spinner.sh"
 		self.picPath = picPath
 		self.Scale = AVSwitch().getFramebufferScale()
 		self.PicLoad = ePicLoad()
@@ -201,12 +244,16 @@ class BlackSpiritHD(ConfigListScreen, Screen):
 		list.append(getConfigListEntry(_("Color Selectionbar"), config.plugins.BlackSpiritHD.SelectionBackground))
 		list.append(getConfigListEntry(_("Color Selectionbar Font"), config.plugins.BlackSpiritHD.SelectionFont))
 		list.append(getConfigListEntry(_("Color Progress Bar"), config.plugins.BlackSpiritHD.ProgressColor))
+		list.append(getConfigListEntry(_("Color MiniProgressBar"), config.plugins.BlackSpiritHD.MiniProgress))
+		list.append(getConfigListEntry(_("Color Border MiniProgressBar"), config.plugins.BlackSpiritHD.BorderMiniProgress))
 		list.append(getConfigListEntry(_("________________________________ General __________________________________"), ))
 		list.append(getConfigListEntry(_(" "), ))
 		list.append(getConfigListEntry(_("Infobar and SecondInfobar"), config.plugins.BlackSpiritHD.Infobar))
 		list.append(getConfigListEntry(_("Channelselection (MiniTV)"), config.plugins.BlackSpiritHD.Channelselection))
 		list.append(getConfigListEntry(_("EMC Description"), config.plugins.BlackSpiritHD.EMCcover))
+		list.append(getConfigListEntry(_("Extended NumberZap Size"), config.plugins.BlackSpiritHD.ExtNumberZap))
 		list.append(getConfigListEntry(_("Special Plugin Pictures"), config.plugins.BlackSpiritHD.PluginPics))
+		list.append(getConfigListEntry(_("BlackSpirit Spinner"), config.plugins.BlackSpiritHD.Spinner))
 
 		ConfigListScreen.__init__(self, list)
 		self["actions"] = ActionMap(["OkCancelActions","DirectionActions", "InputActions", "ColorActions"], {"left": self.keyLeft,"down": self.keyDown,"up": self.keyUp,"right": self.keyRight,"red": self.exit,"yellow": self.reboot, "blue": self.showInfo, "green": self.save,"cancel": self.exit}, -1)
@@ -273,33 +320,37 @@ class BlackSpiritHD(ConfigListScreen, Screen):
 			self.skinSearchAndReplace = []
 			self.skinSearchAndReplace.append(["002c2c2c", config.plugins.BlackSpiritHD.SelectionBackground.value])
 			self.skinSearchAndReplace.append(["00ca7700", config.plugins.BlackSpiritHD.SelectionFont.value])
+			self.skinSearchAndReplace.append(["00000002", config.plugins.BlackSpiritHD.BorderMiniProgress.value])
 			self.skinSearchAndReplace.append(["progressbar1200_1.png", "progressbar1200" + config.plugins.BlackSpiritHD.ProgressColor.value + ".png"])
 			self.skinSearchAndReplace.append(["progressbar1080_1.png", "progressbar1080" + config.plugins.BlackSpiritHD.ProgressColor.value + ".png"])
 			self.skinSearchAndReplace.append(["progressbar280_1.png", "progressbar280" + config.plugins.BlackSpiritHD.ProgressColor.value + ".png"])
 			self.skinSearchAndReplace.append(["progressbar260_1.png", "progressbar260" + config.plugins.BlackSpiritHD.ProgressColor.value + ".png"])
+			self.skinSearchAndReplace.append(["miniprog_mp1.png", "miniprog" + config.plugins.BlackSpiritHD.MiniProgress.value + ".png"])
 
-#			self.container.execute("chmod a+x /usr/lib/enigma2/python/Plugins/Extensions/BlackSpiritHD/pluginpics/install_pluginpics.sh ")
-			self.container.execute("chmod a+x " + self.picinstallscript + " && " + self.picinstallscript + " " + config.plugins.BlackSpiritHD.PluginPics.value)
+			self.container.execute("chmod a+x " + self.picinstallscript + " && " + self.picinstallscript + " " + config.plugins.BlackSpiritHD.PluginPics.value + " && " + "chmod a+x " + self.spinnerinstallscript + " && " + self.spinnerinstallscript + " " + config.plugins.BlackSpiritHD.Spinner.value)
 
-			###Header XML
+			### Header
 			self.appendSkinFile(self.daten + "header.xml")
 
-			###InfoBar
+			### InfoBar
 			self.appendSkinFile(self.daten + config.plugins.BlackSpiritHD.Infobar.value + ".xml")
 
-			###Channelselection
+			### Channelselection
 			self.appendSkinFile(self.daten + config.plugins.BlackSpiritHD.Channelselection.value + ".xml")
 
-			###EMCcover
+			### EMCcover
 			self.appendSkinFile(self.daten + config.plugins.BlackSpiritHD.EMCcover.value + ".xml")
 
-			###skin-main
+			### ExtNumberZap
+			self.appendSkinFile(self.daten + config.plugins.BlackSpiritHD.ExtNumberZap.value + ".xml")
+
+			### main
 			self.appendSkinFile(self.daten + "main.xml")
 
-			###system
+			### system
 			self.appendSkinFile(self.daten + config.plugins.BlackSpiritHD.System.value + ".xml")
 
-			###The End
+			### The End
 			self.appendSkinFile(self.daten + "the-end.xml")
 
 			xFile = open(self.dateiTMP, "w")
@@ -309,7 +360,6 @@ class BlackSpiritHD(ConfigListScreen, Screen):
 
 			move(self.dateiTMP, self.datei)
 
-			#system('rm -rf ' + self.dateiTMP)
 		except:
 			self.session.open(MessageBox, _("Error creating Skin!"), MessageBox.TYPE_ERROR)
 

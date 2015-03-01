@@ -6,6 +6,7 @@
 	<!--/* Volume -->
 	<screen name="Volume" position="60,130" zPosition="99" size="28,360" title="Volume" flags="wfNoBorder">
 		<ePixmap pixmap="BlackSpirit.HD/img/volume_bg.png" position="0,0" size="28,360" alphatest="blend" transparent="1" />
+		<!--widget font="RegularBold;40" foregroundColor="BlackSpirit" backgroundColor="BS_background" halign="center" valign="center" render="VVolumeText" source="global.CurrentTime" position="center,center" size="85,50" zPosition="20" transparent="1" /-->
 		<widget name="Volume" pixmap="BlackSpirit.HD/img/volumebar.png" position="5,18" zPosition="1" orientation="orBottomToTop" size="18,309" transparent="1" />
 	</screen>
 	<!-- Volume */-->
@@ -25,7 +26,7 @@
 		<ePixmap position="1237,75" size="15,472" zPosition="4" pixmap="BlackSpirit.HD/img/scroll472.png" backgroundColor="BS_background" alphatest="off" transparent="1" />
 		<ePixmap position="435,74" size="817,474" zPosition="2" pixmap="BlackSpirit.HD/img/bg_channellist.png" backgroundColor="BS_background" alphatest="off" transparent="1" />
 
-		<ePixmap position="480,460" size="720,200" zPosition="1" pixmap="BlackSpirit.HD/img/bg_nextlist.png" backgroundColor="BS_background" alphatest="off" transparent="1" />
+		<ePixmap position="480,460" size="720,200" zPosition="1" pixmap="BlackSpirit.HD/img/bg_720x200.png" backgroundColor="BS_background" alphatest="off" transparent="1" />
 		<eLabel backgroundColor="BS_background" font="Regular; 19" halign="left" position="490,633" size="300,22" noWrap="1" foregroundColor="BlackSpirit" text="Es folgt:" transparent="1" valign="bottom" zPosition="3" />
 		<widget source="ServiceEvent" render="BS_SingleEpgList" position="610,552" size="550,146" zPosition="3" noWrap="1" font="Regular;19" foregroundColor="BlackSpirit" backgroundColor="BS_background" transparent="1">
 		</widget>
@@ -221,7 +222,7 @@
 	  <panel name="template_TOP_Title" />
 	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
 	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
-	<widget name="text" font="Console;18" position="center,100" size="900,514" enableWrapAround="1" scrollbarMode="showAlways" itemHeight="30" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
+	<widget name="text" font="Console;18" position="center,105" size="900,504" enableWrapAround="1" scrollbarMode="showAlways" itemHeight="30" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
 </screen>
 
 
@@ -409,14 +410,6 @@
 <screen backgroundColor="transparent" flags="wfNoBorder" name="EPGSelection" position="0,0" size="1280,720" title="EPG Selection">
 	  <panel name="template_screen_background" />
 	  <panel name="template_TOP_Title" />
-	<panel name="template_BOTTOM_Lines"/>
-	<panel name="template_colorkey_red"/>
-	<panel name="template_colorkey_green"/>
-	<panel name="template_colorkey_yellow"/>
-	<panel name="template_colorkey_blue"/>
-	<panel name="template_key_menu"/>
-	<panel name="template_key_epg"/>
-	<panel name="template_key_info"/>
 	<ePixmap position="471,129" size="702,392" zPosition="-6" pixmap="BlackSpirit.HD/img/bg_702x392.png" />
 	<ePixmap position="69,99" size="701,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_702x516.png" />
 	<ePixmap position="755,100" size="15,512" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" backgroundColor="BS_background" alphatest="blend" transparent="1" />
@@ -427,12 +420,20 @@
 	<widget backgroundColor="BS_background" font="Regular; 18" position="791,137" size="360,22" halign="right" render="BS_RunningText" options="movetype=swimming,direction=left,startpoint=0,startdelay=5000,wrap=0,always=0,repeat=2,oneshot=1" source="Event" valign="bottom" foregroundColor="BlackSpirit" zPosition="4" transparent="1">
 		<convert type="EventName">Description</convert>
 	</widget>
-	<ePixmap position="920,506" size="222,134" zPosition="4" pixmap="BlackSpirit.HD/img/bg_xpicon.png" alphatest="off" />
-	<widget source="Service" render="BS_XPicon" position="921,507" size="220,132" transparent="0" zPosition="5" alphatest="off">
+	<ePixmap position="920,506" size="222,134" zPosition="4" pixmap="BlackSpirit.HD/img/bg_222x134.png" alphatest="off" />
+	<widget source="Service" render="BS_XPicon" position="921,507" size="220,132" transparent="0" zPosition="5" alphatest="blend">
 		<convert type="ServiceName">Reference</convert>
 	</widget>
 	<ePixmap position="773,560" size="24,24" pixmap="BlackSpirit.HD/img/key_plus.png" transparent="1" />
 	<ePixmap position="773,585" size="24,24" pixmap="BlackSpirit.HD/img/key_minus.png" transparent="1" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red"/>
+	<panel name="template_colorkey_green"/>
+	<panel name="template_colorkey_yellow"/>
+	<panel name="template_colorkey_blue"/>
+	<panel name="template_key_menu"/>
+	<panel name="template_key_epg"/>
+	<panel name="template_key_info"/>
 </screen>
 
 
@@ -444,7 +445,7 @@
 
 <!-- EPGSelectionEPGBar_HD -->
 <!-- Quick EPG -->
-<screen backgroundColor="transparent" flags="wfNoBorder" name="EPGSelectionEPGBar_HD" position="0,0" size="1280,720" title="EPG Selection">
+<screen name="xxxxxxxxxxxxxxxEPGSelectionEPGBar_HD" backgroundColor="transparent" flags="wfNoBorder" position="0,0" size="1280,720" title="EPG Selection">
 	<eLabel backgroundColor="BS_background" position="30,656" size="1220,67" transparent="0" zPosition="-10" />
 	<ePixmap position="0,0" size="1280,720" zPosition="-9" pixmap="BlackSpirit.HD/img/bg_screen_ib_400.png" alphatest="off" />
 	<widget font="Regular; 100" foregroundColor="transpWhite" halign="left" noWrap="1" position="31,315" render="Label" size="1219,150" source="Service" transparent="1" valign="top" zPosition="1">
@@ -484,16 +485,14 @@
 <screen backgroundColor="transparent" flags="wfNoBorder" name="EventView" position="0,0" size="1280,720" title="Eventview">
 	  <panel name="template_screen_background" />
 	  <panel name="template_TOP_Title" />
-
-	<!-- SKIN BODY -->
-	<ePixmap position="289,99" size="701,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_702x516.png" />
-	<ePixmap position="975,100" size="15,512" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" backgroundColor="BS_background" alphatest="blend" transparent="1" />
-	<widget name="epg_description" position="310,110" size="680,486" font="Regular; 20" backgroundColor="BS_background" foregroundColor="BS_foreground" transparent="1" />
-	<widget name="channel" position="300,617" size="700,27" font="Regular; 22" halign="left" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
-	<widget name="datetime" position="280,617" size="700,25" font="Regular; 22" halign="right" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" valign="center" />
-	<widget name="duration" position="870,593" size="100,22" font="Regular; 16" halign="right" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
-	<ePixmap position="300,589" size="49,24" pixmap="BlackSpirit.HD/img/key_leftright.png" transparent="1" />
-	<eLabel position="355,591" size="150,24" font="Regular; 22" text="Next" backgroundColor="BS_background" foregroundColor="BS_grey1" halign="left" render="Label" transparent="1" valign="bottom" noWrap="1" />
+	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<ePixmap position="1075,100" size="15,512" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" backgroundColor="BS_background" alphatest="blend" transparent="1" />
+	<widget name="epg_description" position="210,110" size="880,486" font="Regular; 23" backgroundColor="BS_background" foregroundColor="BS_foreground" transparent="1" />
+	<widget name="channel" position="200,617" size="700,27" font="Regular; 22" halign="left" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
+	<widget name="datetime" position="380,617" size="700,25" font="Regular; 22" halign="right" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" valign="center" />
+	<widget name="duration" position="970,593" size="100,22" font="Regular; 16" halign="right" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
+	<ePixmap position="200,589" size="49,24" pixmap="BlackSpirit.HD/img/key_leftright.png" transparent="1" />
+	<eLabel position="255,591" size="150,24" font="Regular; 22" text="Next" backgroundColor="BS_background" foregroundColor="BS_grey1" halign="left" render="Label" transparent="1" valign="bottom" noWrap="1" />
 	<panel name="template_BOTTOM_Lines"/>
 	<panel name="template_colorkey_red_source"/>
 	<panel name="template_colorkey_green"/>
@@ -504,27 +503,17 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 <!-- EventViewSimple -->
 <!-- SKINNED -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="EventViewSimple" position="0,0" size="1280,720" title="EventviewSimple">
 	  <panel name="template_screen_background" />
 	  <panel name="template_TOP_Title" />
-	<ePixmap position="289,99" size="701,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_702x516.png" />
-	<ePixmap position="975,100" size="15,512" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" backgroundColor="BS_background" alphatest="blend" transparent="1" />
-	<widget name="epg_description" position="310,110" size="680,486" font="Regular; 20" backgroundColor="BS_background" foregroundColor="BS_foreground" transparent="1" />
-	<widget name="channel" position="300,617" size="700,27" font="Regular; 22" halign="left" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
-	<widget name="datetime" position="280,617" size="700,25" font="Regular; 22" halign="right" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" valign="center" />
-	<widget name="duration" position="870,593" size="100,22" font="Regular; 16" halign="right" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
+	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<ePixmap position="1075,100" size="15,512" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" backgroundColor="BS_background" alphatest="blend" transparent="1" />
+	<widget name="epg_description" position="210,110" size="880,486" font="Regular; 23" backgroundColor="BS_background" foregroundColor="BS_foreground" transparent="1" />
+	<widget name="channel" position="200,617" size="700,27" font="Regular; 22" halign="left" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
+	<widget name="datetime" position="380,617" size="700,25" font="Regular; 22" halign="right" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" valign="center" />
+	<widget name="duration" position="970,593" size="100,22" font="Regular; 16" halign="right" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
 	<panel name="template_BOTTOM_Lines"/>
 	<panel name="template_colorkey_red"/>
 	<panel name="template_colorkey_green"/>
@@ -548,13 +537,13 @@
 	<ePixmap position="975,100" size="15,512" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" backgroundColor="BS_background" alphatest="blend" transparent="1" />
 	<widget name="epg_description" position="310,110" size="680,486" font="Regular; 20" backgroundColor="BS_background" foregroundColor="BS_foreground" transparent="1" />
 	<widget name="channel" position="300,617" size="700,27" font="Regular; 22" halign="left" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
-	<widget name="datetime" position="280,617" size="700,25" font="Regular; 22" halign="right" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" valign="center" />
-	<widget name="duration" position="870,593" size="100,22" font="Regular; 16" halign="right" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
+	<widget name="datetime" position="280,617" size="680,25" font="Regular; 22" halign="right" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" valign="center" />
+	<widget name="duration" position="860,593" size="100,22" font="Regular; 16" halign="right" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
 	<ePixmap position="300,589" size="49,24" pixmap="BlackSpirit.HD/img/key_leftright.png" transparent="1" />
 	<ePixmap position="347,589" size="49,24" pixmap="BlackSpirit.HD/img/key_updown.png" transparent="1" />
 
-	<ePixmap position="970,495" size="222,134" zPosition="4" pixmap="BlackSpirit.HD/img/bg_xpicon.png" alphatest="off" />
-	<widget source="Service" render="BS_XPicon" position="971,496" size="220,132" transparent="0" zPosition="5" alphatest="off">
+	<ePixmap position="970,495" size="222,134" zPosition="4" pixmap="BlackSpirit.HD/img/bg_222x134.png" alphatest="off" />
+	<widget source="Service" render="BS_XPicon" position="971,496" size="220,132" transparent="0" zPosition="5" alphatest="blend">
 		<convert type="ServiceName">Reference</convert>
 	</widget>
 	<panel name="template_BOTTOM_Lines"/>
@@ -621,82 +610,40 @@
 </screen>
 
 
-
-
-
-
-
-
-
-
-
-<!-- GraphMultiEPG -->
-<screen backgroundColor="transparent" flags="wfNoBorder" name="GraphMultiEPG" position="0,0" size="1280,720" title="Electronic Program Guide">
-	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Title" />
-	<widget backgroundColor="BS_background" font="Regular; 28" position="70,90" render="Label" size="700,39" source="Event" transparent="1">
-		<convert type="EventName">Name</convert>
-	</widget>
-	<widget backgroundColor="BS_background" font="Regular; 18" halign="right" position="70,131" render="Label" size=" 65, 22" source="Event" transparent="1">
-		<convert type="EventTime">StartTime</convert>
-		<convert type="ClockToText">Format:%H:%M </convert>
-	</widget>
-	<widget backgroundColor="BS_background" font="Regular; 18" position="1142,131" render="Label" size=" 80, 22" source="Event" transparent="1">
-		<convert type="EventTime">EndTime</convert>
-		<convert type="ClockToText">Format:%H:%M</convert>
-	</widget>
-	<widget backgroundColor="BS_foreground" borderWidth="0" position="146,138" render="Progress" size="990,5" source="Event" transparent="1" zPosition="20" pixmap="BlackSpirit.HD/img/prog_bar990.png">
-		<convert type="EventTime">Progress</convert>
-	</widget>
-	<widget backgroundColor="BS_background" font="Regular; 19" position="70,163" render="BS_RunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,wrap=1,always=0,repeat=2,oneshot=1" size="1153,139" source="Event" valign="top" zPosition="-8">
-		<convert type="EventName">ExtendedDescription</convert>
-	</widget>
-	<eLabel backgroundColor="BS_grey1" position="146,140" size="990,1" />
-	<widget name="timeline_text" position="0,305" selectionDisabled="1" size="1280,25" transparent="1" />
-	<widget EntryBackgroundColor="BS_background" EntryBackgroundColorSelected="BS_grey1" EntryBorderColor="BS_foreground" itemHeight="60" name="list" position="70,335" size="1160,295" transparent="1" />
-	<widget name="timeline0" pixmap="BlackSpirit.HD/img/prog_bar335.png" position="0,398" size="1,230" zPosition="1" />
-	<widget name="timeline1" pixmap="BlackSpirit.HD/img/prog_bar335.png" position="0,398" size="1,230" zPosition="1" />
-	<widget name="timeline2" pixmap="BlackSpirit.HD/img/prog_bar335.png" position="0,398" size="1,230" zPosition="1" />
-	<widget name="timeline3" pixmap="BlackSpirit.HD/img/prog_bar335.png" position="0,398" size="1,230" zPosition="1" />
-	<widget name="timeline4" pixmap="BlackSpirit.HD/img/prog_bar335.png" position="0,398" size="1,230" zPosition="1" />
-	<widget name="timeline5" pixmap="BlackSpirit.HD/img/prog_bar335.png" position="0,398" size="1,230" zPosition="1" />
-	<widget alphatest="blend" name="timeline_now" pixmap="BlackSpirit.HD/img/prog_bar335.png" position="0,330" size="5,295" zPosition="2" />
-	
-	<panel name="template_BOTTOM_Lines"/>
-	<panel name="template_colorkey_red"/>
-	<panel name="template_colorkey_green"/>
-	<panel name="template_key_menu"/>
-	<panel name="template_key_epg"/>
-	<panel name="template_key_info"/>
-	<panel name="template_key_updown"/>
-	<panel name="template_key_leftright"/>
-</screen>
-
 <!-- GraphicalEPG -->
+<!-- SKINNED -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="GraphicalEPG" position="0,0" size="1280,720" title="Electronic Program Guide">
 	  <panel name="template_screen_background" />
 	  <panel name="template_TOP_Title" />
-	<widget backgroundColor="BS_background" font="Regular; 28" position="70,70" render="Label" size="700,39" source="Event" transparent="1">
+	<widget source="Event" font="Regular; 20" position="center,60" render="Label" size="1080,30" halign="center" backgroundColor="BS_background"  foregroundColor="BS_grey1" transparent="1">
 		<convert type="EventName">Name</convert>
 	</widget>
-	<widget backgroundColor="BS_background" font="Regular; 18" halign="right" position="70,111" render="Label" size=" 65, 22" source="Event" transparent="1">
+
+	<widget source="Event" render="Progress" position="center,92" size="1080,5" transparent="1" pixmap="BlackSpirit.HD/img/progressbar1080_1.png" borderWidth="0" zPosition="5">
+		<convert type="EventTime">Progress</convert>
+	</widget>
+	<ePixmap position="center,90" size="1080,2" zPosition="6" pixmap="BlackSpirit.HD/img/line1080.png" />
+	<ePixmap position="center,97" size="1080,2" zPosition="6" pixmap="BlackSpirit.HD/img/line1080.png" />
+
+		<widget backgroundColor="BS_background" font="Regular; 19" halign="right" position="24,82" render="Label" size="70,25" source="Event" transparent="1" valign="center" foregroundColor="BS_grey1" zPosition="3">
 		<convert type="EventTime">StartTime</convert>
 		<convert type="ClockToText">Format:%H:%M </convert>
 	</widget>
-	<widget backgroundColor="BS_background" font="Regular; 18" position="1142,111" render="Label" size=" 80, 22" source="Event" transparent="1">
+	<widget backgroundColor="BS_background" font="Regular; 19" halign="left" position="1186,82" render="Label" size="70,25" source="Event" transparent="1" valign="center" foregroundColor="BS_grey1" zPosition="1" >
 		<convert type="EventTime">EndTime</convert>
 		<convert type="ClockToText">Format:%H:%M</convert>
 	</widget>
-	<widget backgroundColor="BS_foreground" position="146,117" render="Progress" size="990,5" source="Event" transparent="1" zPosition="20" pixmap="BlackSpirit.HD/img/prog_bar990.png">
-		<convert type="EventTime">Progress</convert>
-	</widget>
-	<widget backgroundColor="BS_background" font="Regular; 21" position="70,143" render="BS_RunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,wrap=1,always=0,repeat=2,oneshot=1" size="1153,151" source="Event" valign="top" zPosition="-8">
+
+	<ePixmap position="center,115" size="1200,353" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_1200x353.png" />
+	<widget source="Event" position="50,120" size="1180,151" font="Regular; 21" render="BS_RunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,wrap=1,always=0,repeat=2,oneshot=1" backgroundColor="BS_background" foregroundColor="BS_grey1" valign="top" transparent="1" zPosition="5">
 		<convert type="EventName">ExtendedDescription</convert>
 	</widget>
-	<eLabel backgroundColor="BS_grey1" position="146,119" size="990,1" />
-	<widget name="timeline_text" position="70,305" selectionDisabled="1" size="1280,25" transparent="1" />
-	<widget EntryBackgroundColor="BS_background" EntryBackgroundColorSelected="BS_grey1" EntryBorderColor="BS_foreground" itemHeight="60" name="list" position="70,335" size="1160,325" transparent="1" />
-	<widget name="timeline_now" position="80,335" zPosition="2" size="3,325" pixmap="BlackSpirit.HD/epg/timeline-now.png" alphatest="blend" />
+	
+	<ePixmap position="center,293" size="1200,353" zPosition="-4" pixmap="BlackSpirit.HD/img/bg_1200x353.png" />
+	<widget name="timeline_text" position="center,295" size="1198,25" selectionDisabled="1" foregroundColor="BS_fg_select" transparent="1" />
+	<ePixmap position="center,320" size="1200,1" zPosition="4" pixmap="BlackSpirit.HD/img/line1200_1px.png" />
+	<widget name="list" position="center,322" size="1198,325" itemHeight="60" EntryBackgroundColor="BS_background" EntryBackgroundColorSelected="BS_grey1" EntryBorderColor="BS_foreground" transparent="1" />
+	<widget name="timeline_now" position="80,322" size="3,325" zPosition="2" pixmap="BlackSpirit.HD/epg/timeline-now.png" alphatest="blend" />
 	
 	<panel name="template_BOTTOM_Lines"/>
 	<panel name="template_colorkey_red"/>
@@ -708,8 +655,6 @@
 	<panel name="template_key_info"/>
 	<panel name="template_key_updown"/>
 	<panel name="template_key_leftright"/>
-
-
 </screen>
 
 
@@ -717,31 +662,44 @@
 
 
 <!-- GraphicalEPGPIG -->
+<!-- SKINNED -->
 <screen name="GraphicalEPGPIG" position="0,0" size="1280,720" title="Electronic Program Guide" flags="wfNoBorder" backgroundColor="BS_background" transparent="0">
 	  <panel name="template_screen_background" />
 	  <panel name="template_TOP_Title" />
-	<widget source="Event" render="Label" position="25,90" size="700,39" font="Regular; 24" backgroundColor="BS_background" foregroundColor="BS_foreground" transparent="1">
+	<widget source="Event" font="Regular; 20" position="center,60" render="Label" size="1080,30" halign="center" backgroundColor="BS_background"  foregroundColor="BS_grey1" transparent="1">
 		<convert type="EventName">Name</convert>
 	</widget>
-	<widget source="Event" render="Label" position="25,136" size=" 65, 22" font="Regular; 18" halign="center" backgroundColor="BS_background" foregroundColor="BS_foreground" transparent="1">
+
+	<widget source="Event" render="Progress" position="center,92" size="1080,5" transparent="1" pixmap="BlackSpirit.HD/img/progressbar1080_1.png" borderWidth="0" zPosition="5">
+		<convert type="EventTime">Progress</convert>
+	</widget>
+	<ePixmap position="center,90" size="1080,2" zPosition="6" pixmap="BlackSpirit.HD/img/line1080.png" />
+	<ePixmap position="center,97" size="1080,2" zPosition="6" pixmap="BlackSpirit.HD/img/line1080.png" />
+
+		<widget backgroundColor="BS_background" font="Regular; 19" halign="right" position="24,82" render="Label" size="70,25" source="Event" transparent="1" valign="center" foregroundColor="BS_grey1" zPosition="3">
 		<convert type="EventTime">StartTime</convert>
 		<convert type="ClockToText">Format:%H:%M </convert>
 	</widget>
-	<widget source="Event" render="Label" position="645,136" size=" 80, 22" font="Regular; 18" backgroundColor="BS_background" foregroundColor="BS_foreground" transparent="1" halign="center">
+	<widget backgroundColor="BS_background" font="Regular; 19" halign="left" position="1186,82" render="Label" size="70,25" source="Event" transparent="1" valign="center" foregroundColor="BS_grey1" zPosition="1" >
 		<convert type="EventTime">EndTime</convert>
 		<convert type="ClockToText">Format:%H:%M</convert>
 	</widget>
-	<widget source="Event" render="Progress" position="101,143" size="535,5" borderWidth="0" backgroundColor="BS_background" foregroundColor="BS_foreground" transparent="1" zPosition="1" pixmap="BlackSpirit.HD/img/prog_bar750.png" name=",">
-		<convert type="EventTime">Progress</convert>
-	</widget>
-	<widget source="Event" render="BS_RunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,wrap=1,always=0,repeat=2,oneshot=1" position="25,163" size="700,122" font="Regular; 19" backgroundColor="BS_background" foregroundColor="BS_foreground" valign="top" zPosition="-8">
+
+	<ePixmap position="center,115" size="1200,353" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_1200x353.png" />
+	<widget source="Event" position="50,120" size="840,151" font="Regular; 21" render="BS_RunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,wrap=1,always=0,repeat=2,oneshot=1" backgroundColor="BS_background" foregroundColor="BS_grey1" valign="top" transparent="1" zPosition="5">
 		<convert type="EventName">ExtendedDescription</convert>
 	</widget>
-	<widget name="timeline_text" position="25,293" size="1230,25" selectionDisabled="1" transparent="1" />
-	<widget name="list" position="25,324" size="1230,345" EntryBorderColor="BS_grey1" EntryBackgroundColor="black" EntryBackgroundColorSelected="BS_grey1" scrollbarMode="showNever" transparent="1" selectionPixmap="BlackSpirit.HD/listselection/sb_30a19181.png" />
-	<widget name="timeline_now" position="80,317" zPosition="2" size="3,325" pixmap="BlackSpirit.HD/epg/timeline-now.png" alphatest="blend" />
-	<widget source="session.VideoPicture" render="Pig" position="767,46" size="486,239" zPosition="3" backgroundColor="transparent" />
-	<eLabel position="101,145" size="535,1" backgroundColor="BS_grey1" foregroundColor="BS_grey1" />
+	
+	<ePixmap position="940,120" size="294,167" zPosition="4" pixmap="BlackSpirit.HD/img/bg_minitv.png" backgroundColor="BS_background" transparent="1" />
+	<widget source="session.VideoPicture" render="Pig" position="942,122" size="290,163" zPosition="10" backgroundColor="transparent" />
+	
+	
+	<ePixmap position="center,293" size="1200,353" zPosition="-4" pixmap="BlackSpirit.HD/img/bg_1200x353.png" />
+	<widget name="timeline_text" position="center,295" size="1198,25" selectionDisabled="1" foregroundColor="BS_fg_select" transparent="1" />
+	<ePixmap position="center,320" size="1200,1" zPosition="4" pixmap="BlackSpirit.HD/img/line1200_1px.png" />
+	<widget name="list" position="center,322" size="1198,325" itemHeight="60" EntryBackgroundColor="BS_background" EntryBackgroundColorSelected="BS_grey1" EntryBorderColor="BS_foreground" transparent="1" />
+	<widget name="timeline_now" position="80,322" size="3,325" zPosition="2" pixmap="BlackSpirit.HD/epg/timeline-now.png" alphatest="blend" />
+
 	<panel name="template_BOTTOM_Lines"/>
 	<panel name="template_colorkey_red"/>
 	<panel name="template_colorkey_green"/>
@@ -753,15 +711,6 @@
 	<panel name="template_key_updown"/>
 	<panel name="template_key_leftright"/>
 </screen>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -772,8 +721,8 @@
 	<widget source="Service" render="Label" position="40,480" size="280,30" font="Regular; 25" valign="bottom" noWrap="1" backgroundColor="BS_background" foregroundColor="BS_grey1"  transparent="1">
 		<convert type="ServiceName">Name</convert>
 	</widget>
-	<ePixmap position="1030,376" size="222,134" zPosition="4" pixmap="BlackSpirit.HD/img/bg_xpicon.png" alphatest="off" />
-	<widget source="Service" render="BS_XPicon" position="1031,377" size="220,132" transparent="0" zPosition="5" alphatest="off">
+	<ePixmap position="1030,376" size="222,134" zPosition="4" pixmap="BlackSpirit.HD/img/bg_222x134.png" alphatest="off" />
+	<widget source="Service" render="BS_XPicon" position="1031,377" size="220,132" transparent="0" zPosition="5" alphatest="blend">
 		<convert type="ServiceName">Reference</convert>
 	</widget>
 
@@ -796,14 +745,6 @@
 
 
 
-
-
-
-
-
-
-
-
 <!-- SimpleEPG InfoBar -->
 <!-- SKINNED -->
 <screen name="QuickEPG" flags="wfNoBorder" position="0,0" size="1280,720" title="InfoBar" backgroundColor="transparent">
@@ -813,8 +754,8 @@
 		<convert type="ServiceName">Name</convert>
 	</widget>
 	<widget name="list" position="40,520" size="680,140" font="Regular; 22" foregroundColor="BS_grey1" backgroundColor="BS_background" transparent="1" />
-	<ePixmap position="1030,396" size="222,134" zPosition="4" pixmap="BlackSpirit.HD/img/bg_xpicon.png" alphatest="off" />
-	<widget source="Service" render="BS_XPicon" position="1031,397" size="220,132" transparent="0" zPosition="5" alphatest="off">
+	<ePixmap position="1030,396" size="222,134" zPosition="4" pixmap="BlackSpirit.HD/img/bg_222x134.png" alphatest="off" />
+	<widget source="Service" render="BS_XPicon" position="1031,397" size="220,132" transparent="0" zPosition="5" alphatest="blend">
 		<convert type="ServiceName">Reference</convert>
 	</widget>
 	<ePixmap position="739,519" size="522,141" zPosition="1" pixmap="BlackSpirit.HD/img/bg_522x141.png" />
@@ -939,7 +880,7 @@
 			}
 		</convert>
 	</widget>
-  <eLabel font="Regular; 14" position="60,690" render="Label" size="300,20" text="BlackSpirit.HD Version: 0.53.rc1" transparent="1" halign="left" valign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" nowrap="1" zPosition="20"/>
+  <eLabel font="Regular; 14" position="60,690" render="Label" size="300,20" text="BlackSpirit.HD Version: 0.60.rc2" transparent="1" halign="left" valign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" nowrap="1" zPosition="20"/>
 </screen>
 
 
@@ -1222,12 +1163,14 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 <!-- PluginBrowser -->
 <!-- SKINNED -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="PluginBrowser" position="0,0" size="1280,720" title="Plugin browser">
-	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Title" />
+	<panel name="template_screen_background" />
+	<panel name="template_TOP_Title" />
 	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
 	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
-	<widget backgroundColor="BS_background" enableWrapAround="1" name="list" position="center,100" size="900,514" scrollbarMode="showOnDemand" transparent="1" />
-
+	<widget backgroundColor="BS_background" enableWrapAround="1" name="list" position="center,100" size="900,500" scrollbarMode="showOnDemand" transparent="1" />
+	<widget source="session.CurrentService" render="Label" position="center,618" size="880,23" font="Regular;18" halign="left" foregroundColor="BlackSpirit" backgroundColor="BS_background" noWrap="1" transparent="1" zPosition="5">
+		<convert type="BS_LayoutInfo">FleshInfo</convert>
+	</widget>
 	<panel name="template_BOTTOM_Lines"/>
 	<panel name="template_colorkey_red_source"/>
 	<panel name="template_colorkey_green_source"/>
@@ -1239,31 +1182,17 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 <!-- PluginDownloadBrowser -->
 <!-- SKINNED -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="PluginDownloadBrowser" position="0,0" size="1280,720" title="Downloadable plugins">
-	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Title" />
+	<panel name="template_screen_background" />
+	<panel name="template_TOP_Title" />
+	<widget name="text" position="center,60" size="800,30" font="Regular;20" halign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" valign="top" zPosition="1" />
 	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
 	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
-	<widget backgroundColor="BS_background" name="list" position="center,100" size="900,514" scrollbarMode="showOnDemand" transparent="1" zPosition="4" />
-	<widget font="Regular;20" halign="center" name="text" position="center,640" size="800,60" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" valign="top" zPosition="1" />
+	<widget name="list" position="center,100" size="900,514" scrollbarMode="showOnDemand" backgroundColor="BS_background" transparent="1" zPosition="4" />
+	<widget source="session.CurrentService" render="Label" position="center,618" size="880,23" font="Regular;18" halign="left" foregroundColor="BlackSpirit" backgroundColor="BS_background" noWrap="1" transparent="1" zPosition="5">
+		<convert type="BS_LayoutInfo">FleshInfo</convert>
+	</widget>
 </screen>
 
-
-
-
-
-
-<!-- ********** NumberZap ********** -->
-	<!--/* NumberZapExt -->
-	<!-- SKINNED -->
-	<screen backgroundColor="transparent" flags="wfNoBorder" name="NumberZapExt" position="0,0" size="1280,720" title="QuickZap">
-	  <ePixmap position="center,center" size="402,242" zPosition="3" pixmap="BlackSpirit.HD/img/bg_402x242.png" />
-		<widget name="chPicon" position="center,center" size="400,240" halign="center" transparent="0" zPosition="4" alphatest="off" />
-	  <ePixmap position="650,345" size="404,174" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_404x174.png" />
-		<widget name="chNum" position="847,360" size="200,100" font="RegularBold; 90" halign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" zPosition="-4" />
-		<widget name="chName" position="650,482" size="330,30" font="RegularBold; 25" halign="right" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" zPosition="-4" />
-		<widget name="chBouq" position="847,350" size="200,25" font="RegularBold; 16" halign="center" noWrap="1" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
-	  <ePixmap alphatest="blend" pixmap="BlackSpirit.HD/img/line160_1px.png" position="867,480" size="160,1" zPosition="3" />
-	</screen>
 
 
 <!-- NumberZap -->
@@ -1275,22 +1204,11 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 </screen>
 
 
-
-
-
-
-
-
-
 <!-- NumberZapWithName -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="NumberZapWithName" position="0,0" size="1280,720" title="QuickZap">
 	  <ePixmap position="center,center" size="204,129" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_204x129.png" />
 		<widget name="servicenumber" position="center,397" size="200,25" halign="center" font="RegularBold; 22" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="0" zPosition="4" />
-
-
-
-
-	<ePixmap position="center,296" size="222,134" zPosition="4" pixmap="BlackSpirit.HD/img/bg_xpicon.png" alphatest="blend" />
+	<ePixmap position="center,296" size="222,134" zPosition="4" pixmap="BlackSpirit.HD/img/bg_222x134.png" alphatest="blend" />
 	<widget alphatest="blend" position="center,297" size="220,132" render="Picon" source="Service">
 		<convert type="ServiceName">Reference</convert>
 	</widget>
@@ -1326,8 +1244,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 <!-- CleanupWizard -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="CleanupWizard" position="0,0" size="1280,720" title="Welcome...">
 	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Label" />
-	<eLabel backgroundColor="BS_background" font="Regular;35" position="70,47" size="800,43" text="CleanupWizard" transparent="1" />
+	  <panel name="template_TOP_Title" />
 	<widget alphatest="blend" name="rc" pixmaps="skin_default/rc.png,skin_default/rcold.png" position="175,115" size="154,500" zPosition="10" />
 	<widget alphatest="blend" name="arrowdown" pixmap="skin_default/arrowdown.png" position="-100,-100" size="37,70" zPosition="11" />
 	<widget alphatest="blend" name="arrowdown2" pixmap="skin_default/arrowdown.png" position="-100,-100" size="37,70" zPosition="11" />
@@ -1362,8 +1279,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 <!-- DefaultSatLists -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="DefaultSatLists" position="0,0" size="1280,720" title="Welcome...">
 	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Label" />
-	<eLabel backgroundColor="BS_background" font="Regular;35" position="70,47" size="800,43" text="DefaultSatLists" transparent="1" />
+	  <panel name="template_TOP_Title" />
 	<widget alphatest="blend" name="wizard" pixmap="skin_default/wizard.png" position="500,120" size="110,174" transparent="1" zPosition="10" />
 	<ePixmap alphatest="blend" pixmap="BlackSpirit.HD/img/key_red.png" position="500,305" size="30,40" />
 	<widget backgroundColor="BS_background" font="Regular;21" name="languagetext" position="535,310" size="150,23" transparent="1" />
@@ -1382,8 +1298,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 <!-- DefaultWizard -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="DefaultWizard" position="0,0" size="1280,720" title="Welcome...">
 	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Label" />
-	<eLabel backgroundColor="BS_background" font="Regular;35" position="70,47" size="800,43" text="DefaultWizard" transparent="1" />
+	  <panel name="template_TOP_Title" />
 	<widget alphatest="blend" name="wizard" pixmap="skin_default/wizard.png" position="500,120" size="110,174" transparent="1" zPosition="10" />
 	<ePixmap alphatest="blend" pixmap="BlackSpirit.HD/img/key_red.png" position="500,305" size="30,40" />
 	<widget backgroundColor="BS_background" font="Regular;21" name="languagetext" position="535,310" size="150,23" transparent="1" />
@@ -1402,8 +1317,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 <!-- DreamPackageWizard -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="DreamPackageWizard" position="0,0" size="1280,720" title="Welcome...">
 	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Label" />
-	<eLabel backgroundColor="BS_background" font="Regular;35" position="70,47" size="800,43" text="DreamPackageWizard" transparent="1" />
+	  <panel name="template_TOP_Title" />
 	<widget alphatest="blend" name="wizard" pixmap="skin_default/wizard.png" position="500,120" size="110,174" transparent="1" zPosition="10" />
 	<ePixmap alphatest="blend" pixmap="BlackSpirit.HD/img/key_red.png" position="500,305" size="30,40" />
 	<widget backgroundColor="BS_background" font="Regular;21" name="languagetext" position="535,310" size="150,23" transparent="1" />
@@ -1422,8 +1336,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 <!-- ImageWizard -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="ImageWizard" position="0,0" size="1280,720" title="Welcome...">
 	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Label" />
-	<eLabel backgroundColor="BS_background" font="Regular;35" position="70,47" size="800,43" text="ImageWizard" transparent="1" />
+	  <panel name="template_TOP_Title" />
 	<widget alphatest="blend" name="rc" pixmaps="skin_default/rc.png,skin_default/rcold.png" position="175,115" size="154,500" zPosition="10" />
 	<widget alphatest="blend" name="arrowdown" pixmap="skin_default/arrowdown.png" position="-100,-100" size="37,70" zPosition="11" />
 	<widget alphatest="blend" name="arrowdown2" pixmap="skin_default/arrowdown.png" position="-100,-100" size="37,70" zPosition="11" />
@@ -1447,8 +1360,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 <!-- LanguageWizard -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="LanguageWizard" position="0,0" size="1280,720" title="Welcome...">
 	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Label" />
-	<eLabel backgroundColor="BS_background" font="Regular;35" position="70,47" size="800,43" text="LanguageWizard" transparent="1" />
+	  <panel name="template_TOP_Title" />
 	<widget alphatest="blend" name="rc" pixmaps="skin_default/rc.png,skin_default/rcold.png" position="175,115" size="154,500" zPosition="10" />
 	<widget alphatest="blend" name="arrowdown" pixmap="skin_default/arrowdown.png" position="-100,-100" size="37,70" zPosition="11" />
 	<widget alphatest="blend" name="arrowdown2" pixmap="skin_default/arrowdown.png" position="-100,-100" size="37,70" zPosition="11" />
@@ -1508,8 +1420,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 <!-- StartWizard -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="StartWizard" position="0,0" size="1280,720" title="Welcome...">
 	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Label" />
-	<eLabel backgroundColor="BS_background" font="Regular;35" position="70,47" size="800,43" text="StartWizard" transparent="1" />
+	  <panel name="template_TOP_Title" />
 	<widget alphatest="blend" name="rc" pixmaps="skin_default/rc.png,skin_default/rcold.png" position="175,115" size="154,500" zPosition="10" />
 	<widget alphatest="blend" name="arrowdown" pixmap="skin_default/arrowdown.png" position="-100,-100" size="37,70" zPosition="11" />
 	<widget alphatest="blend" name="arrowdown2" pixmap="skin_default/arrowdown.png" position="-100,-100" size="37,70" zPosition="11" />
@@ -1533,8 +1444,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 <!-- VideoWizard -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="VideoWizard" position="0,0" size="1280,720" title="Welcome...">
 	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Label" />
-	<eLabel backgroundColor="BS_background" font="Regular;35" position="70,47" size="800,43" text="VideoWizard" transparent="1" />
+	  <panel name="template_TOP_Title" />
 	<widget alphatest="blend" name="rc" pixmaps="skin_default/rc.png,skin_default/rcold.png" position="175,115" size="154,500" zPosition="10" />
 	<widget alphatest="blend" name="arrowdown" pixmap="skin_default/arrowdown.png" position="-100,-100" size="37,70" zPosition="11" />
 	<widget alphatest="blend" name="arrowdown2" pixmap="skin_default/arrowdown.png" position="-100,-100" size="37,70" zPosition="11" />
@@ -1559,8 +1469,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 <!-- HelpMenu -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="HelpMenu" position="0,0" size="1280,720" title="Menu">
 	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Label" />
-	<eLabel backgroundColor="BS_background" font="Regular;35" position="70,47" size="800,43" text="help..." transparent="1" />
+	  <panel name="template_TOP_Title" />
 	<widget alphatest="blend" name="rc" pixmaps="BlackSpirit.HD/rc.png,rcold.png" position="160,115" size="154,500" zPosition="10" />
 	<widget backgroundColor="BS_background" font="Regular;24" foregroundColor="yellow" halign="center" name="long_key" position=" 90,632" size="300,30" transparent="1" />
 	<widget itemHeight="38" name="list" position="500,120" size="720,494" transparent="1" />
@@ -1644,23 +1553,30 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 </screen>
 
 
-	<screen name="NetworkMacSetup" position="0,0" size="1280,720" title="MAC-adress Setup" backgroundColor="transparent" flags="wfNoBorder">
+<!-- NetworkMacSetup -->
+<!-- SKINNED -->
+<screen name="NetworkMacSetup" position="0,0" size="1280,720" title="MAC-adress Setup" backgroundColor="transparent" flags="wfNoBorder">
 	  <panel name="template_screen_background" />
 	  <panel name="template_TOP_Title" />
-		<widget source="introduction" render="Label" position="70,520" size="650,25" font="Regular;22" halign="center" backgroundColor="BS_background" transparent="1" />
-		<widget name="config" zPosition="2" position="70,120" size="710,455" scrollbarMode="showNever" transparent="1" />
+	<widget source="introduction" render="Label" position="center,60" size="900,30" font="Regular;20" halign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
+	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
+	<widget name="config" position="center,110" size="900,495" itemHeight="30" scrollbarMode="showAlways" transparent="1" />
 	<panel name="template_BOTTOM_Lines"/>
 	<panel name="template_colorkey_red_source"/>
 	<panel name="template_colorkey_green_source"/>
-	</screen>
+</screen>
 
 
 <!-- NameserverSetup -->
+<!-- SKINNED -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="NameserverSetup" position="0,0" size="1280,720" title="Nameserver Setup">
 	  <panel name="template_screen_background" />
 	  <panel name="template_TOP_Title" />
-	<widget backgroundColor="BS_background" itemHeight="30" name="config" position="71,120" size="700,450" transparent="1" />
-	<widget backgroundColor="BS_background" font="Regular;22" halign="center" name="introduction" position="70,600" size="700,25" transparent="1" />
+	<widget source="introduction" render="Label" position="center,60" size="900,30" font="Regular;20" halign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
+	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
+	<widget name="config" position="center,110" size="900,495" itemHeight="30" scrollbarMode="showAlways" transparent="1" />
 	<panel name="template_BOTTOM_Lines"/>
 	<panel name="template_colorkey_red_source"/>
 	<panel name="template_colorkey_green_source"/>
@@ -1668,13 +1584,15 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 </screen>
 
 
-
-
 <!-- NetworkAdapterSelection -->
+<!-- SKINNED -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="NetworkAdapterSelection" position="0,0" size="1280,720" title="Select Network Adapter">
 	  <panel name="template_screen_background" />
 	  <panel name="template_TOP_Title" />
-	<widget backgroundColor="BS_background" enableWrapAround="1" position="70,120" render="Listbox" size="700,450" source="list" transparent="1">
+	<widget name="introduction" position="center,60" size="900,30" font="Regular;20" halign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
+	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
+	<widget source="list" render="Listbox" position="center,110" size="900,495" itemHeight="30" scrollbarMode="showALways" enableWrapAround="1" transparent="1" >
 		<convert type="TemplatedMultiContent">
 			{"template": [
 			MultiContentEntryPixmapAlphaTest(pos = (10, 10), size = (54, 54), png = 3), # index 3 is the interface pixmap
@@ -1687,7 +1605,6 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 			}
 		</convert>
 	</widget>
-	<widget backgroundColor="BS_background" font="Regular;22" halign="center" name="introduction" position="70,600" size="700,25" transparent="1" />
 	<panel name="template_BOTTOM_Lines"/>
 	<panel name="template_colorkey_red_source"/>
 	<panel name="template_colorkey_green_source"/>
@@ -1739,10 +1656,14 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 </screen>
 
 <!-- NetworkBrowser -->
+<!-- SKINNED -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="NetworkBrowser" position="0,0" size="1280,720" title="Network Neighbourhood">
 	  <panel name="template_screen_background" />
 	  <panel name="template_TOP_Title" />
-	<widget position="71,121" render="Listbox" size="700,480" source="list" transparent="1" zPosition="3">
+	<widget source="infotext" render="Label" position="center,60" size="900,30" font="Regular;20" halign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
+	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
+	<widget source="list" render="Listbox" position="center,110" size="900,495" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" >
 		<convert type="TemplatedMultiContent">
 			{"template": [
 			MultiContentEntryPixmapAlphaTest(pos = (10, 6), size = (48, 48), png = 1), # index 1 is the expandable/expanded/verticalline icon
@@ -1757,7 +1678,6 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 			}
 		</convert>
 	</widget>
-	<widget font="Regular; 22" halign="center" position="70,598" render="Label" size="700,30" source="infotext" transparent="1" zPosition="3" />
 	<panel name="template_BOTTOM_Lines"/>
 	<panel name="template_colorkey_red_source"/>
 	<panel name="template_colorkey_green_source"/>
@@ -1765,23 +1685,32 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 	<panel name="template_colorkey_blue_source"/>
 </screen>
 
+
 <!-- AutoMountEdit -->
+<!-- SKINNED -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="AutoMountEdit" position="0,0" size="1280,720" title="MountEdit">
 	  <panel name="template_screen_background" />
 	  <panel name="template_TOP_Title" />
-	<widget itemHeight="30" name="config" position="70,121" size="700,450" transparent="1" />
+	<widget source="introduction" render="Label" position="center,60" size="900,30" font="Regular;20" halign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
+	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
+	<widget name="config" position="center,110" size="900,495" itemHeight="30" scrollbarMode="showAlways" transparent="1" />
 	<widget alphatest="blend" name="HelpWindow" position="120,470" size="1,1" transparent="1" zPosition="1" />
 	<widget alphatest="blend" name="VKeyIcon" pixmap="BlackSpirit.HD/img/key_text.png" position="700,640" size="49,24" transparent="1" zPosition="10" />
-	<widget backgroundColor="BS_background" font="Regular;22" halign="center" position="70,593" render="Label" size="700,30" source="introduction" transparent="1" />
 	<panel name="template_BOTTOM_Lines"/>
 	<panel name="template_colorkey_red_source"/>
 </screen>
 
+
 <!-- AutoMountManager -->
+<!-- SKINNED -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="AutoMountManager" position="0,0" size="1280,720" title="AutoMountManager">
 	  <panel name="template_screen_background" />
 	  <panel name="template_TOP_Title" />
-	<widget backgroundColor="BS_background" position="70,115" render="Listbox" size="700,480" source="config" transparent="1">
+	<widget source="introduction" render="Label" position="center,60" size="900,30" font="Regular;20" halign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
+	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
+	<widget source="config" render="Listbox" position="center,110" size="900,495" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" >
 		<convert type="TemplatedMultiContent">
 			{"template": [
 			MultiContentEntryText(pos = (60, 5), size = (620, 28), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
@@ -1793,20 +1722,21 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 			}
 		</convert>
 	</widget>
-	<widget backgroundColor="BS_background" font="Regular; 22" halign="center" position="70,598" render="Label" size="700,30" source="introduction" transparent="1" />
 	<panel name="template_BOTTOM_Lines"/>
 	<panel name="template_colorkey_red_source"/>
 </screen>
 
+
+
 <!-- AutoMountView -->
+<!-- SKINNED -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="AutoMountView" position="0,0" size="1280,720" title="MountView">
 	  <panel name="template_screen_background" />
 	  <panel name="template_TOP_Title" />
-	<widget font="Regular;18" halign="center" position="70,130" render="Label" size="130,60" source="legend1" transparent="1" valign="center" />
-	<widget font="Regular;20" halign="center" position="230,128" render="Label" size="400,60" source="legend2" transparent="1" valign="center" />
-	<widget font="Regular;20" halign="center" position="650,128" render="Label" size="120,60" source="legend3" transparent="1" valign="center" />
-	<ePixmap alphatest="blend" pixmap="BlackSpirit.HD/img/line700.png" position="70,205" size="700,2" />
-	<widget position="70,220" render="Listbox" size="700,360" source="config" transparent="1">
+	<widget source="introduction" render="Label" position="center,60" size="900,30" font="Regular;20" halign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
+	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
+	<widget source="config" render="Listbox" position="center,110" size="900,495" itemHeight="60" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" >
 		<convert type="TemplatedMultiContent">
 			{"template": [
 			MultiContentEntryPixmapAlphaTest(pos = (40, 6), size = (48, 48), png = 0), # index 0 is the isMounted pixmap
@@ -1821,29 +1751,53 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 			}
 		</convert>
 	</widget>
-	<widget backgroundColor="BS_background" font="Regular;22" halign="center" position="70,598" render="Label" size="700,30" source="introduction" transparent="1" />
 	<panel name="template_BOTTOM_Lines"/>
 	<panel name="template_colorkey_red_source"/>
 	<panel name="template_colorkey_yellow_source"/>
 </screen>
 
+
+<!-- ScanIP -->
+<!-- SKINNED -->
+<screen backgroundColor="transparent" flags="wfNoBorder" name="ScanIP" position="0,0" size="1280,720" title="Scan IP">
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+	<ePixmap position="center,99" size="902,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<widget name="config" position="center,110" size="900,495" itemHeight="30" scrollbarMode="showOnDemand" transparent="1" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red_source"/>
+	<panel name="template_colorkey_green_source"/>
+	<panel name="template_colorkey_yellow_source"/>
+	</screen>
+
+
+
+
 <!-- UserDialog -->
+<!-- SKINNED -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="UserDialog" position="0,0" size="1280,720" title="UserDialog">
 	  <panel name="template_screen_background" />
 	  <panel name="template_TOP_Title" />
-	<widget name="config" position="70,120" size="700,350" transparent="1" zPosition="3" />
+	<widget source="introduction" render="Label" position="center,60" size="900,30" font="Regular;20" halign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
+	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
+	<widget name="config" position="center,110" size="900,495" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
 	<widget alphatest="blend" name="HelpWindow" position="120,470" size="1,1" transparent="1" zPosition="1" />
 	<widget alphatest="blend" name="VKeyIcon" pixmap="BlackSpirit.HD/img/key_text.png" position="700,640" size="49,24" transparent="1" zPosition="10" />
-	<widget backgroundColor="BS_background" font="Regular;22" halign="center" position="70,598" render="Label" size="700,30" source="introduction" transparent="1" />
 	<panel name="template_BOTTOM_Lines"/>
 	<panel name="template_colorkey_red_source"/>
 </screen>
 
+
 <!-- UserManager -->
+<!-- SKINNED -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="UserManager" position="0,0" size="1280,720" title="UserManager">
 	  <panel name="template_screen_background" />
 	  <panel name="template_TOP_Title" />
-	<widget position="70,120" render="Listbox" size="700,420" source="config" transparent="1" zPosition="3">
+	<widget source="introduction" render="Label" position="center,60" size="900,30" font="Regular;20" halign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
+	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
+	<widget source="config" render="Listbox" position="center,110" size="900,495" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" >
 		<convert type="TemplatedMultiContent">
 			{"template": [
 			MultiContentEntryText(pos = (80, 4), size = (590, 50), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
@@ -1854,7 +1808,6 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 			}
 		</convert>
 	</widget>
-	<widget backgroundColor="BS_background" font="Regular;22" halign="center" position="70,598" render="Label" size="700,30" source="introduction" transparent="1" />
 	<panel name="template_BOTTOM_Lines"/>
 	<panel name="template_colorkey_red_source"/>
 	<panel name="template_colorkey_yellow_source"/>
@@ -1995,16 +1948,17 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 </screen>
 
 <!-- LocationBox -->
+<!-- SKINNED -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="LocationBox" position="0,0" size="1280,720" title="Location Box">
 	  <panel name="template_screen_background" />
 	  <panel name="template_TOP_Title" />
-	<widget backgroundColor="BS_background" font="Regular;24" name="text" position="70,115" size="700,28" transparent="1" />
-	<widget backgroundColor="BS_background" font="Regular;24" name="target" position="70,150" size="700,28" transparent="1" />
-	<ePixmap alphatest="blend" pixmap="BlackSpirit.HD/img/line700.png" position="70,185" size="700,2" />
-	<widget itemHeight="30" name="filelist" position="70,195" selectionDisabled="1" size="700,150" transparent="1" />
-	<widget backgroundColor="BS_background" font="Regular;24" name="textbook" position="70,415" size="700,28" transparent="1" />
-	<ePixmap alphatest="blend" pixmap="BlackSpirit.HD/img/line700.png" position="70,450" size="700,2" />
-	<widget itemHeight="30" name="booklist" position="70,460" size="700,150" transparent="1" />
+	<widget name="target" position="center,62" size="900,30" font="Regular;23" halign="left" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
+	<ePixmap position="center,99" size="901,450" zPosition="-7" pixmap="BlackSpirit.HD/img/bg_902x450.png" />
+	<ePixmap position="1075,100" size="15,448" zPosition="4" pixmap="BlackSpirit.HD/img/scroll448.png" alphatest="blend" transparent="1" />
+	<widget name="filelist" position="center,100" size="900,300" itemHeight="33" font="Regular;23" selectionDisabled="1" scrollbarMode="showOnDemand" backgroundColor="BS_background" transparent="1" zPosition="3" />
+	<widget name="textbook" position="360,425" size="700,23" font="Regular;18" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" zPosition="-6" />
+	<ePixmap position="350,450" size="720,200" pixmap="BlackSpirit.HD/img/bg_720x200.png" zPosition="-6" />
+	<widget name="booklist" position="360,460" size="700,180" itemHeight="30" font="Regular;20" backgroundColor="BS_background" transparent="1" />
 	<panel name="template_BOTTOM_Lines"/>
 	<panel name="template_colorkey_red"/>
 	<panel name="template_colorkey_green"/>
@@ -2051,7 +2005,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 	<ePixmap position="1075,81" size="15,448" zPosition="4" pixmap="BlackSpirit.HD/img/scroll448.png" alphatest="blend" transparent="1" />
 	<ePixmap position="center,80" size="901,450" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x450.png" />
 	<widget name="timerlist" position="center,81" size="900,445" enableWrapAround="1" scrollbarMode="showAlways" zPosition="3" transparent="1" />
-	<ePixmap position="350,450" size="720,200" zPosition="-6" pixmap="BlackSpirit.HD/img/bg_nextlist.png" />
+	<ePixmap position="350,450" size="720,200" zPosition="-6" pixmap="BlackSpirit.HD/img/bg_720x200.png" />
 	<widget name="description" position="360,540" size="700,105" font="Regular; 20" render="BS_RunningText" options="movetype=running,direction=top,startpoint=0,startdelay=3000,steptime=70,wrap=1,always=0,repeat=2,oneshot=1" transparent="1" zPosition="1" backgroundColor="BS_background" foregroundColor="BlackSpirit" />
 	
 	<panel name="template_BOTTOM_Lines"/>
@@ -2326,13 +2280,16 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 <!-- ********** Common Interface ********** -->
 
 <!-- CiSelection -->
+<!-- SKINNED -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="CiSelection" position="0,0" size="1280,720" title="Common Interface">
 	  <panel name="template_screen_background" />
 	  <panel name="template_TOP_Title" />
-
-	<widget backgroundColor="BS_background" font="Regular;24" name="text" position="70,115" size="700,28" transparent="1" />
-	<ePixmap alphatest="blend" pixmap="BlackSpirit.HD/img/line700.png" position="70,155" size="700,2" />
-	<widget backgroundColor="BS_background" enableWrapAround="1" itemHeight="30" name="entries" position="70,166" size="700,450" transparent="1" />
+	<widget name="text" position="center,60" size="900,30" font="Regular;20" halign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
+	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
+	<widget name="entries" position="center,110" size="900,495" itemHeight="30" scrollbarMode="showAlways" enableWrapAround="1" transparent="1" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_key_ok"/>
 </screen>
 
 <!-- MMIDialog -->
@@ -2485,25 +2442,31 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 <!-- ParentalControlChangePin -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="ParentalControlChangePin" position="0,0" size="1280,720" title="Change pin code">
 	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Label" />
-	<eLabel backgroundColor="BS_background" font="Regular;35" position="70,47" size="800,43" text="Change pin code" transparent="1" />
-	<widget backgroundColor="BS_background" enableWrapAround="1" itemHeight="30" name="config" position="70,120" size="700,480" transparent="1" />
+	  <panel name="template_TOP_Title" />
+	<!--eLabel backgroundColor="BS_background" font="Regular;35" position="70,47" size="800,43" text="Change pin code" transparent="1" /-->
+	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
+	<widget name="config" position="center,100" size="900,514" enableWrapAround="1" font="Regular; 22" halign="left" valign="top" scrollbarMode="showAlways" zPosition="3" transparent="1" />
 </screen>
 
 <!-- ParentalControlEditor -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="ParentalControlEditor" position="0,0" size="1280,720" title="Parental control services Editor">
 	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Label" />
-	<eLabel backgroundColor="BS_background" font="Regular;35" position="70,47" size="800,43" text="Parental control services Editor" transparent="1" />
-	<widget backgroundColor="BS_background" enableWrapAround="1" itemHeight="30" name="servicelist" position="70,120" size="700,480" transparent="1" />
+	  <panel name="template_TOP_Title" />
+	<!--eLabel backgroundColor="BS_background" font="Regular;35" position="70,47" size="800,43" text="Parental control services Editor" transparent="1" /-->
+	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
+	<widget name="servicelist" position="center,100" size="900,514" enableWrapAround="1" font="Regular; 22" halign="left" valign="top" scrollbarMode="showAlways" zPosition="3" transparent="1" />
 </screen>
 
 <!-- ParentalControlSetup -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="ParentalControlSetup" position="0,0" size="1280,720" title="Parental control setup">
 	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Label" />
-	<eLabel backgroundColor="BS_background" font="Regular;35" position="70,47" size="800,43" text="Parental control setup" transparent="1" />
-	<widget backgroundColor="BS_background" enableWrapAround="1" itemHeight="30" name="config" position="70,120" size="700,480" transparent="1" />
+	  <panel name="template_TOP_Title" />
+	<!--eLabel backgroundColor="BS_background" font="Regular;35" position="70,47" size="800,43" text="Parental control setup" transparent="1" /-->
+	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
+	<widget name="config" position="center,100" size="900,514" enableWrapAround="1" font="Regular; 22" halign="left" valign="top" scrollbarMode="showAlways" zPosition="3" transparent="1" />
 </screen>
 
 
@@ -2767,11 +2730,13 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 </screen>
 
 <!-- NimSelection -->
+<!-- SKINNED -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="NimSelection" position="0,0" size="1280,720" title="Choose Tuner">
 	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Label" />
-	<eLabel backgroundColor="BS_background" font="Regular;35" position="70,47" size="800,43" text="Choose Tuner" transparent="1" />
-	<widget enableWrapAround="1" position="70,120" render="Listbox" size="700,440" source="nimlist" transparent="1">
+	  <panel name="template_TOP_Title" />
+	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
+	<widget source="nimlist" render="Listbox" position="center,110" size="900,495" enableWrapAround="1" transparent="1">
 		<convert type="TemplatedMultiContent">
 			{"template": [
 			MultiContentEntryText(pos = (10, 8), size = (680, 30), flags = RT_HALIGN_LEFT, text = 1), # index 1 is the nim name,
@@ -2785,23 +2750,20 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 </screen>
 
 <!-- NimSetup -->
+<!-- SKINNED -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="NimSetup" position="0,0" size="1280,720" title="Reception Settings">
 	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Label" />
-	<eLabel backgroundColor="BS_background" font="Regular;35" position="70,47" size="800,43" text="Reception Settings" transparent="1" />
-	<widget itemHeight="30" name="config" position="70,116" size="700,510" transparent="1" />
+	  <panel name="template_TOP_Title" />
+	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
+	<widget name="config" position="center,110" size="900,495" itemHeight="30" scrollbarMode="showAlways" transparent="1" />
 </screen>
 
 <!-- PositionerSetup -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="PositionerSetup" position="0,0" size="1280,720" title="Positioner setup...">
 	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Label" />
-	<eLabel backgroundColor="BS_background" font="Regular;35" position="70,47" size="800,43" text="Positioner setup..." transparent="1" />
+	  <panel name="template_TOP_Title" />
 	<widget backgroundColor="BS_background" itemHeight="30" name="list" position="220,120" size="400,180" transparent="1" />
-	<widget backgroundColor="red" font="Regular;21" halign="center" name="red" position=" 70,330" size="170,100" valign="center" alphatest="blend" />
-	<widget backgroundColor="green" font="Regular;21" halign="center" name="green" position="241,330" size="170,100" valign="center" alphatest="blend" />
-	<widget backgroundColor="yellow" font="Regular;21" halign="center" name="yellow" position="410,330" size="170,100" valign="center" alphatest="blend" />
-	<widget backgroundColor="blue" font="Regular;21" halign="center" name="blue" position="580,330" size="170,100" valign="center" alphatest="blend" />
 	<widget backgroundColor="BS_background" font="Regular;21" halign="center" name="snr_db" position="160,455" size="200,25" transparent="1" valign="center" />
 	<eLabel backgroundColor="BS_background" font="Regular;21" position=" 70,490" size="80,25" text="SNR:" transparent="1" />
 	<widget borderWidth="1" name="snr_bar" position="160,490" size="200,25" transparent="1" />
@@ -2829,68 +2791,72 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 </screen>
 
 <!-- Satfinder -->
+<!-- SKINNED -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="Satfinder" position="0,0" size="1280,720" title="Satfinder">
 	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Label" />
-	<eLabel backgroundColor="BS_background" font="Regular;35" position="70,47" size="800,43" text="Satfinder" transparent="1" />
-	<widget backgroundColor="BS_background" font="Regular;21" halign="center" position="120,120" render="Label" size="600,22" source="Frontend" transparent="1" zPosition="2">
+	  <panel name="template_TOP_Title" />
+	<widget name="introduction" position="center,60" size="900,30" font="Regular;20" halign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
+	<ePixmap position="center,99" size="902,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<widget backgroundColor="BS_background" font="Regular;21" halign="center" position="200,120" render="Label" size="600,22" source="Frontend" transparent="1" zPosition="2">
 		<convert type="FrontendInfo">SNRdB</convert>
 	</widget>
-	<eLabel backgroundColor="BS_background" font="Regular;21" halign="right" name="snr" position="120,150" size=" 80,25" text="SNR:" transparent="1" />
-	<widget borderColor="BS_grey1" borderWidth="1" position="210,152" render="Progress" size="420,20" source="Frontend" transparent="1">
+	<eLabel backgroundColor="BS_background" font="Regular;21" halign="right" name="snr" position="200,150" size=" 80,25" text="SNR:" transparent="1" />
+	<widget borderColor="BS_grey1" borderWidth="1" position="210,152" render="Progress" size="500,20" source="Frontend" transparent="1">
 		<convert type="FrontendInfo">SNR</convert>
 	</widget>
-	<widget backgroundColor="BS_background" font="Regular;21" position="640,150" render="Label" size=" 80,25" source="Frontend" transparent="1">
+	<widget backgroundColor="BS_background" font="Regular;21" position="720,150" render="Label" size=" 80,25" source="Frontend" transparent="1">
 		<convert type="FrontendInfo">SNR</convert>
 	</widget>
-	<eLabel backgroundColor="BS_background" font="Regular;21" halign="right" name="ber" position="120,185" size=" 80,25" text="BER:" transparent="1" />
-	<widget borderColor="BS_grey1" borderWidth="1" position="210,187" render="Progress" size="420,20" source="Frontend" transparent="1">
+	<eLabel backgroundColor="BS_background" font="Regular;21" halign="right" name="ber" position="200,185" size=" 80,25" text="BER:" transparent="1" />
+	<widget borderColor="BS_grey1" borderWidth="1" position="210,187" render="Progress" size="500,20" source="Frontend" transparent="1">
 		<convert type="FrontendInfo">BER</convert>
 	</widget>
-	<widget backgroundColor="BS_background" font="Regular;21" position="640,185" render="Label" size=" 80,25" source="Frontend" transparent="1">
+	<widget backgroundColor="BS_background" font="Regular;21" position="7200,185" render="Label" size=" 80,25" source="Frontend" transparent="1">
 		<convert type="FrontendInfo">BER</convert>
 	</widget>
-	<eLabel backgroundColor="BS_background" font="Regular;21" halign="right" name="lock" position="120,225" size=" 80,25" text="Lock:" transparent="1" />
-	<widget alphatest="blend" pixmap="skin_default/icons/lock_on.png" position="210,223" render="Pixmap" size=" 38,31" source="Frontend" zPosition="1">
+	<eLabel backgroundColor="BS_background" font="Regular;21" halign="right" name="lock" position="200,225" size=" 80,25" text="Lock:" transparent="1" />
+	<widget alphatest="blend" pixmap="skin_default/icons/lock_on.png" position="290,223" render="Pixmap" size=" 38,31" source="Frontend" zPosition="1">
 		<convert type="FrontendInfo">LOCK</convert>
 		<convert type="ConditionalShowHide" />
 	</widget>
-	<widget alphatest="blend" pixmap="skin_default/icons/lock_off.png" position="210,223" render="Pixmap" size=" 38,31" source="Frontend" zPosition="1">
+	<widget alphatest="blend" pixmap="skin_default/icons/lock_off.png" position="290,223" render="Pixmap" size=" 38,31" source="Frontend" zPosition="1">
 		<convert type="FrontendInfo">LOCK</convert>
 		<convert type="ConditionalShowHide">Invert</convert>
 	</widget>
-	<ePixmap alphatest="blend" pixmap="BlackSpirit.HD/img/line600.png" position="120,280" size="600, 1" zPosition="1" />
-	<widget itemHeight="30" name="config" position="120,290" size="600,330" transparent="1" />
-	<widget backgroundColor="BS_background" font="Regular;22" halign="center" name="introduction" position="70,635" size="700,25" transparent="1" />
+	<ePixmap alphatest="blend" pixmap="BlackSpirit.HD/img/line600.png" position="center,280" size="600, 1" zPosition="1" />
+	<widget itemHeight="30" name="config" position="center,290" size="900,330" transparent="1" />
 </screen>
 
 <!-- ScanSetup -->
+<!-- SKINNED -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="ScanSetup" position="0,0" size="1280,720" title="Service scan">
 	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Label" />
-	<eLabel backgroundColor="BS_background" font="Regular;35" position="70,47" size="800,43" text="Service scan" transparent="1" />
-	<widget backgroundColor="BS_background" enableWrapAround="1" itemHeight="30" name="config" position="70,120" size="700,480" transparent="1" />
-	<widget backgroundColor="BS_background" font="Regular;22" halign="center" name="introduction" position="70,635" size="700,25" transparent="1" />
+	  <panel name="template_TOP_Title" />
+	<widget name="introduction" position="center,60" size="900,30" font="Regular;20" halign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
+	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
+	<widget name="config" position="center,110" size="900,495" itemHeight="30" scrollbarMode="showAlways" enableWrapAround="1" transparent="1" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_key_ok"/>
 </screen>
 
 <!-- ScanSimple -->
+<!-- SKINNED -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="ScanSimple" position="0,0" size="1280,720" title="Service scan">
 	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Label" />
-	<eLabel backgroundColor="BS_background" font="Regular;35" position="70,47" size="800,43" text="Service scan" transparent="1" />
-	<widget backgroundColor="BS_background" font="Regular;24" name="header" position="71,115" size="700,28" transparent="1" />
-	<ePixmap alphatest="blend" pixmap="BlackSpirit.HD/img/line700.png" position="70,155" size="700,2" />
-	<widget backgroundColor="BS_background" enableWrapAround="1" itemHeight="30" name="config" position="70,165" size="700,450" transparent="1" />
-	<widget backgroundColor="BS_background" font="Regular;22" halign="center" name="footer" position="70,635" size="700,25" transparent="1" />
-	  <panel name="template_screen_background" />
 	  <panel name="template_TOP_Title" />
+	<widget name="footer" position="center,60" size="900,30" font="Regular;20" halign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
+	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
+	<widget name="config" position="center,110" size="900,495" itemHeight="30" scrollbarMode="showAlways" enableWrapAround="1" transparent="1" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_key_ok"/>
 </screen>
 
 <!-- ServiceScan -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="ServiceScan" position="0,0" size="1280,720" title="Service Scan">
 	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Label" />
-	<eLabel backgroundColor="BS_background" font="Regular;35" position="70,47" size="800,43" text="Service scan" transparent="1" />
+	  <panel name="template_TOP_Title" />
 	<widget alphatest="blend" pixmap="skin_default/icons/scan-s.png" position="995,420" render="Pixmap" size="64,64" source="FrontendInfo" transparent="1">
 		<convert type="FrontendInfo">TYPE</convert>
 		<convert type="ValueRange">0,0</convert>
@@ -2937,7 +2903,6 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 <screen backgroundColor="transparent" flags="wfNoBorder" name="Blindscan" position="0,0" size="1280,720" title="Blindscan">
 	  <panel name="template_screen_background" />
 	  <panel name="template_TOP_Title" />
-	<eLabel backgroundColor="BS_background" font="Regular;35" position="70,47" size="800,43" text="Blindscan" transparent="1" />
 	<widget name="config" position="70,120" size="700,420" transparent="1" />
 	<widget backgroundColor="BS_background" font="Regular;24" foregroundColor="orange" name="introduction" position="70,560" size="700,30" transparent="1" zPosition="1" />
 	<panel name="template_BOTTOM_Lines"/>
@@ -2965,8 +2930,329 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 
 
 
+<!-- ********** Network Screens Anfang ********** -->
+
+<!-- NetworkMountsMenu -->
+<screen name="NetworkMountsMenu" position="center,center" size="1280,720" flags="wfNoBorder" backgroundColor="BS_background" >
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+	<widget name="introduction" position="center,60" size="900,30" font="Regular;20" halign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
+	<ePixmap position="center,99" size="901,516" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_902x516.png" />
+	<ePixmap position="1075,100" size="15,514" zPosition="4" pixmap="BlackSpirit.HD/img/scroll514.png" alphatest="blend" transparent="1" />
+	<widget name="menulist" position="center,110" size="900,495" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red_source"/>
+	</screen>
 
 
+
+<!-- NetworkSamba -->
+<screen name="NetworkSamba" position="center,center" size="1280,720" flags="wfNoBorder" backgroundColor="BS_background" >
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+			<widget name="lab1" position="300,100" size="150,30" font="Regular;20" valign="center" transparent="0"/>
+			<widget name="labactive" position="500,100" size="250,30" font="Regular;20" valign="center" transparent="0"/>
+			<widget name="lab2" position="300,200" size="150,30" font="Regular;20" valign="center" transparent="0"/>
+			<widget name="labstop" position="500,200" size="200,30" font="Regular;20" valign="center" halign="center" backgroundColor="red"/>
+			<widget name="labrun" position="500,200" size="100,30" zPosition="1" font="Regular;20" valign="center"  halign="center" backgroundColor="green"/>
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red"/>
+	<panel name="template_colorkey_green"/>
+	<panel name="template_colorkey_yellow"/>
+	<panel name="template_colorkey_blue"/>
+</screen>
+		
+<screen name="NetworkSambaLog" position="center,center" size="1280,720" flags="wfNoBorder" backgroundColor="BS_background" >
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+    <widget name="infotext" position="center,center" size="540,380" font="Regular;18" />
+</screen>		
+		
+		
+<!-- NetworkNfs -->
+<screen name="NetworkNfs" position="center,center" size="1280,720" flags="wfNoBorder" backgroundColor="BS_background" >
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+			<widget name="lab1" position="300,100" size="200,30" font="Regular;20" valign="center" transparent="0"/>
+			<widget name="labactive" position="500,100" size="150,30" font="Regular;20" valign="center" transparent="0"/>
+			<widget name="lab2" position="300,200" size="200,30" font="Regular;20" valign="center" transparent="0"/>
+			<widget name="labstop" position="500,200" size="200,30" font="Regular;20" valign="center"  halign="center" backgroundColor="red"/>
+			<widget name="labrun" position="500,200" size="100,30" zPosition="1" font="Regular;20" valign="center"  halign="center" backgroundColor="green"/>
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red"/>
+	<panel name="template_colorkey_green"/>
+	<panel name="template_colorkey_yellow"/>
+</screen>
+		
+		
+		
+<!-- NetworkOpenvpn -->
+<screen name="NetworkOpenvpn" position="center,center" size="1280,720" flags="wfNoBorder" backgroundColor="BS_background" >
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+			<widget name="lab1" position="20,50" size="200,30" font="Regular;20" valign="center" transparent="0"/>
+			<widget name="labactive" position="220,50" size="150,30" font="Regular;20" valign="center" transparent="0"/>
+			<widget name="lab2" position="20,100" size="200,30" font="Regular;20" valign="center" transparent="0"/>
+			<widget name="labstop" position="220,100" size="200,30" font="Regular;20" valign="center"  halign="center" backgroundColor="red"/>
+			<widget name="labrun" position="220,100" size="100,30" zPosition="1" font="Regular;20" valign="center"  halign="center" backgroundColor="green"/>
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red"/>
+	<panel name="template_colorkey_green"/>
+	<panel name="template_colorkey_yellow"/>
+	<panel name="template_colorkey_blue"/>
+</screen>		
+		
+<screen name="NetworkVpnLog" position="center,center" size="1280,720" flags="wfNoBorder" backgroundColor="BS_background" >
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+    <widget name="infotext" position="center,center" size="540,380" font="Regular;18" />
+</screen>		
+		
+		
+		
+<!-- NetworkFtp -->
+<screen name="NetworkFtp" position="center,center" size="1280,720" flags="wfNoBorder" backgroundColor="BS_background" >
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+			<widget name="lab1" position="20,30" size="300,80" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="lab2" position="20,150" size="150,30" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="labstop" position="170,150" size="100,30" font="Regular;20" valign="center"  halign="center" backgroundColor="red"/>
+			<widget name="labrun" position="170,150" size="100,30" zPosition="1" font="Regular;20" valign="center"  halign="center" backgroundColor="green"/>
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red"/>
+	<panel name="template_colorkey_green"/>
+</screen>		
+		
+		
+		
+<!-- NetworkAfp -->
+<screen name="NetworkAfp" position="center,center" size="1280,720" flags="wfNoBorder" backgroundColor="BS_background" >
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+			<widget name="lab1" position="20,50" size="200,30" font="Regular;20" valign="center" transparent="0"/>
+			<widget name="labactive" position="220,50" size="150,30" font="Regular;20" valign="center" transparent="0"/>
+			<widget name="lab2" position="20,100" size="200,30" font="Regular;20" valign="center" transparent="0"/>
+			<widget name="labstop" position="220,100" size="200,30" font="Regular;20" valign="center"  halign="center" backgroundColor="red"/>
+			<widget name="labrun" position="220,100" size="100,30" zPosition="1" font="Regular;20" valign="center"  halign="center" backgroundColor="green"/>
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red"/>
+	<panel name="template_colorkey_green"/>
+	<panel name="template_colorkey_yellow"/>
+	<panel name="template_colorkey_blue"/>
+</screen>		
+		
+		
+<!-- NetworkTelnet -->
+<screen name="NetworkTelnet" position="center,center" size="1280,720" flags="wfNoBorder" backgroundColor="BS_background" >
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+			<widget name="lab1" position="300,100" size="800,80" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="lab2" position="300,200" size="150,30" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="labstop" position="500,200" size="100,30" font="Regular;20" valign="center"  halign="center" backgroundColor="red"/>
+			<widget name="labrun" position="500,200" size="100,30" zPosition="1" font="Regular;20" valign="center"  halign="center" backgroundColor="green"/>
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red"/>
+	<panel name="template_colorkey_green"/>
+</screen>		
+		
+		
+<!-- NetworkInadyn -->
+<screen name="NetworkInadyn" position="center,center" size="1280,720" flags="wfNoBorder" backgroundColor="BS_background" >
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+			<widget name="autostart" position="10,0" size="100,24" font="Regular;20" valign="center" transparent="0" />
+			<widget name="labdisabled" position="110,0" size="100,24" font="Regular;20" valign="center" halign="center" backgroundColor="red" zPosition="1" />
+			<widget name="labactive" position="110,0" size="100,24" font="Regular;20" valign="center" halign="center" backgroundColor="green" zPosition="2" />
+			<widget name="status" position="240,0" size="150,24" font="Regular;20" valign="center" transparent="0" />
+			<widget name="labstop" position="390,0" size="200,24" font="Regular;20" valign="center" halign="center" backgroundColor="red" zPosition="1" />
+			<widget name="labrun" position="390,0" size="100,24" font="Regular;20" valign="center" halign="center" backgroundColor="green" zPosition="2"/>
+			<widget name="time" position="10,50" size="230,30" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="labtime" position="240,50" size="100,30" font="Regular;20" valign="center" backgroundColor="#4D5375"/>
+			<widget name="username" position="10,100" size="150,30" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="labuser" position="160,100" size="310,30" font="Regular;20" valign="center" backgroundColor="#4D5375"/>
+			<widget name="password" position="10,150" size="150,30" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="labpass" position="160,150" size="310,30" font="Regular;20" valign="center" backgroundColor="#4D5375"/>
+			<widget name="alias" position="10,200" size="150,30" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="labalias" position="160,200" size="310,30" font="Regular;20" valign="center" backgroundColor="#4D5375"/>
+			<widget name="sinactive" position="10,250" zPosition="1" pixmap="skin_default/icons/lock_off.png" size="32,32"  alphatest="on" />
+			<widget name="sactive" position="10,250" zPosition="2" pixmap="skin_default/icons/lock_on.png" size="32,32"  alphatest="on" />
+			<widget name="system" position="50,250" size="100,30" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="labsys" position="160,250" size="310,30" font="Regular;20" valign="center" backgroundColor="#4D5375"/>
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red"/>
+	<panel name="template_colorkey_green"/>
+	<panel name="template_colorkey_yellow"/>
+	<panel name="template_colorkey_blue"/>
+</screen>		
+		
+<screen name="InadynSetup" position="center,center" size="1280,720" flags="wfNoBorder" backgroundColor="BS_background" >
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+			<widget name="config" position="10,10" size="420,240" scrollbarMode="showOnDemand" />
+			<widget name="HelpWindow" pixmap="skin_default/vkey_icon.png" position="170,300" zPosition="1" size="440,350" transparent="1" alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/key_text.png" position="300,313" zPosition="4" size="35,25" alphatest="on" transparent="1" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red"/>
+</screen>		
+		
+<screen name="InadynLog" position="center,center" size="1280,720" flags="wfNoBorder" backgroundColor="BS_background" >
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+    <widget name="infotext" position="center,center" size="540,380" font="Regular;18" />
+</screen>		
+		
+		
+		
+		
+<!-- NetworkuShare -->
+<screen name="NetworkuShare" position="center,center" size="1280,720" flags="wfNoBorder" backgroundColor="BS_background" >
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+		  <widget name="autostart" position="10,0" size="100,24" font="Regular;20" valign="center" transparent="0" />
+			<widget name="labdisabled" position="110,0" size="100,24" font="Regular;20" valign="center" halign="center" backgroundColor="red" zPosition="1" />
+			<widget name="labactive" position="110,0" size="100,24" font="Regular;20" valign="center" halign="center" backgroundColor="green" zPosition="2" />
+			<widget name="status" position="240,0" size="150,24" font="Regular;20" valign="center" transparent="0" />
+			<widget name="labstop" position="390,0" size="200,24" font="Regular;20" valign="center" halign="center" backgroundColor="red" zPosition="1" />
+			<widget name="labrun" position="390,0" size="100,24" font="Regular;20" valign="center" halign="center" backgroundColor="green" zPosition="2"/>
+			<widget name="username" position="10,50" size="150,30" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="labuser" position="160,50" size="310,30" font="Regular;20" valign="center" backgroundColor="#4D5375"/>
+			<widget name="iface" position="10,90" size="150,30" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="labiface" position="160,90" size="310,30" font="Regular;20" valign="center" backgroundColor="#4D5375"/>
+			<widget name="port" position="10,130" size="150,30" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="labport" position="160,130" size="310,30" font="Regular;20" valign="center" backgroundColor="#4D5375"/>
+			<widget name="telnetport" position="10,170" size="150,30" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="labtelnetport" position="160,170" size="310,30" font="Regular;20" valign="center" backgroundColor="#4D5375"/>
+			<widget name="sharedir" position="10,210" size="150,30" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="labsharedir" position="160,210" size="310,90" font="Regular;20" valign="center" backgroundColor="#4D5375"/>
+			<widget name="web" position="10,300" size="180,30" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="webinactive" position="200,300" zPosition="1" pixmap="skin_default/icons/lock_off.png" size="32,32"  alphatest="on" />
+			<widget name="webactive" position="200,300" zPosition="2" pixmap="skin_default/icons/lock_on.png" size="32,32"  alphatest="on" />
+			<widget name="telnet" position="10,330" size="180,30" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="telnetinactive" position="200,330" zPosition="1" pixmap="skin_default/icons/lock_off.png" size="32,32"  alphatest="on" />
+			<widget name="telnetactive" position="200,330" zPosition="2" pixmap="skin_default/icons/lock_on.png" size="32,32"  alphatest="on" />
+			<widget name="xbox" position="250,300" size="200,30" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="xboxinactive" position="470,300" zPosition="1" pixmap="skin_default/icons/lock_off.png" size="32,32"  alphatest="on" />
+			<widget name="xboxactive" position="470,300" zPosition="2" pixmap="skin_default/icons/lock_on.png" size="32,32"  alphatest="on" />
+			<widget name="dlna" position="250,330" size="200,30" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="dlnainactive" position="470,330" zPosition="1" pixmap="skin_default/icons/lock_off.png" size="32,32"  alphatest="on" />
+			<widget name="dlnaactive" position="470,330" zPosition="2" pixmap="skin_default/icons/lock_on.png" size="32,32"  alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/red.png" position="0,360" size="140,40" alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/green.png" position="150,360" size="140,40" alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/yellow.png" position="300,360" size="140,40" alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/blue.png" position="450,360" size="140,40" alphatest="on" />
+			<widget name="key_red" position="0,360" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red"/>
+	<panel name="template_colorkey_green"/>
+	<panel name="template_colorkey_yellow"/>
+	<panel name="template_colorkey_blue"/>
+</screen>		
+		
+		
+<screen name="uShareSetup" position="center,center" size="1280,720" flags="wfNoBorder" backgroundColor="BS_background" >
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+			<widget name="config" position="10,10" size="420,240" scrollbarMode="showOnDemand" />
+			<widget name="HelpWindow" pixmap="skin_default/vkey_icon.png" position="440,390" size="440,350" transparent="1" alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/key_text.png" position="320,366" zPosition="4" size="35,25" alphatest="on" transparent="1" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red"/>
+	<panel name="template_colorkey_green"/>
+</screen>		
+		
+		
+<screen name="uShareSelection" position="center,center" size="1280,720" flags="wfNoBorder" backgroundColor="BS_background" >
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+			<widget name="checkList" position="5,50" size="550,350" transparent="1" scrollbarMode="showOnDemand" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red"/>
+	<panel name="template_colorkey_green"/>
+	<panel name="template_colorkey_yellow"/>
+</screen>		
+		
+
+<screen name="NetworkuShareLog" position="center,center" size="1280,720" flags="wfNoBorder" backgroundColor="BS_background" >
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+    <widget name="infotext" position="center,center" size="540,380" font="Regular;18" />
+</screen>		
+	
+	
+<!-- NetworkMiniDLNA -->
+<screen name="NetworkMiniDLNA" position="center,center" size="1280,720" flags="wfNoBorder" backgroundColor="BS_background" >
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+			<widget name="autostart" position="10,0" size="100,24" font="Regular;20" valign="center" transparent="0" />
+			<widget name="labdisabled" position="110,0" size="100,24" font="Regular;20" valign="center" halign="center" backgroundColor="red" zPosition="1" />
+			<widget name="labactive" position="110,0" size="100,24" font="Regular;20" valign="center" halign="center" backgroundColor="green" zPosition="2" />
+			<widget name="status" position="240,0" size="150,24" font="Regular;20" valign="center" transparent="0" />
+			<widget name="labstop" position="390,0" size="200,24" font="Regular;20" valign="center" halign="center" backgroundColor="red" zPosition="1" />
+			<widget name="labrun" position="390,0" size="100,24" font="Regular;20" valign="center" halign="center" backgroundColor="green" zPosition="2"/>
+			<widget name="username" position="10,50" size="150,30" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="labuser" position="160,50" size="310,30" font="Regular;20" valign="center" backgroundColor="#4D5375"/>
+			<widget name="iface" position="10,90" size="150,30" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="labiface" position="160,90" size="310,30" font="Regular;20" valign="center" backgroundColor="#4D5375"/>
+			<widget name="port" position="10,130" size="150,30" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="labport" position="160,130" size="310,30" font="Regular;20" valign="center" backgroundColor="#4D5375"/>
+			<widget name="serialno" position="10,170" size="150,30" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="labserialno" position="160,170" size="310,30" font="Regular;20" valign="center" backgroundColor="#4D5375"/>
+			<widget name="sharedir" position="10,210" size="150,30" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="labsharedir" position="160,210" size="310,90" font="Regular;20" valign="top" backgroundColor="#4D5375"/>
+			<widget name="inotify" position="10,300" size="180,30" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="inotifyinactive" position="200,300" zPosition="1" pixmap="skin_default/icons/lock_off.png" size="32,32"  alphatest="on" />
+			<widget name="inotifyactive" position="200,300" zPosition="2" pixmap="skin_default/icons/lock_on.png" size="32,32"  alphatest="on" />
+			<widget name="tivo" position="10,330" size="180,30" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="tivoinactive" position="200,330" zPosition="1" pixmap="skin_default/icons/lock_off.png" size="32,32"  alphatest="on" />
+			<widget name="tivoactive" position="200,330" zPosition="2" pixmap="skin_default/icons/lock_on.png" size="32,32"  alphatest="on" />
+			<widget name="dlna" position="250,300" size="200,30" font="Regular;20" valign="center" transparent="1"/>
+			<widget name="dlnainactive" position="470,300" zPosition="1" pixmap="skin_default/icons/lock_off.png" size="32,32"  alphatest="on" />
+			<widget name="dlnaactive" position="470,300" zPosition="2" pixmap="skin_default/icons/lock_on.png" size="32,32"  alphatest="on" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red"/>
+	<panel name="template_colorkey_green"/>
+	<panel name="template_colorkey_yellow"/>
+	<panel name="template_colorkey_blue"/>
+</screen>	
+	
+	
+<!-- MiniDLNASetup -->
+<screen name="MiniDLNASetup" position="center,center" size="1280,720" flags="wfNoBorder" backgroundColor="BS_background" >
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+			<widget name="config" position="10,10" size="420,240" scrollbarMode="showOnDemand" />
+			<widget name="HelpWindow" pixmap="skin_default/vkey_icon.png" position="440,390" size="440,350" transparent="1" alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/key_text.png" position="320,366" zPosition="4" size="35,25" alphatest="on" transparent="1" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red"/>
+	<panel name="template_colorkey_green"/>
+</screen>	
+	
+	
+<!-- MiniDLNASelection -->
+<screen name="MiniDLNASelection" position="center,center" size="1280,720" flags="wfNoBorder" backgroundColor="BS_background" >
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+			<widget name="checkList" position="5,50" size="550,350" transparent="1" scrollbarMode="showOnDemand" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red"/>
+	<panel name="template_colorkey_green"/>
+	<panel name="template_colorkey_yellow"/>
+</screen>	
+	
+	
+	<screen name="NetworkMiniDLNALog" position="center,center" size="1280,720" flags="wfNoBorder" backgroundColor="BS_background" >
+	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+    <widget name="infotext" position="center,center" size="540,380" font="Regular;18" />
+</screen>		
+
+<!-- ********** Network Screens Ende ********** -->
+
+
+
+
+	
 <!-- ********** Software Manager Screens ********** -->
 
 <!-- SoftwareManagerSetup -->
@@ -3921,7 +4207,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 	<ePixmap position="100,667" size="1080,2" zPosition="1" pixmap="BlackSpirit.HD/img/line1080.png" />
 	<ePixmap position="100,674" size="1080,2" zPosition="1" pixmap="BlackSpirit.HD/img/line1080.png" />
 	<eLabel backgroundColor="BS_background" font="Regular; 19" halign="left" position="450,677" size="120,35" text="Restlaufzeit:" transparent="1" valign="center" foregroundColor="BS_grey1" zPosition="1" />
-	<widget backgroundColor="BS_background" font="Regular; 19" halign="right" position="540,677" render="Label" size="100,35" source="session.CurrentService" transparent="1" valign="center" foregroundColor="BS_grey1" zPosition="1">
+	<widget source="session.CurrentService" position="540,677" size="100,35" font="Regular; 19" render="Label" halign="right" valign="center" transparent="1" backgroundColor="BS_background" foregroundColor="BS_grey1" zPosition="1">
 		<convert type="ServicePosition">Remaining</convert>
 	</widget>
 	<eLabel backgroundColor="BS_background" font="Regular; 19" halign="left" position="643,677" size="100,35" text="min" foregroundColor="BS_grey1" transparent="1" valign="center" zPosition="1" />
@@ -4605,112 +4891,6 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 	<eLabel font="Regular; 20" halign="left" position="395,637" size="250,28" text="Save" transparent="1" valign="top" />
 </screen>
 
-
-<!-- ********** Merlin Music Player ********** -->
-
-<!-- MerlinMusicPlayerFileList -->
-<screen backgroundColor="transparent" flags="wfNoBorder" name="MerlinMusicPlayerFileList" position="0,0" size="1280,710" title="Merlin Music Player">
-	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Title" />
-	<widget name="headertext" position="65,125" size="800,38" zPosition="3" halign="left" foregroundColor="BS_grey1" backgroundColor="BS_background" font="Bold; 35" transparent="1" />
-	<widget name="list" position="65,188" size="800,450" backgroundColor="BS_background" transparent="1" />
-</screen>
-
-<!-- MerlinMusicPlayerLyrics -->
-<screen backgroundColor="transparent" flags="wfNoBorder" name="MerlinMusicPlayerLyrics" position="0,0" size="1280,710" title="Merlin Music Player">
-	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Title" />
-	<widget name="resulttext" position="62,172" size="800,38" backgroundColor="BS_background" font="Regular; 35" transparent="1" />
-	<widget name="lyric_text" position="62,225" size="800,450" backgroundColor="BS_background" transparent="1" />
-	<widget name="headertext" position="62,125" size="800,38" zPosition="3" halign="left" foregroundColor="BS_grey1" backgroundColor="BS_background" font="Regular; 30" transparent="1" />
-</screen>
-
-<!-- MerlinMusicPlayerScreen -->
-<screen name="MerlinMusicPlayerScreen" position="0,0" size="1280,720" title="Merlin Music Player" flags="wfNoBorder" backgroundColor="transparent">
-	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Title" />
-	<widget name="title" position=" 80,390" size="545,32" font="Regular;26" foregroundColor="BlackSpirit" backgroundColor="BS_background" transparent="1" />
-	<widget source="session.CurrentService" render="Label" position="625,390" size="120,32" font="Regular;26" foregroundColor="BlackSpirit" backgroundColor="BS_background" halign="right" transparent="1">
-		<convert type="ServicePosition">Length</convert>
-	</widget>
-	<eLabel position="80,430" size="665,2" backgroundColor="BS_grey1" />
-	<widget name="album" position="80,450" size="665,26" font="Regular;22" foregroundColor="BS_grey1" backgroundColor="BS_background" transparent="1" />
-	<widget name="artist" position="80,490" size="665,26" font="Regular;22" foregroundColor="BS_grey1" backgroundColor="BS_background" transparent="1" />
-	<widget name="genre" position="80,530" size="665,26" font="Regular;22" foregroundColor="BS_grey1" backgroundColor="BS_background" transparent="1" />
-	<widget source="session.CurrentService" render="Progress" position=" 80,580" size="665,10" backgroundColor="BS_background" borderWidth="2" borderColor="BS_grey1" transparent="1" pixmap="BlackSpirit.HD/img/prog_bar750.png">
-		<convert type="ServicePosition">Position</convert>
-	</widget>
-	<widget source="session.CurrentService" render="Label" position=" 80,600" size="100,22" font="Regular;20" halign="left" backgroundColor="BS_background" transparent="1">
-		<convert type="ServicePosition">Position</convert>
-	</widget>
-	<widget source="session.CurrentService" render="Label" position="645,600" size="100,22" font="Regular;20" halign="right" backgroundColor="BS_background" transparent="1">
-		<convert type="ServicePosition">Remaining</convert>
-	</widget>
-	<eLabel text="next" position=" 80,638" size="60,25" font="Regular;18" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" />
-	<widget name="nextTitle" position="140,635" size="680,26" font="Regular;20" backgroundColor="BS_background" foregroundColor="BS_grey1" transparent="1" />
-	<widget name="shuffle" position="630,120" size="50,25" pixmaps="BlackSpirit.HD/img/placeholder1.png,BlackSpirit.HD/img/shuffle.png" alphatest="blend" />
-	<widget name="repeat" position="700,120" size="50,25" pixmaps="BlackSpirit.HD/img/placeholder1.png,BlackSpirit.HD/img/repeat.png" alphatest="blend" />
-	<widget name="PositionGauge" position="0,0" size="0,0" />
-	<widget name="coverArt" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/images/no_coverArt.png" position="789,140" size="470,470" transparent="1" alphatest="blend" />
-</screen>
-
-<!-- MerlinMusicPlayerScreenSaver -->
-<screen name="MerlinMusicPlayerScreenSaver" position="0,0" size="1280,720" title="Merlin Music Player ScreenSaver" flags="wfNoBorder" backgroundColor="BS_background">
-	<widget name="coverArt" pixmap="BlackSpirit.HD/img/new/no_coverArt.png" position="200,77" size="200,256" transparent="1" alphatest="blend" />
-	<widget name="display" position="200,315" size="1280,24" zPosition="1" transparent="1" font="Regular;20" foregroundColor="BS_grey1" />
-</screen>
-
-<!-- MerlinMusicPlayerSetup -->
-<screen backgroundColor="transparent" flags="wfNoBorder" name="MerlinMusicPlayerSetup" position="0,0" size="1280,710" title="Merlin Music Player">
-	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Title" />
-	<widget name="config" position="63,133" size="800,450" backgroundColor="BS_background" transparent="1" />
-	<ePixmap pixmap="BlackSpirit.HD/img/key_red1.png" position="100,662" size="200,5" alphatest="blend" />
-	<ePixmap pixmap="BlackSpirit.HD/img/key_green1.png" position="390,662" size="200,5" alphatest="blend" />
-	<eLabel font="Regular; 20" halign="left" position="105,637" size="240,24" text="Cancel" transparent="1" valign="top" />
-	<eLabel font="Regular; 20" halign="left" position="395,637" size="240,24" text="OK" transparent="1" valign="top" />
-</screen>
-
-<!-- MerlinMusicPlayerSongList -->
-<screen backgroundColor="transparent" flags="wfNoBorder" name="MerlinMusicPlayerSongList" position="0,0" size="1280,710" title="Songlist">
-	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Title" />
-	<widget name="headertext" position="65,125" size="800,38" zPosition="3" halign="left" foregroundColor="BS_grey1" backgroundColor="BS_background" font="Regular; 35" transparent="1" />
-	<widget name="list" position="65,189" size="800,450" itemHeight="30" backgroundColor="BS_background" transparent="1" />
-</screen>
-
-<!-- SelectPath -->
-<screen backgroundColor="transparent" flags="wfNoBorder" name="SelectPath" position="0,0" size="1280,710" title="Select path">
-	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Title" />
-	<widget name="target" position="64,107" size="800,38" zPosition="3" halign="left" foregroundColor="BS_grey1" backgroundColor="BS_background" font="Bold; 35" transparent="1" />
-	<widget name="filelist" position="66,159" size="800,450" backgroundColor="BS_background" transparent="1" />
-	<panel name="template_BOTTOM_Lines"/>
-	<panel name="template_colorkey_red"/>
-	<panel name="template_colorkey_green"/>
-</screen>
-
-<!-- iDreamAddToDatabase -->
-<screen name="iDreamAddToDatabase" position="0,0" size="1280,720" title="Add music files to iDream database" flags="wfNoBorder" backgroundColor="transparent">
-	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Title" />
-	<widget name="output" position="39,141" size="800,450" font="Regular;22" backgroundColor="BS_background" transparent="1" />
-	<panel name="template_BOTTOM_Lines"/>
-	<panel name="template_colorkey_red"/>
-	<panel name="template_colorkey_green"/>
-</screen>
-
-<!-- iDreamMerlin -->
-<screen name="iDreamMerlin" position="0,0" size="1280,720" title="iDream" flags="wfNoBorder" backgroundColor="transparent">
-	  <panel name="template_screen_background" />
-	  <panel name="template_TOP_Title" />
-	<widget name="list" position="61,160" size="800,430" zPosition="3" itemHeight="30" scrollbarMode="showAlways" backgroundColor="BS_background" transparent="1" />
-	<panel name="template_BOTTOM_Lines"/>
-	<panel name="template_colorkey_red"/>
-	<panel name="template_colorkey_green"/>
-	<panel name="template_colorkey_yellow"/>
-	<panel name="template_colorkey_blue"/>
-</screen>
 
 
 <!-- ********** MoviePlayer ********** -->
@@ -6010,8 +6190,97 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
 			</screen>
 			
 			
+<!-- WeatherPlugin -->
+<screen name="xxxMSNWeatherPlugin" backgroundColor="BS_background" flags="wfNoBorder" position="center,center" size="1280,720" title="Weather Plugin">
+	<panel name="template_screen_background" />
+	<panel name="template_TOP_Title" />
+	<widget render="Label" source="caption" position="130,65" size="600,30" font="Regular;23" backgroundColor="BS_background" foregroundColor="BlackSpirit" halign="left" transparent="1"/>
+	<widget render="Label" source="observationpoint" position="700,65" size="300,30" font="Regular;23" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" halign="left" />
+	<widget render="Label" source="observationtime" position="1000,65" size="150,30" font="Regular;23" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" halign="left" />
+	<!--widget name="currenticon" position="10,95" zPosition="1" size="55,45" alphatest="blend"/-->
+	<!--ePixmap position="center,100" size="1100,450" zPosition="-5" pixmap="BlackSpirit.HD/img/bg_1100x450.png" /-->
+	<eLabel font="Regular; 20" halign="left" position="350,100" size="600,30" text="Today" backgroundColor="BS_background" foregroundColor="BlackSpirit" render="Label" transparent="1" />
+	<ePixmap position="889,129" size="202,202" zPosition="-4" pixmap="BlackSpirit.HD/img/bg_202x202.png" />
+	<widget render="MSNWeatherPixmap" source="session.MSNWeather" position="890,130" size="200,200" backgroundColor="transparent" zPosition="1" transparent="1">
+		<convert type="MSNWeather">weathericon,current,/usr/share/enigma2/BlackSpirit.HD/img/weather/big/,png</convert>
+	</widget>
+	<widget render="Label" source="condition" position="895,306" size="195,35" font="Regular;16" backgroundColor="BS_background" foregroundColor="BlackSpirit" transparent="1" zPosition="2"/>
+
+	<eLabel render="Label" text="Aktuell:" position="350,153" size="100,30" font="Regular; 22" backgroundColor="BS_background" transparent="1" />
+	<widget render="Label" source="currentTemp" position="450,153" size="100,30" font="Regular;22" backgroundColor="BS_background" transparent="1"/>
+	<widget render="Label" source="feelsliketemp" position="500,153" size="200,30" font="Regular;22" backgroundColor="BS_background" transparent="1"/>
+	<eLabel render="Label" text="Max./Min.:" position="350,180" size="100,30" font="Regular; 22" backgroundColor="BS_background" transparent="1" />
+	<widget render="Label" source="weekday1_temp" position="500,180" size="300,60" font="Regular;22" backgroundColor="BS_background" transparent="1" zPosition="10"/>
+	<eLabel render="Label" text="Wind:" position="350,240" size="100,30" font="Regular; 22" backgroundColor="BS_background" transparent="1" />
+	<widget render="Label" source="wind_condition" position="500,240" size="300,30" font="Regular;22" backgroundColor="BS_background" transparent="1"/>
+	<widget render="Label" source="humidity" position="350,270" size="300,30" font="Regular;22" backgroundColor="BS_background" transparent="1"/>
+
+	<!--widget name="weekday1_icon" position="60,215" zPosition="1" size="55,45" alphatest="blend"/-->
+
+	<ePixmap position="110,280" size="202,300" zPosition="-4" pixmap="BlackSpirit.HD/img/bg_202x300.png" />
+	<widget render="Label" source="weekday2" position="155,400" zPosition="1" size="105,40" halign="center" valign="center" font="Regular;18" transparent="1"/>
+	<widget name="weekday2_icon" position="180,445" zPosition="1" size="55,45" alphatest="blend"/>
+	<widget render="Label" source="weekday2_temp" position="155,500" zPosition="1" size="105,60" halign="center" valign="bottom" font="Regular;16" transparent="1"/>
+
+	<ePixmap position="356,317" size="202,300" zPosition="-4" pixmap="BlackSpirit.HD/img/bg_202x300.png" />
+	<widget render="Label" source="weekday3" position="275,400" zPosition="1" size="105,40" halign="center" valign="center" font="Regular;18" transparent="1"/>
+	<widget name="weekday3_icon" position="300,445" zPosition="1" size="55,45" alphatest="blend"/>
+	<widget render="Label" source="weekday3_temp" position="275,500" zPosition="1" size="105,60" halign="center" valign="bottom" font="Regular;16" transparent="1"/>
+
+	<ePixmap position="632,338" size="202,300" zPosition="-4" pixmap="BlackSpirit.HD/img/bg_202x300.png" />
+	<widget render="Label" source="weekday4" position="395,400" zPosition="1" size="105,40" halign="center" valign="center" font="Regular;18" transparent="1"/>
+	<widget name="weekday4_icon" position="420,445" zPosition="1" size="55,45" alphatest="blend"/>
+	<widget render="Label" source="weekday4_temp" position="395,500" zPosition="1" size="105,60" halign="center" valign="bottom" font="Regular;16" transparent="1"/>
+
+	<ePixmap position="933,360" size="202,300" zPosition="-4" pixmap="BlackSpirit.HD/img/bg_202x300.png" />
+	<widget render="Label" source="weekday5" position="515,400" zPosition="1" size="105,40" halign="center" valign="center" font="Regular;18" transparent="1"/>
+	<widget name="weekday5_icon" position="540,445" zPosition="1" size="55,45" alphatest="blend"/>
+	<widget render="Label" source="weekday5_temp" position="515,500" zPosition="1" size="105,60" halign="center" valign="bottom" font="Regular;16" transparent="1"/>
+
+	<widget render="Label" source="statustext" position="130,675" zPosition="1" size="800,24" font="Regular;20" backgroundColor="BS_background" foregroundColor="BlackSpirit" valign="center" transparent="1"/>
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_key_menu"/>
+</screen>
+
+			
+<screen name="xxxMSNWeatherPluginEntriesListConfigScreen" backgroundColor="BS_background" flags="wfNoBorder" position="center,center" size="1280,720">
+ 	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+			<widget render="Label" source="city" position="5,60" size="400,50" font="Regular;20" halign="left"/>
+			<widget render="Label" source="degreetype" position="410,60" size="130,50" font="Regular;20" halign="left"/>
+			<widget name="entrylist" position="0,80" size="550,300" scrollbarMode="showOnDemand"/>
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red_source"/>
+	<panel name="template_colorkey_green_source"/>
+	<panel name="template_colorkey_yellow_source"/>
+	<panel name="template_colorkey_blue_source"/>
+</screen>	
+
+
+<screen name="xxxMSNWeatherPluginEntryConfigScreen" backgroundColor="BS_background" flags="wfNoBorder" position="center,center" size="1280,720">
+ 	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+			<widget name="config" position="20,60" size="520,300" scrollbarMode="showOnDemand" />
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red_source"/>
+	<panel name="template_colorkey_green_source"/>
+	<panel name="template_colorkey_yellow_source"/>
+	<panel name="template_colorkey_blue_source"/>
+</screen>
 			
 			
+<screen name="xxxMSNWeatherPluginSearch" backgroundColor="BS_background" flags="wfNoBorder" position="center,center" size="1280,720">
+ 	  <panel name="template_screen_background" />
+	  <panel name="template_TOP_Title" />
+			<widget name="entrylist" position="0,60" size="550,200" scrollbarMode="showOnDemand"/>
+	<panel name="template_BOTTOM_Lines"/>
+	<panel name="template_colorkey_red_source"/>
+	<panel name="template_colorkey_green_source"/>
+	<panel name="template_colorkey_yellow_source"/>
+	<panel name="template_colorkey_blue_source"/>
+</screen>			
+			
+				
 <!--			
 <screen position="center,center" size="1000,560" title=" ">
 				<eLabel position="0,0" size="1000,50" backgroundColor="#FFFFFF" zPosition="-1" />

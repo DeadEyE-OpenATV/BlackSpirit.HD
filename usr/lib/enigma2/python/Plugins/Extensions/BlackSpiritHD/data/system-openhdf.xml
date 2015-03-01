@@ -36,7 +36,7 @@
     <panel name="template_BOTTOM_Lines"/>
     <panel name="template_key_info"/>
     <panel name="template_key_ok"/>
-    <eLabel font="Regular; 14" position="60,690" render="Label" size="300,20" text="BlackSpirit.HD Version: 0.53.rc1" transparent="1" halign="left" valign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" nowrap="1" zPosition="20"/>
+    <eLabel font="Regular; 14" position="60,690" render="Label" size="300,20" text="BlackSpirit.HD Version: 0.60.rc2" transparent="1" halign="left" valign="center" backgroundColor="BS_background" foregroundColor="BlackSpirit" nowrap="1" zPosition="20"/>
 </screen>
 
 

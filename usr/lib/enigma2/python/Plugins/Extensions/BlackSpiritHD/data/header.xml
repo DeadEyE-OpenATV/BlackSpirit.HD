@@ -3,7 +3,7 @@
 
 	BlackSpirit.HD by DeadEyE <deadeye.blackspirit@web.de>
 
-	Version: _VERSIONNUMMER_. You use it at your own risk!!!!
+	Version: 0.60.rc2. You use it at your own risk!!!!
 
 	This skin is a Freeware. You can change the skin for personal use.
 	If you want to make your modifikation public, contact and ask me!
@@ -32,6 +32,9 @@
 
 		<!-- DEFAULT GRAU color name="BS_select2" value="#xx2c2c2c" DEFAULT /-->
 		<color name="BS_select2" value="#002c2c2c" />
+
+		<!-- DEFAULT BLACK color name="BS_fr_miniprogress" value="#xx000002" DEFAULT /-->
+		<color name="BS_fr_miniprogress" value="#00000002" />
 
 		<color name="BS_select3" value="#23352111" />
 		<color name="BS_green" value="#0070ad11" />
